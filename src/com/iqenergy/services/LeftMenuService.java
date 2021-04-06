@@ -19,7 +19,7 @@ public class LeftMenuService
 	public void listMenu(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
 	{
 		request.setAttribute("leftmenu", leftMenuDao.getAllMenus() );
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/menu-left");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/menu-left.jsp");
         dispatcher.forward(request, response);
 	}	
 	

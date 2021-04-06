@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
 <%@page import="com.iqenergy.DAO.*"%>
 <%@ page import="com.iqenergy.model.*" %>
 <%@ page import="com.iqenergy.controller.*" %>
 <%@ page import ="com.iqenergy.util.ServerHelper" %>
+
 
 <jsp:include page="includes/header.jsp" />
 <jsp:include page="includes/navbar.jsp" />
@@ -60,9 +62,9 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
                 <tr>
                    <th width="5%">ID</th>
                   <th  width="10%">Name</th>
-                   <th  width="10%">Url</th>
-                    <th  width="10%">Order</th>
-                    <th  width="10%" >Level</th>                  
+                   <th  width="10%">parent id</th>
+                    <th  width="10%">link</th>
+                    <th  width="10%" >status</th>                  
                   <th width="10%" >Action </th>
                   <th width="10%">Action </th>
                 </tr>
@@ -80,9 +82,9 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
               <tfoot>
                  <th width="5%">ID</th>
                   <th  width="10%">Name</th>
-                   <th  width="10%">Url</th>
-                    <th  width="10%">Order</th>
-                    <th  width="10%" >Level</th>                   
+                   <th  width="10%">parent id</th>
+                    <th  width="10%">link</th>
+                    <th  width="10%" >status</th>                   
                   <th width="10%" >Action </th>
                   <th width="10%">Action </th>
                 </tr>
@@ -99,9 +101,9 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
               
                 <tr>
                	   <td><%=menus.getMenu_id() %> </td>
-                   <td><h3><%=menus.getMenu_name() %> </h3> </td>
+                   <td><%=menus.getMenu_name() %>  </td>
                      <td><%=menus.getParent_id()  %> </td>
-                   <td><h3><%=menus.getLink() %> </h3> </td>  
+                   <td><%=menus.getLink() %> </td>  
                    <td><%=menus.getStatus() %> </td>                   
                    <td>
                <a href = "<%=request.getContextPath()%>/admin/superadmin/left-menu-edit?id=<%=menus.getMenu_id() %>" class="btn btn-primary"> Edit</a> 
@@ -110,7 +112,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
                   
                    <td>
              
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteMenuModal<%=menus.getMenu_id() %>">
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteLeftMenuModal<%=menus.getMenu_id() %>">
   Delete
 </button>
 

@@ -28,12 +28,13 @@ import com.iqenergy.services.LeftMenuService;
 public class LeftMenuBackEndServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 private LeftMenuDAO menuDAO = null;
-	 private LeftMenuService lmService = new LeftMenuService();
+	 private LeftMenuDAO menuDAO = null;	 
+	 private LeftMenuService lmService = null;
 	    
 	    public void init() 
 	    {
 	    	menuDAO = new LeftMenuDAO();
+	    	lmService = new LeftMenuService();
 	    }
 
 
@@ -52,7 +53,7 @@ public class LeftMenuBackEndServlet extends HttpServlet {
 		try {
 			switch (action) {
 			case "/admin/superadmin/menu-left":
-				listMenu(request, response);	
+				lmService.listMenu(request, response);	
 				break;
 				
 				
@@ -111,7 +112,7 @@ public class LeftMenuBackEndServlet extends HttpServlet {
 	private void listMenu(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
 	{
 		request.setAttribute("leftmenu", menuDAO.getAllMenus() );
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/menu-left");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/menu-left.jsp");
         dispatcher.forward(request, response);
 	}	
 	
