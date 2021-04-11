@@ -44,7 +44,7 @@ public class LeftMenuDAO extends AbstractDAO
 				row.setMenu_name(rs.getString(2));
 				row.setParent_id(rs.getInt(3));							
 				row.setLink(rs.getString(4));
-				row.setStatus(rs.getShort(5));	
+				row.setM_status (rs.getShort(5));	
 				
 				menus.add(row);
 			}
@@ -84,7 +84,7 @@ public class LeftMenuDAO extends AbstractDAO
 				row.setMenu_name(rs.getString(2));
 				row.setParent_id(rs.getInt(3));							
 				row.setLink(rs.getString(4));
-				row.setStatus(rs.getShort(5));	
+				row.setM_status(rs.getShort(5));	
 				
 				
 				menu= row;
@@ -114,15 +114,16 @@ public class LeftMenuDAO extends AbstractDAO
 		boolean itWorked = false;
 		getConnection();
 		try {  //row.setDate_reg(rs.getDate(7));
-			PreparedStatement ps = conn.prepareStatement("insert into menu_left (menu_name, parent_id, link, status ) values (?,?,?,?)");
-			
+			PreparedStatement ps = conn.prepareStatement("insert into menu_left (menu_name, parent_id, link, m_status ) values (?,?,?,?)");
 			
 						
 			ps.setString(1, menu.getMenu_name());			
 			   ps.setInt(2, menu.getParent_id());
 			ps.setString(3, menu.getLink() );
-		 	 ps.setShort(4, menu.getStatus());
-						
+		 	 ps.setShort(4, menu.getM_status() );
+		 	 
+		 	
+		    
 			itWorked = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -150,11 +151,11 @@ public class LeftMenuDAO extends AbstractDAO
 		boolean isMenuUpdate = false;
 		getConnection();
 		try {
-			String SQL_UPDATE = "UPDATE  menu_left SET "
+			String SQL_UPDATE = " UPDATE  menu_left SET "
 					+ " menu_name = ?, "     //1
 					+ " parent_id = ?,"      //2
 					+ " link = ?,"           //3
-					+ " status = ?,"         //4							
+					+ " m_status = ?"         //4							
 					+ " WHERE menu_id =? ";  //5
 			
 			PreparedStatement ps = conn.prepareStatement(SQL_UPDATE);
@@ -162,8 +163,11 @@ public class LeftMenuDAO extends AbstractDAO
 			ps.setString(1, menu.getMenu_name());			
 			ps.setInt(2, menu.getParent_id());
 			ps.setString(3, menu.getLink());
-			ps.setShort(4, menu.getStatus());
+			ps.setShort(4, menu.getM_status() );
 			ps.setInt(5, menu.getMenu_id() );  
+			
+		//	ps.executeQuery("SET NAMES 'UTF8'");
+		 //   ps.executeQuery("SET CHARACTER SET 'UTF8'");
 			
 			isMenuUpdate = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {

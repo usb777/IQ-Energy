@@ -29,7 +29,7 @@
   
   
  <dependencies>
- 
+ <!-- 5.1.24 -->
  <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>

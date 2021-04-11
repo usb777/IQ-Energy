@@ -28,7 +28,7 @@
 //	ArrayList<Places> listplaces = placesDAO.showAllPlaces();
 LeftMenu leftMenu = new LeftMenu();
 leftMenu = lmdao.getMenuById(1);
-out.println(leftMenu.getMenu_name()+"  id:"+leftMenu.getMenu_id()+ "  status:"+leftMenu.getStatus()+"<br/>");
+out.println(leftMenu.getMenu_name()+"  id:"+leftMenu.getMenu_id()+ "  status:"+leftMenu.getM_status() +"<br/>");
 
 
 				
@@ -38,7 +38,7 @@ ArrayList<LeftMenu> listAllplaces = lmdao.getAllMenus();
 
 for (int i=0;i<listAllplaces.size();i++)
 {
-	out.println(listAllplaces.get(i).getMenu_name()+"  id:"+listAllplaces.get(i).getMenu_id()+ "  status:"+listAllplaces.get(i).getStatus()+"<br/>");
+	out.println(listAllplaces.get(i).getMenu_name()+"  id:"+listAllplaces.get(i).getMenu_id()+ "  status:"+listAllplaces.get(i).getM_status() +"<br/>");
 }
 
 %>

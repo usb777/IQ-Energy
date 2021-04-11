@@ -48,6 +48,9 @@ public class LeftMenuBackEndServlet extends HttpServlet {
     
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
+    	response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+    	
     	String action = request.getServletPath();
 
 		try {
@@ -108,13 +111,6 @@ public class LeftMenuBackEndServlet extends HttpServlet {
 	}
 	
 	
-	
-	private void listMenu(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
-	{
-		request.setAttribute("leftmenu", menuDAO.getAllMenus() );
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/menu-left.jsp");
-        dispatcher.forward(request, response);
-	}	
 	
 	
 	

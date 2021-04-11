@@ -1,6 +1,6 @@
 package com.iqenergy.DAO;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -261,7 +261,7 @@ public class UsersDAO extends AbstractDAO
 		boolean itWorked = false;
 		getConnection();
 		try {  //row.setDate_reg(rs.getDate(7));
-			PreparedStatement ps = conn.prepareStatement("insert into users(fullName,Email,userName,password,role, date_reg) values (?,?,?,?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("insert into users(fullName,Email,userName,password, role, date_reg) values (?,?,?,?,?,?)");
 			
 			ps.setString(1, users.getFullname());
 			
@@ -297,7 +297,7 @@ public class UsersDAO extends AbstractDAO
 		boolean itWorked = false;
 		getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("insert into users(fullName,Email,userName,password,role) values (?,?,?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("insert into users (fullName,Email,userName,password, role, date_reg) values (?,?,?,?,?,?)");
 			
 			ps.setString(1, users.getFullname());
 			
@@ -329,6 +329,8 @@ public class UsersDAO extends AbstractDAO
 	public boolean updateUser(Users users) 
 	{
 		boolean isUserUpdate = false;
+	
+		
 		getConnection();
 		try {
 			String SQL_UPDATE = "UPDATE  users SET "
@@ -336,7 +338,7 @@ public class UsersDAO extends AbstractDAO
 					+ " email = ?,"      //2
 					+ " userName = ?,"     //3
 					+ " password = ?,"   //4
-					+ " role = ? "       //5
+					+ " role = ?, "       //5
 					+ " date_reg = ? "       //6
 					+ " WHERE id =? ";   //7
 			
@@ -347,12 +349,14 @@ public class UsersDAO extends AbstractDAO
 			ps.setString(3, users.getUsername());
 			ps.setString(4, users.getPassword());
 			   ps.setInt(5, users.getRole());
-			   ps.setDate(6, com.iqenergy.util.DateConverter.convertFromUTILDateToSQLDate( users.getDate_reg()) );
+			  ps.setDate(6, com.iqenergy.util.DateConverter.convertFromUTILDateToSQLDate( users.getDate_reg()) );
+			   
 			   ps.setInt(7, users.getId() );  
 			
 			isUserUpdate = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println("SQL Error is ="+e.getMessage() ) ;
 			e.printStackTrace();
 		} finally 
 		  {

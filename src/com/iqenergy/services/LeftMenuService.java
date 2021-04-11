@@ -35,9 +35,12 @@ public class LeftMenuService
 	
 	public void showMenuUpdateForm(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
 	{ 
+		
+		
 		int id = Integer.parseInt(request.getParameter("id"));
-		LeftMenu currentMenu =leftMenuDao.getMenuById(id);
+		LeftMenu currentMenu = leftMenuDao.getMenuById(id);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/menu-left-edit.jsp");
+		request.setAttribute("leftmenus", leftMenuDao.getAllMenus() );
 		request.setAttribute("menu", currentMenu);
 		dispatcher.forward(request, response);
 	}
@@ -52,7 +55,7 @@ public class LeftMenuService
 		newMenuItem.setMenu_name(request.getParameter("name"));
 		newMenuItem.setParent_id(Integer.valueOf(request.getParameter("parent_id")));
 		newMenuItem.setLink(request.getParameter("link"));
-		newMenuItem.setStatus( Short.valueOf(request.getParameter("status")) );
+		newMenuItem.setM_status( Short.valueOf(request.getParameter("status")) );
 		
 		
 			try{	
@@ -70,13 +73,16 @@ public class LeftMenuService
 	
 	public void updateMenu(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		LeftMenu updatedMenuItem = new LeftMenu();
 		
 		updatedMenuItem.setMenu_id( Integer.parseInt(request.getParameter("id")) );
 		updatedMenuItem.setMenu_name(request.getParameter("name"));
 		updatedMenuItem.setParent_id(Integer.valueOf(request.getParameter("parent_id")));
 		updatedMenuItem.setLink(request.getParameter("link"));
-		updatedMenuItem.setStatus( Short.valueOf(request.getParameter("status")) );
+		updatedMenuItem.setM_status( Short.valueOf(request.getParameter("status")) );
 				 
 			try{
 				leftMenuDao.updateMenu(updatedMenuItem) ;

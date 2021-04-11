@@ -2,6 +2,7 @@ package com.iqenergy.services;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +28,7 @@ public class UserService
 	
 	public void showUserInsertForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/users-insert.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/user-insert.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -48,24 +49,18 @@ public class UserService
 
 	public void insertUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
+		Date date_registration = new Date();
 		Users newUser = new Users();
-	/*	
-		String fullname = request.getParameter("fullname") ; 
-		String email = request.getParameter("email");
-		String username = request.getParameter("username") ; 
-		String password = request.getParameter("password");
-		int role = Integer.parseInt(request.getParameter("role")) ;
-		*/
 		newUser.setFullname( request.getParameter("fullname") );
 		newUser.setEmail(request.getParameter("email") );
 		newUser.setUsername(request.getParameter("username") );
 		newUser.setPassword(request.getParameter("password") );
 		newUser.setRole(Integer.parseInt(request.getParameter("role")) ); 
-    	 
-		 
+		newUser.setDate_reg(date_registration);
+   	 
 	try{	 
 		
-		 userDAO.insertUserByAdmin(newUser) ;
+		 userDAO.insertUser(newUser) ;
 		 request.getRequestDispatcher("/admin/superadmin/users").forward(request, response);
 			
        }  //try Before insert to Database
@@ -78,6 +73,7 @@ public class UserService
 	
 	public void updateUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
+		Date date_registration = new Date();
 		Users updateUser = new Users();
 		
 		updateUser.setId( Integer.parseInt(request.getParameter("id")) ); 
@@ -86,7 +82,7 @@ public class UserService
 		updateUser.setUsername(request.getParameter("username") );
 		updateUser.setPassword(request.getParameter("password") );
 		updateUser.setRole(Integer.parseInt(request.getParameter("role")) ); 
-         
+		updateUser.setDate_reg(date_registration); 
 			try{	 
 				
 				 userDAO.updateUser(updateUser) ;

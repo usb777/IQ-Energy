@@ -17,8 +17,8 @@ abstract class AbstractDAO implements DAOConnectI
 		
 		try 
 		{
+			//Class.forName("com.mysql.cj.jdbc.Driver");
 			Class.forName("com.mysql.cj.jdbc.Driver");
-		
 			conn = DriverManager.getConnection(URL, USER, PASSWORD);  // value come from DAO interfaces
 			
 		}

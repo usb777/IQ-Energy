@@ -104,9 +104,9 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
                    <td><%=menus.getMenu_name() %>  </td>
                      <td><%=menus.getParent_id()  %> </td>
                    <td><%=menus.getLink() %> </td>  
-                   <td><%=menus.getStatus() %> </td>                   
+                   <td><%=menus.getM_status() %> </td>                   
                    <td>
-               <a href = "<%=request.getContextPath()%>/admin/superadmin/left-menu-edit?id=<%=menus.getMenu_id() %>" class="btn btn-primary"> Edit</a> 
+               <a href = "<%=request.getContextPath()%>/admin/superadmin/menu-left-edit?id=<%=menus.getMenu_id() %>" class="btn btn-primary"> Edit</a> 
                     </td>
                   
                   
@@ -134,7 +134,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
       <div class="modal-footer">
        <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
         <a href="#"  class="btn btn-secondary" data-dismiss="modal" >Cancel </a>
-        <a href = "<%=request.getContextPath()%>/admin/superadmin/left-menu-delete?id=<%=menus.getMenu_id() %>" class="btn btn-primary"> Confirm</a>  
+        <a href = "<%=request.getContextPath()%>/admin/superadmin/menu-left-delete?id=<%=menus.getMenu_id() %>" class="btn btn-primary"> Confirm</a>  
       </div>
     </div>
   </div>

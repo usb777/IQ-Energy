@@ -23,8 +23,24 @@
               <li><a href="index.html"><i class="icon-dashboard"></i> Dashboard</a></li>
               <li class="active"><i class="icon-file-alt"></i> Blank Page</li>
             </ol>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           </div>
         </div><!-- /.row -->
+        
+              
+        
+        
 
       </div><!-- /#page-wrapper -->
 
