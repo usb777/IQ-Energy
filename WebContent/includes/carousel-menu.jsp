@@ -36,19 +36,19 @@
                 <div class="d-none d-sm-block position-absolute top-0 end-0">
                   <ul class="nav justify-content-end m-3">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Для недропользователей</a>
+                        <a class="nav-link" href="#">Недропользователи</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Для ЖКХ</a>
+                        <a class="nav-link" href="#">ЖКХ</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Для ТЭК</a>
+                        <a class="nav-link" href="#">ТЭК</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Для АПК</a>
+                        <a class="nav-link" href="#">АПК</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Для ГПС</a>
+                        <a class="nav-link" href="#">ГПС</a>
                       </li>
                   </ul>
                 </div>

@@ -6,13 +6,51 @@
 
         <div class="row">
 
+<!-- Left-menu -->
 
-          <div class="col-sm-12 mb-2">
-            <h1 align="center">IQ Energy</h1>
+
+     <div class="col-sm-6 col-lg-4">
+            <ul class="nav flex-column column_nav">
+              <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">О компании</a>
+                  <div class="collapse show" id="about_company">
+                    <ul class="nav flex-column column_nav_sub">
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Дилеры и субдилеры</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Партнеры</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Новости</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Вакансии</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Реквизиты компании</a>
+                        </li>
+                        
+                    </ul>
+                  </div>
+              </li>
+
+            </ul>
+          </div>
+
+
+<!-- End Left-menu -->
+          <div class="col-sm-12 col-lg-8 mb-2">
+            <h1>О компании</h1>
 
             <p class="page_text">
-          Рады приветствовать Вас на сайте компании <strong>«Innovation Qazaqstan Energy»  </strong>.
-          С уважением к Вам и Вашему делу, Команда <strong>«IQ Energy» </strong> </p>
+              <strong>Товарищество с ограниченной ответственностью «Innovation Qazaqstan Energy»</strong> молодая, динамичной развивающая компания, деятельность 
+              которой сфокусирована на поиск и внедрение инновационных и интеллектуальных технологий, развитие альтернативных видов энергетики, подбор наилучших 
+              доступных энергоэффективных разработок, содействие в реализации механизмов зеленой экономики с целью снижения уровня загрязнения окружающей среды и 
+              улучшения экологической ситуации в целом.
+            </p>
 
             <!-- 3 section -->
             <div class="row">
