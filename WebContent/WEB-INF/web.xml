@@ -4,6 +4,21 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list> 
+  
+    <servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+		     <param-name>com.sun.jersey.config.property.packages</param-name>
+		     <param-value>com.iqenergy.controller</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+  <servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/products/*</url-pattern>
+	</servlet-mapping>
  
   <error-page>
     <error-code>403</error-code>
