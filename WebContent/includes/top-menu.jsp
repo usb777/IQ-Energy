@@ -13,7 +13,7 @@
                             <a class="nav-link active" href="<%=request.getContextPath()%>/company-about">о компании</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="page.html">решения и продукты</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/products">решения и продукты</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#null">Экология</a>
