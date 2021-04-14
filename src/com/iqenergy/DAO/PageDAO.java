@@ -311,6 +311,46 @@ public class PageDAO extends AbstractDAO
 		return page;
 		
 	}
+	
+	
+	
+	
+	public Page getPageByIdAndTemplate( int id, String template) 
+	{
+		Page page = new Page();
+		getConnection();
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from pages where page_id=? and  template=? order by page_order");
+			ps.setInt(1, id);
+			ps.setString(2, template);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) 
+			{
+				Page row = new Page();
+				
+				
+				row.setPage_id (rs.getInt(1));
+				row.setPage_name (rs.getString(2));
+				row.setPage_title(rs.getString(3));
+				row.setPage_info(rs.getString(4));
+				row.setPage_order(rs.getInt(5));
+				row.setTemplate(rs.getString(6));
+				
+				page = row;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return page;
+		
+	}
+	
 
 	
 	

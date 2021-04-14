@@ -16,7 +16,7 @@
                             <a class="nav-link" href="<%=request.getContextPath()%>/products">решения и продукты</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#null">Экология</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/ecology">Экология</a>
                           </li>
 
                           <!-- right nav for show on mobile -->

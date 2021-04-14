@@ -5,7 +5,7 @@ package com.iqenergy.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.iqenergy.DAO.PageDAO;
-import com.iqenergy.services.CompanyService;
-import com.iqenergy.services.PageService;
-import com.iqenergy.services.ProductService;
-import com.iqenergy.util.UsefulFunction;
+import com.iqenergy.services.EcologyService;
+
+
 
 
 
@@ -26,25 +25,25 @@ import com.iqenergy.util.UsefulFunction;
  */
 //@WebServlet("/UserServlet", urlPatterns = "/employees")
 
-@WebServlet(name = "FrontProductServlet", urlPatterns = {"/products","/product-ecobarrier","/product-mineraly", "/product-mafy","/product-gerony","/product-watermazut" })
+@WebServlet(name = "FrontEcologyServlet", urlPatterns = {"/ecology","/ecology-npa","/ecology-smi", "/ecology-rk" })
 @MultipartConfig
-public class FrontProductServlet extends HttpServlet {
+public class FrontEcologyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
     private PageDAO pageDAO = null;
-    private ProductService productService = null;
+    private EcologyService ecologyService = null;
     
     public void init() 
     {
     	pageDAO = new PageDAO();
-    	productService = new ProductService();
+    	ecologyService = new EcologyService();
     }
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FrontProductServlet() {
+    public FrontEcologyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -59,34 +58,25 @@ public class FrontProductServlet extends HttpServlet {
 		{
 			
 				
-			case "/products":
-				productService.showProductsPage(request, response);
+			case "/ecology":
+				ecologyService.showEcologyPage(request, response);
 				break;
 				
-			case "/product-ecobarrier":
-				productService.showProductEcobarrierPage(request, response);
+			case "/ecology-npa":
+				ecologyService.showEcologyNpaPage(request, response);
 				break;
 				
-			case"/product-mineraly":
-				productService.showProductMineralyPage(request, response);
+			case "/ecology-smi":
+				ecologyService.showEcologySmiPage(request, response);
+				break;
+			case "/ecology-rk":
+				ecologyService.showEcologyRkPage(request, response);
 				break;
 				
-			case	"/product-mafy":
-				productService.showProductMafyPage(request, response);
-				break;
-				
-			case	"/product-gerony":
-				productService.showProductGeronyPage(request, response);
-				break;
-				
-			case	"/product-watermazut":
-				productService.showProductWatermazutPage(request, response);
-				break;
-				
-		
+			
 			
 			default:
-				productService.showProductsPage(request, response);
+				ecologyService.showEcologyPage(request, response);
 				break;
 		}
 		} catch (SQLException ex) 

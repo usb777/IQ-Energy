@@ -38,7 +38,66 @@ public class ProductService
 		System.out.println( pageDAO.getCompanyPageById(9).toString());
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
         dispatcher.forward(request, response);
+	}
+	
+	
+	
+	
+	public void showProductMineralyPage(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
+	{
+		
+	//	request.setAttribute("menu_products", pageDAO.getAllProductsPages() );		
+		request.setAttribute("productinfo", pageDAO.getProductPageById(10) );
+		System.out.println( pageDAO.getCompanyPageById(10).toString());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+        dispatcher.forward(request, response);
 	}	
+	
+	public void showProductMafyPage(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
+	{
+		
+	//	request.setAttribute("menu_products", pageDAO.getAllProductsPages() );		
+		request.setAttribute("productinfo", pageDAO.getProductPageById(11) );
+		System.out.println( pageDAO.getCompanyPageById(11).toString());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+        dispatcher.forward(request, response);
+	}	
+	
+	
+	public void showProductGeronyPage(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
+	{
+		
+	//	request.setAttribute("menu_products", pageDAO.getAllProductsPages() );		
+		request.setAttribute("productinfo", pageDAO.getProductPageById(12) );
+		System.out.println( pageDAO.getCompanyPageById(12).toString());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+        dispatcher.forward(request, response);
+	}	
+	
+	
+	public void showProductWatermazutPage(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
+	{
+		
+	//	request.setAttribute("menu_products", pageDAO.getAllProductsPages() );		
+		request.setAttribute("productinfo", pageDAO.getProductPageById(13) );
+		System.out.println( pageDAO.getCompanyPageById(13).toString());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+        dispatcher.forward(request, response);
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
