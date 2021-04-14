@@ -4,7 +4,42 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list> 
+  <!-- 
   
+      <servlet>
+    <servlet-name>FrontCompanyServlet</servlet-name>
+    <servlet-class>com.iqenergy.controller</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>0</param-value>
+    </init-param>
+   
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontCompanyServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+    <servlet>
+    <servlet-name>FrontProductServlet</servlet-name>
+    <servlet-class>com.iqenergy.controller</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>0</param-value>
+    </init-param>
+   
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontProductServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  
+   
+   -->
   
   
  <!--  
@@ -39,6 +74,7 @@
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
+  
   <security-constraint>
     <display-name>Restrict direct access to certain folders</display-name>
     <web-resource-collection>
@@ -46,4 +82,6 @@
     </web-resource-collection>
     <auth-constraint/>
   </security-constraint>
+  
+   
 </web-app>

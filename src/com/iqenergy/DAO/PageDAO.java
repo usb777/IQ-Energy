@@ -109,6 +109,49 @@ public class PageDAO extends AbstractDAO
 		
 	}
 	
+	public ArrayList<Page> getAllProductsPages() 
+	{
+		ArrayList<Page> pages = new ArrayList<Page>();
+		getConnection();
+		
+		/*
+		 	private int page_id;   //1
+			private String name;   //2 
+			private String page_title;  //3
+			private String page_info;  //4
+			private int page_order;  //5
+			private String template;  //6
+		 */
+		
+		
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from pages where template ='product.jsp' order by page_order ");
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				Page row = new Page();
+				
+				
+				row.setPage_id (rs.getInt(1));
+				row.setPage_name (rs.getString(2));
+				row.setPage_title(rs.getString(3));
+				row.setPage_info(rs.getString(4));
+				row.setPage_order(rs.getInt(5));
+				row.setTemplate(rs.getString(6));
+				
+				pages.add(row);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return pages;
+		
+	}
 	
 	
 	
@@ -230,8 +273,44 @@ public class PageDAO extends AbstractDAO
 		
 	}
 	
-
-	
+/**
+ * product Page
+ * @param id
+ * @return
+ */
+	public Page getProductPageById(int id) 
+	{
+		Page page = new Page();
+		getConnection();
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from pages where template='product.jsp' and page_id=?  order by page_order");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) 
+			{
+				Page row = new Page();
+				
+				
+				row.setPage_id (rs.getInt(1));
+				row.setPage_name (rs.getString(2));
+				row.setPage_title(rs.getString(3));
+				row.setPage_info(rs.getString(4));
+				row.setPage_order(rs.getInt(5));
+				row.setTemplate(rs.getString(6));
+				
+				page = row;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return page;
+		
+	}
 
 	
 	

@@ -57,7 +57,7 @@
            
               <% 
               Page company = new Page();
-        		  company = (Page)request.getAttribute("companyinfo");   
+        		  company = (Page)request.getAttribute("productinfo");   
            %>
             <h1><%=company.getPage_title() %></h1>
 
