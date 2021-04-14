@@ -42,7 +42,7 @@
                   <!-- logo -->
                   <div class="col-lg-1">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="https://iqe.kz">
                             <img src="<%=request.getContextPath()%>/images/l.png" alt="">
                         </a>
                     </div>

@@ -9,18 +9,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.iqenergy.model.Users;
-import com.iqenergy.DAO.UsersDAO;;
+import com.iqenergy.model.Page;
+import com.iqenergy.DAO.PageDAO;
 
 public class PageService 
 {
-	UsersDAO userDAO = new UsersDAO();
+	PageDAO pageDAO = new PageDAO();
 
 	
 	public void listUsers(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
 	{
-		request.setAttribute("users", userDAO.getAllUsers());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/users.jsp");
+		request.setAttribute("pages", pageDAO.getAllPages());
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/pages.jsp");
         dispatcher.forward(request, response);
 	}
 	
@@ -28,7 +28,7 @@ public class PageService
 	
 	public void showUserInsertForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/user-insert.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/page-insert.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -37,9 +37,9 @@ public class PageService
 	public void showUserUpdateForm(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
 	{ 
 		int id = Integer.parseInt(request.getParameter("id"));
-		Users currentUser = userDAO.getUserById(id);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/user-edit.jsp");
-		request.setAttribute("user", currentUser);
+		Page currentPage = pageDAO.getPageById(id);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/superadmin/page-edit.jsp");
+		request.setAttribute("page", currentPage);
 		dispatcher.forward(request, response);
 	}
 	
@@ -49,19 +49,28 @@ public class PageService
 
 	public void insertUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
-		Date date_registration = new Date();
-		Users newUser = new Users();
-		newUser.setFullname( request.getParameter("fullname") );
-		newUser.setEmail(request.getParameter("email") );
-		newUser.setUsername(request.getParameter("username") );
-		newUser.setPassword(request.getParameter("password") );
-		newUser.setRole(Integer.parseInt(request.getParameter("role")) ); 
-		newUser.setDate_reg(date_registration);
+	
+		Page newPage = new Page();
+		
+		/**
+		 	private String page_name;
+	private String page_title;
+	private String page_info;
+	private int page_order;
+	private String template;
+		 */
+		
+		newPage.setPage_name( request.getParameter("page_name") );
+		newPage.setPage_title(request.getParameter("page_title") );
+		newPage.setPage_info(request.getParameter("page_info") );
+		newPage.setPage_order(Integer.parseInt(request.getParameter("page_order")) ); 
+		newPage.setTemplate(request.getParameter("template") );
+	
    	 
 	try{	 
 		
-		 userDAO.insertUser(newUser) ;
-		 request.getRequestDispatcher("/admin/superadmin/users").forward(request, response);
+		 pageDAO.insertPageByAdmin(newPage) ;
+		 request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
 			
        }  //try Before insert to Database
        catch (Exception e)
@@ -73,20 +82,23 @@ public class PageService
 	
 	public void updateUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
-		Date date_registration = new Date();
-		Users updateUser = new Users();
+	
+		Page updateUser = new Page();
 		
-		updateUser.setId( Integer.parseInt(request.getParameter("id")) ); 
-		updateUser.setFullname( request.getParameter("fullname") );
-		updateUser.setEmail(request.getParameter("email") );
-		updateUser.setUsername(request.getParameter("username") );
-		updateUser.setPassword(request.getParameter("password") );
-		updateUser.setRole(Integer.parseInt(request.getParameter("role")) ); 
-		updateUser.setDate_reg(date_registration); 
+		updateUser.setPage_id( Integer.parseInt(request.getParameter("id")) ); 
+		
+		updateUser.setPage_name( request.getParameter("page_name") );
+		updateUser.setPage_title(request.getParameter("page_title") );
+		updateUser.setPage_info(request.getParameter("page_info") );
+		updateUser.setPage_order(Integer.parseInt(request.getParameter("page_order")) ); 
+		updateUser.setTemplate(request.getParameter("template") );
+	
+		
+		
 			try{	 
 				
-				 userDAO.updateUser(updateUser) ;
-				 request.getRequestDispatcher("/admin/superadmin/users").forward(request, response);
+				 pageDAO.updatePage(updateUser) ;
+				 request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
 					
                 }  //try Before insert to Database
 	           catch (Exception e)
@@ -102,15 +114,15 @@ public class PageService
 	
 	
 
-	public void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
+	public void deletePage(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
 		//  Users user = new Users();
 			 
 			 int id = Integer.parseInt (request.getParameter("id") ); 
 		
 		try{	 
-					userDAO.deleteUserById(id);
-					request.getRequestDispatcher("/admin/superadmin/users").forward(request, response);
+					pageDAO.deletePageById(id);
+					request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
 			}  //try Before insert to Database
 		   catch (Exception e)
 		     { 

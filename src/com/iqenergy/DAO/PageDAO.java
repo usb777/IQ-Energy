@@ -10,6 +10,7 @@ import java.util.List;
 
 
 import com.iqenergy.model.Page;
+import com.iqenergy.model.Users;
 
 
 public class PageDAO extends AbstractDAO
@@ -64,7 +65,49 @@ public class PageDAO extends AbstractDAO
 	}
 	
 	
-	
+	public ArrayList<Page> getAllCompaniesPages() 
+	{
+		ArrayList<Page> pages = new ArrayList<Page>();
+		getConnection();
+		
+		/*
+		 	private int page_id;   //1
+			private String name;   //2 
+			private String page_title;  //3
+			private String page_info;  //4
+			private int page_order;  //5
+			private String template;  //6
+		 */
+		
+		
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from pages where template ='company.jsp' order by page_order ");
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				Page row = new Page();
+				
+				
+				row.setPage_id (rs.getInt(1));
+				row.setPage_name (rs.getString(2));
+				row.setPage_title(rs.getString(3));
+				row.setPage_info(rs.getString(4));
+				row.setPage_order(rs.getInt(5));
+				row.setTemplate(rs.getString(6));
+				
+				pages.add(row);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return pages;
+		
+	}
 	
 	
 	
@@ -74,7 +117,7 @@ public class PageDAO extends AbstractDAO
 	 * @param id
 	 * @return
 	 */
-	public List<Page> getPageById(int id)
+	public List<Page> getPagesById(int id)
 	{
 		List<Page> page = new ArrayList<Page>();
 		getConnection();
@@ -108,8 +151,85 @@ public class PageDAO extends AbstractDAO
 	}
 	
 	
+	/**
+	 * This method gets  users from table by id
+	 * @param id
+	 * @return
+	 */
+	public Page getPageById(int id) 
+	{
+		Page page = new Page();
+		getConnection();
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from pages where page_id=?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) 
+			{
+				Page row = new Page();
+				
+				
+				row.setPage_id (rs.getInt(1));
+				row.setPage_name (rs.getString(2));
+				row.setPage_title(rs.getString(3));
+				row.setPage_info(rs.getString(4));
+				row.setPage_order(rs.getInt(5));
+				row.setTemplate(rs.getString(6));
+				
+				page = row;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return page;
+		
+	}
 	
-
+	
+	/**
+	 * This method gets  users from table by id
+	 * @param id
+	 * @return
+	 */
+	public Page getCompanyPageById(int id) 
+	{
+		Page page = new Page();
+		getConnection();
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from pages where template='company.jsp' and page_id=?  order by page_order");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) 
+			{
+				Page row = new Page();
+				
+				
+				row.setPage_id (rs.getInt(1));
+				row.setPage_name (rs.getString(2));
+				row.setPage_title(rs.getString(3));
+				row.setPage_info(rs.getString(4));
+				row.setPage_order(rs.getInt(5));
+				row.setTemplate(rs.getString(6));
+				
+				page = row;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return page;
+		
+	}
+	
 
 	
 
@@ -117,7 +237,6 @@ public class PageDAO extends AbstractDAO
 	
 	/**
 	 * method insert Page by ID from Database
-	 * @param user_id
 	 * @return
 	 */
 	public boolean insertPageByAdmin(Page page) 
@@ -166,35 +285,34 @@ public class PageDAO extends AbstractDAO
 	{
 		boolean isPageUpdate = false;
 		/*
-	 	private int page_id;   //1
-		private String name;   //2 
-		private String page_title;  //3
-		private String page_info;  //4
-		private int page_order;  //5
-		private String template;  //6
+	 
+		private String page_name;   //1 
+		private String page_title;  //2
+		private String page_info;  //3
+		private int page_order;  //4
+		private String template;  //5
+	 	private int page_id;   //6
 	 */
 		
 		getConnection();
 		try {
-			String SQL_UPDATE = "UPDATE  pages SET "
-					+ " fullName = ?, "  //1
-					+ " email = ?,"      //2
-					+ " userName = ?,"     //3
-					+ " password = ?,"   //4
-					+ " role = ?, "       //5
-					+ " date_reg = ? "       //6
-					+ " WHERE id =? ";   //7
+			String SQL_UPDATE = "UPDATE pages SET "
+					+ " page_name = ?, "  //1
+					+ " page_title = ?,"      //2
+					+ " page_info = ?,"     //3
+					+ " page_order = ?,"   //4
+					+ " template = ? "       //5				
+					+ " WHERE page_id =? ";   //6
 			
 			PreparedStatement ps = conn.prepareStatement(SQL_UPDATE);
 			
-			ps.setString(1, users.getFullname());			
-			ps.setString(2, users.getEmail());
-			ps.setString(3, users.getUsername());
-			ps.setString(4, users.getPassword());
-			   ps.setInt(5, users.getRole());
-			  ps.setDate(6, com.iqenergy.util.DateConverter.convertFromUTILDateToSQLDate( users.getDate_reg()) );
+			ps.setString(1, page.getPage_name()  );			
+			ps.setString(2, page.getPage_title() );
+			ps.setString(3, page.getPage_info() );
+			ps.setInt(4, page.getPage_order() );
+			  ps.setString(5, page.getTemplate() );			
 			   
-			   ps.setInt(7, users.getId() );  
+			   ps.setInt(6, page.getPage_id() );  
 			
 			isPageUpdate = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
@@ -216,18 +334,18 @@ public class PageDAO extends AbstractDAO
 	 * @param user_id
 	 * @return
 	 */
-	public boolean deleteUserById(int user_id)
+	public boolean deletePageById(int page_id)
 	{  
-		boolean isUserDeleted = false;
+		boolean isPageDeleted = false;
 		getConnection();
 		try {
-			String SQL_INSERT = " DELETE from users where id= ? ";         
+			String SQL_INSERT = " DELETE from pages where page_id= ? ";         
 			
 			PreparedStatement ps = conn.prepareStatement(SQL_INSERT);
-		    ps.setInt(1, user_id);
+		    ps.setInt(1, page_id);
 		
 		
-		 isUserDeleted = ps.executeUpdate() > 0 ? true : false;
+		 isPageDeleted = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -236,10 +354,10 @@ public class PageDAO extends AbstractDAO
 		}
 		
 		
-		return isUserDeleted;
+		return isPageDeleted;
 		
 	}	
 	
-	*/
+	
 	
 }
