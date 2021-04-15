@@ -36,7 +36,7 @@
                 <div class="d-none d-sm-block position-absolute top-0 end-0">
                   <ul class="nav justify-content-end m-3">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Недропользователи</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers">Недропользователи</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">ЖКХ</a>

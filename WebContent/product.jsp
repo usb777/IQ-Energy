@@ -18,6 +18,8 @@
               Page product = new Page();
               product = (Page)request.getAttribute("productinfo");   
               
+              
+              //  Not collapsed Mechanizm
               String icemix_a_class="nav-link collapsed";
               String icemix_aria_expanded="false";
               String icemix_div_class = "collapse";
@@ -97,7 +99,7 @@
                    </li>
               
               <% 
-              
+              //  Not collapsed Mechanizm
               String ecobarrier_a_class="nav-link collapsed";
               String ecobarrier_aria_expanded="false";
               String ecobarrier_div_class = "collapse";
