@@ -70,27 +70,27 @@ public class FrontProductServlet extends HttpServlet {
 			
 				
 			case "/products":
-				productService.showProductsPage(request, response);
+				productService.showProductPage(request, response, 8);
 				break;
 				
 			case "/product-ecobarrier":
-				productService.showProductEcobarrierPage(request, response);
+				productService.showProductPage(request, response, 9);
 				break;
 				
 			case"/product-mineraly":
-				productService.showProductMineralyPage(request, response);
+				productService.showProductPage(request, response, 10);
 				break;
 				
 			case	"/product-mafy":
-				productService.showProductMafyPage(request, response);
+				productService.showProductPage(request, response, 11);
 				break;
 				
 			case	"/product-gerony":
-				productService.showProductGeronyPage(request, response);
+				productService.showProductPage(request, response, 12);
 				break;
 				
 			case	"/product-watermazut":
-				productService.showProductWatermazutPage(request, response);
+				productService.showProductPage(request, response, 13);
 				break;
 				
 			case "/product-icemix_about":
@@ -182,7 +182,7 @@ public class FrontProductServlet extends HttpServlet {
 				
 			
 			default:
-				productService.showProductsPage(request, response);
+				productService.showProductPage(request, response, 8);
 				break;
 		}
 		} catch (SQLException ex) 

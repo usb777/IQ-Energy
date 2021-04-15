@@ -17,7 +17,7 @@ public class ProductService
 	PageDAO pageDAO = new PageDAO();
 
 	
-		
+/*		
 	public void showProductsPage(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
 	{
 		
@@ -96,7 +96,7 @@ public class ProductService
     dispatcher.forward(request, response);
   }	
 	
-	
+	*/
 	public void showProductPage(HttpServletRequest request, HttpServletResponse response, int page) 	throws  ServletException,SQLException, IOException
  {
 	
