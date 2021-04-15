@@ -15,25 +15,27 @@ p{
   font-size: 1.1rem;
 }
 
-
-
 .container.custom {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     box-shadow: 0 0 8px #2c5e04;
+    /* background-color: #f6f6f6; */
 }
 
 .header{
     padding: .5rem 0 .5rem;
     padding-right: var(--bs-gutter-x,.75rem);
     padding-left: var(--bs-gutter-x,.75rem);
+    /* background: rgb(107,181,9);
+    background: linear-gradient(90deg, rgba(107,181,9,1) 0%, rgba(104,177,6,1) 50%, rgba(113,173,32,1) 100%);  */
     margin-right: calc(var(--bs-gutter-x)/ -2);
     margin-left: calc(var(--bs-gutter-x)/ -2);
 }
 
 .navbar-light .navbar-nav .show>.nav-link,
 .navbar-light .navbar-nav .nav-link {
+    /* color: #eee; */
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -57,6 +59,7 @@ p{
 
 .logo{
     margin-bottom: .45rem;
+    /* padding-left: var(--bs-gutter-x,.75rem); */
 }
 
 .social_icons{
@@ -89,6 +92,20 @@ p{
     }
 }
 
+/* @media (max-width: 768px){
+    .logo img{
+        max-width: 200px;
+    }
+
+    .navbar-light .navbar-toggler{
+        top: -42px;
+    }
+
+    .social_icons{
+        margin-top: -40px;
+    }
+} */
+
 .navbar-toggler:focus{
     box-shadow: 0 0 0 0.15rem #2c5e04;
 }
@@ -104,14 +121,17 @@ p{
 .information .nav{
     top: 1rem;
     right: 1rem;
-    left: 1rem; 
+    left: 1rem;
+    /* background: rgb(107,181,9);
+    background: linear-gradient(90deg, rgba(107,181,9,1) 0%, rgba(104,177,6,1) 50%, rgba(113,173,32,1) 100%);  */
     display: flex;
     color: #fff;
+    /* border-bottom: 1rem solid #2c5e04; */
 }
 
 .information .nav .nav-item{
     background: rgb(107,181,9);
-    background: linear-gradient(90deg, rgba(107,181,9,1) 0%, rgba(104,177,6,1) 50%, rgba(113,173,32,1) 100%); 
+    background: linear-gradient(90deg, rgba(107,181,9,1) 0%, rgba(104,177,6,1) 50%, rgba(113,173,32,1) 100%);
 }
 
 .information .nav .nav-item:last-child{
@@ -136,8 +156,8 @@ p{
 
 .carousel-item .carousel-caption h1{
     color: #eee;
-    text-shadow: 1px 1px 1rem #2c5e04; 
-    font-size: 3.5rem;  
+    text-shadow: 1px 1px 1rem #2c5e04;
+    font-size: 3.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-family: 'Lobster', cursive;
@@ -150,7 +170,7 @@ p{
     }
 
     .carousel-item .carousel-caption h1{
-        font-size: 2.5rem;  
+        font-size: 2.5rem;
     }
 }
 
@@ -161,8 +181,9 @@ p{
     }
 
     .carousel-item .carousel-caption h1{
-        font-size: 1.8rem;  
-    }   
+        font-size: 1.8rem;
+    }
+
 }
 
 .nav .nav-link{
@@ -194,7 +215,9 @@ p{
 
 
 .column_nav .column_nav_sub li{
+    /* background: #70ac3f; */
     background: #fff;
+    /* border-bottom: none; */
     border-bottom: 1px solid #2c5e04;
 }
 
@@ -212,7 +235,7 @@ p{
 }
 
 .column_nav .column_nav_sub_sub li{
-    background: #eee;
+    background: #88cf4d;
 }
 
 .column_nav .column_nav_sub_sub li .nav-link{
@@ -220,30 +243,6 @@ p{
 }
 
 .column_nav .column_nav_sub_sub li:last-child{
-    border-bottom: none;
-}
-
-.column_nav .column_nav_sub_sub_sub li{
-    background: #fff;
-}
-
-.column_nav .column_nav_sub_sub_sub li .nav-link{
-    padding-left: 4rem;
-}
-
-.column_nav .column_nav_sub_sub_sub li:last-child{
-    border-bottom: none;
-}
-
-.column_nav .column_nav_sub_sub_sub_sub li{
-    background: #fff;
-}
-
-.column_nav .column_nav_sub_sub_sub_sub li .nav-link{
-    padding-left: 5rem;
-}
-
-.column_nav .column_nav_sub_sub_sub_sub li:last-child{
     border-bottom: none;
 }
 
@@ -261,13 +260,9 @@ p{
     flex: 1;
 }
 
-.card{
-    font-size: .8rem;
-    font-weight: 700;
-}
-
 .card h5{
-    font-size: 1rem;
+    font-size: 0.9rem;
+
 }
 
 .card .card-text{
@@ -279,14 +274,15 @@ p{
     padding-bottom: 1rem;
 }
 
-.card .card-text p{
-    font-size: .8rem;
-    margin-bottom: .4rem;
+.card_text
+{
+  font-size: 0.75rem;
+
 }
 
 .footer{
     background: rgb(107,181,9);
-    background: linear-gradient(90deg, rgba(107,181,9,1) 0%, rgba(104,177,6,1) 50%, rgba(113,173,32,1) 100%); 
+    background: linear-gradient(90deg, rgba(107,181,9,1) 0%, rgba(104,177,6,1) 50%, rgba(113,173,32,1) 100%);
     margin-right: calc(var(--bs-gutter-x)/ -2);
     margin-left: calc(var(--bs-gutter-x)/ -2);
     border-bottom: 1rem solid #2c5e04;

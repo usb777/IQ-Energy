@@ -13,64 +13,68 @@
             <h1>О компании</h1>
 
             <p class="page_text">
-              <strong>Товарищество с ограниченной ответственностью «Innovation Qazaqstan Energy»</strong> молодая, динамичной развивающая компания, деятельность которой сфокусирована на поиск и внедрение инновационных и интеллектуальных технологий, развитие альтернативных видов энергетики, подбор наилучших доступных энергоэффективных разработок, содействие в реализации механизмов зеленой экономики с целью снижения уровня загрязнения окружающей среды и улучшения экологической ситуации в целом.
-            </p>
+ <b>«О продукте»</b><br>
+Наиболее популярный и эффективный способ устранения наледи – применение противогололедных химических средств. 
+Противогололёдный реагент <b>«АйсМикс»</b> современное средства для уборки льда и предотвращения гололеда
+Твердый многокомпонентный реагент, который распределяется на автобусных остановках, перекрестках, пешеходных переходах, мостах, тоннелях, а также пешеходных зонах (тротуары).<br>
+<b>Характеристика:</b> Твердый противогололёдный материал, в виде растворимых гранул на основе смеси солей бескислородных кислот.<br><br>
+<b>Химический состав:</b><br>
+Хлористый кальций<br>
+Хлористый магний<br>
+Хлористый натрий<br>
+Ингибитор коррозии<br><br>
 
-            <!-- 3 section -->
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="card text-center mt-2 mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Товарищество с ограниченной ответственностью "Innovation Qazaqstan Energy"</strong></h5>
-                    <div class="card-text">
-                    <p class="card_text"> <strong>БИН 1805 4000 7119</br>
-                      ИИК (IBAN) № KZ76 9650 3F00 0805 1272</br>
-                      филиал АО "ForteBank" г. Нур-Султан</br>
-                      БИК (SWIFT) IRTY KZKA </br>
-                      РК, 010000, г. Нур-Султан, район Алматы, ул. А. Петрова, д. 18/2, офис 305Б</strong>
-                    </p>
-                    </div>
-                    <div class="card-bot">Телефоны:</div>
-                  </div>
-                </div>
-              </div>
+<b>Свойства:</b> действует при контакте со снегом и льдом<br><br>
+<b>Физические свойства: </b><b><b>
 
-              <div class="col-sm-4">
-                <div class="card text-center mt-2 mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>"Innovation Qazaqstan Energy" Жауапкершілігі шектеулі серіктестік</strong></h5>
-                    <div class="card-text">
-                      <p class="card_text"> <strong>БСН 1805 4000 7119</br>
-                      ЖСК (IBAN) № KZ76 9650 3F00 0805 1272</br>
-                      "ForteBank" АҚ Нұр-Сұлтан қ. филиалы</br>
-                      БСК (SWIFT) IRTY KZKA </br>
-                      ҚР, 010000, Нұр-Сұлтан қаласы, Алматы ауданы, А. Петрова көшесі, 18/2 үй, 305Б кеңсе</strong>
-                    </p>
-                    </div>
-                    <div class="card-bot">Телефоны:</div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-sm-4">
-                <div class="card text-center mt-2 mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Limited liability partnership "Innovation Qazaqstan Energy"</strong></h5>
-                    <div class="card-text">
-                        <p class="card_text"> <strong>BIN 1805 4000 7119</br>
-                      IIC (IBAN) № KZ76 9650 3F00 0805 1272</br>
-                      filial АО "ForteBank" Nur-Sultan</br>
-                      BIC (SWIFT) IRTY KZKA </br>
-                      18/2 A. Petrova street, Apt. 305Б, Almaty district, Nur-Sultan city, 010000, Kazakhstan</strong>
-                    </p>
+<table class="table table-bordered">
+ 
+  <tbody>
+    <tr>
+      <th scope="row">Внешний вид</th>
+      <td>гранулы белого цвета</td>    
+    </tr>
+    <tr>
+      <th scope="row">Запах</th>
+      <td>отсутствует</td>   
+    </tr>
+    
+     <tr>
+      <th scope="row">Насыпная плотность</th>
+      <td>0,75 - 0,85 кг/м3</td>   
+    </tr>
+    
+     <tr>
+      <th scope="row">Зерновой состав</th>
+      <td> > 10 мм – 0%</td>   
+    </tr>
+    
+     <tr>
+      <th scope="row">&nbsp;</th>
+      <td>2-5 мм – не  менее 85%</td>   
+    </tr>
+    
+     <tr>
+      <th scope="row">&nbsp;</th>
+      <td> <2 мм – не более 15%</td>   
+    </tr>
+    
+    
+    
+    
+  
+  </tbody>
+</table>
 
-                    </div>
-                    <div class="card-bot">Телефоны:</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /3 section -->
+
+
+  </p>
+            
+            
+            
+            
+
 
           </div>
         </div> <!-- row -->

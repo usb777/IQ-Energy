@@ -8,14 +8,8 @@ body {
 }
 
 p{
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
-.page_text
-{
-  font-size: 1.1rem;
-}
-
-
 
 .container.custom {
     display: flex;

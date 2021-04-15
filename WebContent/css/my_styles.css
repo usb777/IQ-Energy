@@ -6,3 +6,7 @@ p{
 {
   font-size: 1.1rem;
 }
+
+
+
+ol.decimal {list-style-type: decimal;}

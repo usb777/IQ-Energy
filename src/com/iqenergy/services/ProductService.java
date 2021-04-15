@@ -87,14 +87,24 @@ public class ProductService
 	
 	
 	
+	public void showProductIcemixAboutPage(HttpServletRequest request, HttpServletResponse response) 	throws  ServletException,SQLException, IOException
+ {
+	
+	request.setAttribute("productinfo", pageDAO.getPageByIdAndTemplate(30, "product.jsp") );	
+	
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+    dispatcher.forward(request, response);
+  }	
 	
 	
+	public void showProductPage(HttpServletRequest request, HttpServletResponse response, int page) 	throws  ServletException,SQLException, IOException
+ {
 	
+	request.setAttribute("productinfo", pageDAO.getPageByIdAndTemplate(page, "product.jsp") );	
 	
-	
-	
-	
-	
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+    dispatcher.forward(request, response);
+  }	
 	
 	
 	

@@ -26,7 +26,17 @@ import com.iqenergy.util.UsefulFunction;
  */
 //@WebServlet("/UserServlet", urlPatterns = "/employees")
 
-@WebServlet(name = "FrontProductServlet", urlPatterns = {"/products","/product-ecobarrier","/product-mineraly", "/product-mafy","/product-gerony","/product-watermazut" })
+@WebServlet(name = "FrontProductServlet", urlPatterns = 
+{"/products","/product-ecobarrier","/product-mineraly", "/product-mafy","/product-gerony","/product-watermazut"  ,
+"/product-icemix_about"	,"/product-icemix_using","/product-icemix_action", "/product-icemix_super","/product-icemix_table",
+"/product-icemix_security","/product-icemix_activity","/product-icemix_reagent","/product-icemux_opyt","/product-icemix_ntd",
+"/product-icemix_document","/product-icemix_line", 
+
+"/product-ecobarrier_about","/product-ecobarrier_forwhat",
+"/product-ecobarrier_using","/product-ecobarrier_super","/product-ecobarrier_road",
+"/product-ecobarrier_experience","/product-ecobarrier_ntd","/product-ecobarrier_document"
+
+})
 @MultipartConfig
 public class FrontProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -83,7 +93,93 @@ public class FrontProductServlet extends HttpServlet {
 				productService.showProductWatermazutPage(request, response);
 				break;
 				
-		
+			case "/product-icemix_about":
+				productService.showProductPage(request, response, 30);
+				break;
+				
+			case "/product-icemix_using":
+				productService.showProductPage(request, response, 19);
+				break;
+				
+			case    "product-icemix_action": 
+				productService.showProductPage(request, response, 20);
+				break;
+			
+			case	"/product-icemix_super":
+				productService.showProductPage(request, response, 21);
+				break;
+				
+			case	"/product-icemix_table":
+				productService.showProductPage(request, response, 22);
+				break;
+				
+			case	"/product-icemix_security":
+				productService.showProductPage(request, response, 23);
+				break;
+				
+			case	"/product-icemix_activity":
+				productService.showProductPage(request, response, 24);
+				break;
+				
+			case	"/product-icemix_reagent":
+				productService.showProductPage(request, response, 25);
+				break;
+				
+			case	"/product-icemux_opyt":
+				productService.showProductPage(request, response, 26);
+				break;
+				
+			case	"/product-icemix_ntd":
+				productService.showProductPage(request, response, 27);
+				break;
+				
+			case	"/product-icemix_document":
+				productService.showProductPage(request, response, 28);
+				break;
+				
+			case	"/product-icemix_line":
+				productService.showProductPage(request, response, 29);
+				break;
+				
+				
+				
+			case "/product-ecobarrier_about":
+					productService.showProductPage(request, response, 31);
+				break;
+				
+			case "/product-ecobarrier_forwhat":
+					productService.showProductPage(request, response, 32);
+				break;	
+				
+			case "/product-ecobarrier_using":
+					productService.showProductPage(request, response, 33);
+				break;
+				
+			case "/product-ecobarrier_super":
+					productService.showProductPage(request, response, 34);
+				break;
+				
+			case "/product-ecobarrier_road":
+					productService.showProductPage(request, response, 35);
+				break;
+				
+			case "/product-ecobarrier_experience":
+					productService.showProductPage(request, response, 36);
+				break;
+				
+			case "/product-ecobarrier_ntd":
+					productService.showProductPage(request, response, 37);
+				break;
+				
+			case "/product-ecobarrier_document":
+					productService.showProductPage(request, response, 38);
+				break;	
+				
+				
+				
+				
+				
+				
 			
 			default:
 				productService.showProductsPage(request, response);

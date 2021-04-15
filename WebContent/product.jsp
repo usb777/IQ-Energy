@@ -21,12 +21,101 @@
             <ul class="nav flex-column column_nav">
               <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения и продукты</a>
-                  <div class="collapse show" id="about_company">
+              <div class="collapse show" id="about_company">
                     <ul class="nav flex-column column_nav_sub">
+                    
+                  <li class="nav-item">
+                  
+                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="false" aria-controls="nl_icemix">
+                      Противогололёдный реагент «АйсМикс»
+                      </a>  
+                      
+                      <div class="collapse" id="nl_icemix">
+                        <ul class="nav flex-column column_nav_sub_sub">
                         
-                        <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier">Пылеподавитель реагент «ЭкоБарьер»</a>
-                        </li>
+                         <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_about">О продукте</a>
+                          </li>                          
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_using">Назначение и применение</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_action">Действие</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_super">Преимущества</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_table">Сравнительная таблица противогололёдных реагентов</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_security">Экологичность и безопасность</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_activity">Показатели активности</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_reagent">Расход и концентрация реагента</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemux_opyt">Опытно-промышленные испытания</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_ntd">Инструкция и НТД</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_document">Документация</a>
+                          </li>
+                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-icemix_line">Линейка реагентов «ICEMIX» (АЙСМИКС)</a>
+                          </li> 
+                          
+                        </ul>
+                      </div>
+                      
+                      
+                   </li>
+                   
+                   
+                  <li class="nav-item">                  
+                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_ecobarier" role="button" aria-expanded="false" aria-controls="nl_ecobarier">
+                      Пылеподавитель реагент «ЭкоБарьер»
+                      </a>
+                      <div class="collapse" id="nl_ecobarier">
+                        <ul class="nav flex-column column_nav_sub_sub">
+                        
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_about">О продукте</a>
+                          </li>                        
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_forwhat">Назначение и применение</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_using">Использование</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_super">Преимущества</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_road">Промышленные площадки и дороги</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_experience">Опытно-промышленные испытания</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_ntd">Инструкция и НТД</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/product-ecobarrier_document">Документация</a>
+                          </li>
+                          
+                        </ul>
+                      </div>                     
+                      
+                   </li>
+                   
+                   
                         <li class="nav-item">
                           <a class="nav-link" href="<%=request.getContextPath()%>/product-mineraly">Минеральные удобрения</a>
                         </li>
@@ -42,11 +131,11 @@
                         </li>
                         
                     </ul>
-                  </div>
+                  </div>   <!-- div collapse show  -->
               </li>
 
             </ul>
-          </div>
+   </div>               <!-- div col-sm-6 col-lg-4  -->
 
 
 <!-- End Left-menu -->
