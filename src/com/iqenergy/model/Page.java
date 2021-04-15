@@ -10,14 +10,16 @@ public class Page
 	private String page_title;
 	private String page_info;
 	private int page_order;
+	private String page_group;	
 	private String template;
+	
 
 	public Page()
 	{
 		super();		
 	}
 
-	public Page(int page_id, String name, String page_title, String page_info, int page_order, String template)
+	public Page(int page_id, String name, String page_title, String page_info, int page_order, String page_group,String template)
 	{
 		super();
 		this.page_id = page_id;
@@ -25,17 +27,19 @@ public class Page
 		this.page_title = page_title;
 		this.page_info = page_info;
 		this.page_order = page_order;
+		this.page_group =  page_group;
 		this.template = template;
 	}
 	
 
-	public Page( String name, String page_title, String page_info, int page_order, String template)
+	public Page( String name, String page_title, String page_info, int page_order,String page_group, String template)
 	{
 		super();		
 		this.page_name = name;
 		this.page_title = page_title;
 		this.page_info = page_info;
 		this.page_order = page_order;
+		this.page_group =  page_group;
 		this.template = template;
 	}
 
@@ -84,6 +88,18 @@ public class Page
 	public void setPage_order(int page_order) {
 		this.page_order = page_order;
 	}
+	
+	
+	public String getPage_group() {
+		return page_group;
+	}
+
+	public void setPage_group(String page_group) {
+		this.page_group = page_group;
+	}
+
+	
+	
 
 	public String getTemplate() {
 		return template;
@@ -96,7 +112,7 @@ public class Page
 	@Override
 	public String toString() {
 		return "Page [page_id=" + page_id + ", page_name=" + page_name + ", page_title=" + page_title + ", page_info=" + page_info
-				+ ", page_order=" + page_order + ", template=" + template + "]";
+				+ ", page_order=" + page_order + ", page_group=" + page_group+ ", template=" + template + "]";
 	}
 	
 	

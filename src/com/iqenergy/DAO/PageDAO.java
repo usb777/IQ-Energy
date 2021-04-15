@@ -49,7 +49,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				row.setTemplate(rs.getString(7));
 				
 				pages.add(row);
 			}
@@ -94,7 +95,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				row.setTemplate(rs.getString(7));
 				
 				pages.add(row);
 			}
@@ -120,7 +122,8 @@ public class PageDAO extends AbstractDAO
 			private String page_title;  //3
 			private String page_info;  //4
 			private int page_order;  //5
-			private String template;  //6
+				private int page_group;  //6
+			private String template;  //7
 		 */
 		
 		
@@ -138,7 +141,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				row.setTemplate(rs.getString(7));
 				
 				pages.add(row);
 			}
@@ -178,7 +182,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				row.setTemplate(rs.getString(7));
 				
 				page.add(row);
 			}
@@ -218,7 +223,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));				
+				row.setTemplate(rs.getString(7));
 				
 				page = row;
 			}
@@ -258,7 +264,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				row.setTemplate(rs.getString(7));
 				
 				page = row;
 			}
@@ -297,7 +304,9 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				
+				row.setTemplate(rs.getString(7));
 				
 				page = row;
 			}
@@ -336,7 +345,8 @@ public class PageDAO extends AbstractDAO
 				row.setPage_title(rs.getString(3));
 				row.setPage_info(rs.getString(4));
 				row.setPage_order(rs.getInt(5));
-				row.setTemplate(rs.getString(6));
+				row.setPage_group(rs.getString(6));
+				row.setTemplate(rs.getString(7));
 				
 				page = row;
 			}
@@ -372,13 +382,14 @@ public class PageDAO extends AbstractDAO
 		boolean itWorked = false;
 		getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("insert into pages (page_name, page_title, page_info, page_order, template ) values (?,?,?,?,?) ");
+			PreparedStatement ps = conn.prepareStatement("insert into pages (page_name, page_title, page_info, page_order, page_group, template ) values (?,?,?,?,?,?) ");
 			
 			ps.setString(1, page.getPage_name()  );			
 			ps.setString(2, page.getPage_title()  );
 			ps.setString(3, page.getPage_info()  );
 			ps.setInt(4, page.getPage_order() );
-			   ps.setString(5, page.getTemplate() );
+			ps.setString(5, page.getPage_group()  );
+			   ps.setString(6, page.getTemplate() );
 			
 			itWorked = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
@@ -420,8 +431,9 @@ public class PageDAO extends AbstractDAO
 					+ " page_title = ?,"      //2
 					+ " page_info = ?,"     //3
 					+ " page_order = ?,"   //4
-					+ " template = ? "       //5				
-					+ " WHERE page_id =? ";   //6
+					+ " page_group = ?,"   //5
+					+ " template = ? "       //6				
+					+ " WHERE page_id =? ";   //7
 			
 			PreparedStatement ps = conn.prepareStatement(SQL_UPDATE);
 			
@@ -429,9 +441,13 @@ public class PageDAO extends AbstractDAO
 			ps.setString(2, page.getPage_title() );
 			ps.setString(3, page.getPage_info() );
 			ps.setInt(4, page.getPage_order() );
-			  ps.setString(5, page.getTemplate() );			
+			 
+			 ps.setString(5, page.getPage_group() );	
+			 
+			ps.setString(6, page.getTemplate() );	
+			  
 			   
-			   ps.setInt(6, page.getPage_id() );  
+			   ps.setInt(7, page.getPage_id() );  
 			
 			isPageUpdate = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {

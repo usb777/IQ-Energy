@@ -14,6 +14,25 @@
 
         <div class="row">
 
+   <% 
+              Page product = new Page();
+              product = (Page)request.getAttribute("productinfo");   
+              
+              String icemix_a_class="nav-link collapsed";
+              String icemix_aria_expanded="false";
+              String icemix_div_class = "collapse";
+              
+              if (product.getPage_group().equals("icemix"))  
+              {
+            	   icemix_a_class="nav-link";
+                   icemix_aria_expanded="true";
+                   icemix_div_class = "collapse show";  
+              }
+              
+              
+              
+    %>
+
 <!-- Left-menu -->
 
 
@@ -26,11 +45,11 @@
                     
                   <li class="nav-item">
                   
-                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="false" aria-controls="nl_icemix">
+                      <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="<%=icemix_aria_expanded %>" aria-controls="nl_icemix">
                       Противогололёдный реагент «АйсМикс»
                       </a>  
                       
-                      <div class="collapse" id="nl_icemix">
+                      <div class="<%=icemix_div_class %>" id="nl_icemix">
                         <ul class="nav flex-column column_nav_sub_sub">
                         
                          <li class="nav-item">
@@ -76,13 +95,30 @@
                       
                       
                    </li>
+              
+              <% 
+              
+              String ecobarrier_a_class="nav-link collapsed";
+              String ecobarrier_aria_expanded="false";
+              String ecobarrier_div_class = "collapse";
+              
+              if (product.getPage_group().equals("ecobarrier"))  
+              {
+            	  ecobarrier_a_class="nav-link";
+            	  ecobarrier_aria_expanded="true";
+            	  ecobarrier_div_class = "collapse show";  
+              }
+              
+           
+              
+              %>
                    
                    
                   <li class="nav-item">                  
-                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_ecobarier" role="button" aria-expanded="false" aria-controls="nl_ecobarier">
+                      <a class="<%=ecobarrier_a_class %>" data-bs-toggle="collapse" href="#nl_ecobarier" role="button" aria-expanded="<%=ecobarrier_aria_expanded %>" aria-controls="nl_ecobarier">
                       Пылеподавитель реагент «ЭкоБарьер»
                       </a>
-                      <div class="collapse" id="nl_ecobarier">
+                      <div class="<%=ecobarrier_div_class %>" id="nl_ecobarier">
                         <ul class="nav flex-column column_nav_sub_sub">
                         
                           <li class="nav-item">
@@ -144,14 +180,10 @@
            
            
            
-              <% 
-              Page company = new Page();
-        		  company = (Page)request.getAttribute("productinfo");   
-           %>
-            <h1><%=company.getPage_title() %></h1>
+            <h1><%=product.getPage_title() %></h1>
 
             <p class="page_text">
-             <%=company.getPage_info() %>
+             <%=product.getPage_info() %>
             </p>
 
        
