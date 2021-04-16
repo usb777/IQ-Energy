@@ -15,7 +15,7 @@
         <div class="row">
  <% 
               Page product = new Page();
-              product = (Page)request.getAttribute("gkhinfo");           
+              product = (Page)request.getAttribute("tekinfo");           
               
     %>
 
@@ -25,15 +25,15 @@
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
               <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения для ЖКХ</a>
+          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения для ТЭК</a>
               <div class="collapse show" id="about_company">
                     <ul class="nav flex-column column_nav_sub">
                    
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/gkh-icemix"> Противогололёдный реагент «АйсМикс»</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/tek-icemix"> Противогололёдный реагент «АйсМикс»</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/gkh-ecobarrier"> Пылеподавитель реагент «ЭкоБарьер»</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/tek-ecobarrier"> Пылеподавитель реагент «ЭкоБарьер»</a>
                         </li>
                      
                         

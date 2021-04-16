@@ -15,7 +15,7 @@
         <div class="row">
  <% 
               Page product = new Page();
-              product = (Page)request.getAttribute("gkhinfo");           
+              product = (Page)request.getAttribute("pgsinfo");           
               
     %>
 
@@ -30,10 +30,19 @@
                     <ul class="nav flex-column column_nav_sub">
                    
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/gkh-icemix"> Противогололёдный реагент «АйсМикс»</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/pgs-icemix"> Противогололёдный реагент «АйсМикс»</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/gkh-ecobarrier"> Пылеподавитель реагент «ЭкоБарьер»</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/pgs-ecobarrier"> Пылеподавитель реагент «ЭкоБарьер»</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/pgs-mafy">Малые Архитектурные Формы (МАФы)</a>
+                        </li>
+                     
+                     
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/pgs-sml">Стекломагниевые листы (СМЛ)</a>
                         </li>
                      
                         

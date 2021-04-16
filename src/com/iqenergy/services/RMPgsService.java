@@ -17,15 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.iqenergy.model.Page;
 import com.iqenergy.DAO.PageDAO;
 
-public class RMGkhService 
+public class RMPgsService 
 {
 	PageDAO pageDAO = new PageDAO();
 
 	
-public void showGkhPage(HttpServletRequest request, HttpServletResponse response, int page) 	throws  ServletException,SQLException, IOException
+public void showPgsPage(HttpServletRequest request, HttpServletResponse response, int page) 	throws  ServletException,SQLException, IOException
  {
-	request.setAttribute("gkhinfo", pageDAO.getPageByIdAndTemplate(page, "gkh.jsp") );	
-	RequestDispatcher dispatcher = request.getRequestDispatcher("/gkh.jsp");
+	request.setAttribute("pgsinfo", pageDAO.getPageByIdAndTemplate(page, "pgs.jsp") );	
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/pgs.jsp");
     dispatcher.forward(request, response);
  }		
 	

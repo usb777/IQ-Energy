@@ -39,16 +39,16 @@
                         <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers">Недропользователи</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">ЖКХ</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/gkh">ЖКХ</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">ТЭК</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/tek">ТЭК</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">АПК</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/apk">АПК</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">ГПС</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/pgs">ПГС</a>
                       </li>
                   </ul>
                 </div>
