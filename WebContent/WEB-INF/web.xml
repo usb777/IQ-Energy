@@ -42,7 +42,7 @@
    -->
   
   
- <!--  
+ 
   
     <servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
@@ -58,7 +58,19 @@
 		<servlet-name>jersey-serlvet</servlet-name>
 		<url-pattern>/products/*</url-pattern>
 	</servlet-mapping>
-  -->
+	
+	
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/ru/*</url-pattern>
+	</servlet-mapping>
+	
+	  <servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/en/*</url-pattern>
+	</servlet-mapping>
+	 
+ 
   <error-page>
     <error-code>403</error-code>
     <location>/error403.jsp</location>
