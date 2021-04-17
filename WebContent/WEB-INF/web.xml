@@ -42,8 +42,7 @@
    -->
   
   
- 
-  
+
     <servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -52,13 +51,7 @@
 		     <param-value>com.iqenergy.controller</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
-	</servlet>
-	
-  <servlet-mapping>
-		<servlet-name>jersey-serlvet</servlet-name>
-		<url-pattern>/products/*</url-pattern>
-	</servlet-mapping>
-	
+	</servlet>	
 	
 	<servlet-mapping>
 		<servlet-name>jersey-serlvet</servlet-name>
@@ -69,8 +62,18 @@
 		<servlet-name>jersey-serlvet</servlet-name>
 		<url-pattern>/en/*</url-pattern>
 	</servlet-mapping>
-	 
- 
+	
+	  <servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/v/*</url-pattern>
+	</servlet-mapping> 
+	
+
+
+
+
+
+
   <error-page>
     <error-code>403</error-code>
     <location>/error403.jsp</location>

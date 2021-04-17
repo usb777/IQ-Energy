@@ -22,6 +22,10 @@
             <p class="page_text">
               <strong>page this is page Page id:  
               
+               <a class="nav-link" href="<%=request.getContextPath()%>/v/en/products/1"> Противогололёдный реагент «АйсМикс»</a> <br>
+               <a class="nav-link" href="<%=request.getContextPath()%>/v/en/products/40"> Противогололёдный реагент «АйсМикс»</a> <br>
+               
+              
               <%=request.getAttribute("productId")%>
               
                <% 
@@ -30,6 +34,7 @@
               
               %>
               <h1> <%=product.getPage_name() %>  </h1>
+              <p><%=product.getPage_info() %> </p>
             </p>
 
             <!-- 3 section -->

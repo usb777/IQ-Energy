@@ -14,7 +14,8 @@ import javax.ws.rs.core.Response;
 
 import com.sun.jersey.api.view.Viewable;
 
-@Path("/")
+//@Path("/")
+@Path("/productov/")
 public class PageJersey {
 	
 	

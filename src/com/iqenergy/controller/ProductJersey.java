@@ -19,7 +19,7 @@ import com.iqenergy.DAO.PageDAO;
 import com.iqenergy.model.Page;
 import com.sun.jersey.api.view.Viewable;
 
-@Path("/products/")
+@Path("/en/products/")
 public class ProductJersey {
 	
 PageDAO pageDAO = new PageDAO();
