@@ -111,7 +111,7 @@ public class MenuDAO extends AbstractDAO
 		getConnection();
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement("SELECT m.`menu_id`, m.`menu_name`,m.`page_id`, p.`page_group` AS page_group FROM menu m "  
+			PreparedStatement ps = conn.prepareStatement("SELECT m.`menu_id`, m.`menu_name`,m.`page_id`, p.`page_group` AS page_group, m.`parent_id`, m.`menu_status`, m.`menu_level`, m.`menu_group`, m.`menu_head`  FROM menu m "  
 +" JOIN pages p  ON m.`page_id` = p.`page_id`  WHERE m.menu_group=? AND m.`menu_status`=1 ORDER BY m.menu_id ");			
 			ps.setString(1, menu_group); // parameter before execution
 			
@@ -126,13 +126,15 @@ public class MenuDAO extends AbstractDAO
 				row.setMenu_name(rs.getString(2));
 				row.setPage_id(rs.getInt(3));
 				row.setPage_group(rs.getString(4));
-				/*
-				row.setParent_id(rs.getInt(4));
-				row.setMenu_status(rs.getInt(5));
-				row.setMenu_level(rs.getInt(6));
-				row.setMenu_group(rs.getString(7));
-				row.setMenu_head(rs.getInt(8));
-				*/
+				
+				 
+			
+				row.setParent_id(rs.getInt(5));
+				row.setMenu_status(rs.getInt(6));
+				row.setMenu_level(rs.getInt(7));
+				row.setMenu_group(rs.getString(8));
+				row.setMenu_head(rs.getInt(9));
+				
 				
 				
 				menus.add(row);

@@ -11,32 +11,68 @@
 
       <!-- main content -->
       <div class="main_content">
+      
+      
+            <% 
+            	
+            	MenuDAO  menuDao = new MenuDAO();
+   				List<Menu> rightMenus = menuDao.getMenuByGroup1("rm_ecology") ;
+           
+            
+             	Page ecology = new Page();
+              	ecology = (Page)request.getAttribute("ecologyinfo");   
+              	
+              	String menuTitle="";
+              	 if ( session.getAttribute("menuTitle")!=null )  { menuTitle = (String)session.getAttribute("menuTitle");}
+             
+             %>
+      
 
         <div class="row">
 
 <!-- Left-menu -->
 
-
+<!--  return all rightmenu_ecology -->
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
-              <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Экология</a>
-                  <div class="collapse show" id="about_company">
-                    <ul class="nav flex-column column_nav_sub">
-                        
-                        <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/ecology-npa">Кодекс и НПА</a>
-                        </li>
-                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/ecology-smi">СМИ об экологии</a>
-                        </li>
-                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/ecology-rk">Уполномоченный орган РК</a>
-                        </li>
-                      
-                    </ul>
-                  </div>
-              </li>
+            <%
+            int k=0;
+            for (Menu rmenus: rightMenus )
+            {
+            	if (rmenus.getMenu_head()==1 ) 
+            	{  String colapser = rmenus.getMenu_group()+""+rmenus.getMenu_id();
+            		%>
+            	<li class="nav-item">
+            		<a class="nav-link" data-bs-toggle="collapse" href="#<%=colapser %>" role="button" aria-expanded="true" aria-controls="collapseExample" href="#"><%=menuTitle %></a>
+                  <div class="collapse show" id="<%=colapser %>">
+                   <ul class="nav flex-column column_nav_sub">
+            		<%
+            	}
+            	
+            	else  // head!=1
+            	{
+            		%>
+            		 <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/ru/ecology/<%=rmenus.getPage_id()%>"> <%=rmenus.getMenu_name() %> </a>
+                      </li>
+            		<%
+            	} //else
+            k++;  
+            	if (k==rightMenus.size())  
+            	{
+            	%>
+            		 </ul>
+                  </div> <!--// ecology div //-->
+              </li>  <!--//top nav-item  //-->
+            		<%
+            		break;
+            	}
+            } //for
+            %>
+             
+              
+             <!--  --> 
+              
 
             </ul>
           </div>
@@ -48,10 +84,6 @@
            
            
            
-              <% 
-              Page ecology = new Page();
-              ecology = (Page)request.getAttribute("ecologyinfo");   
-           %>
             <h1><%=ecology.getPage_title() %></h1>
 
             <p class="page_text">

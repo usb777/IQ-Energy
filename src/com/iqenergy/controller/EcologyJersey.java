@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -25,7 +26,10 @@ public class EcologyJersey {
 PageDAO pageDAO = new PageDAO();
 Page ecology =new Page();
 
-		
+/*
+ SELECT m.`menu_id`, m.`menu_name`,m.`page_id`, p.`page_group` AS page_group, m.`parent_id`, m.`menu_status`, m.`menu_level`, m.`menu_group`, m.`menu_head`
+ FROM menu m  JOIN pages p  ON m.`page_id` = p.`page_id`  WHERE m.menu_group="rm_ecology" AND m.`menu_status`=1 ORDER BY m.menu_id		
+ */
 		
 	/*	
 	  @GET
@@ -38,9 +42,17 @@ Page ecology =new Page();
 	  */
 
 	@GET
-	public Viewable getProductsPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
-	{
+	public Viewable getEcologyPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
+	{   HttpSession session = null;
+	    session = request.getSession(true);
+	 
+	 
+	     
+	 
 		ecology = pageDAO.getPageByName("ecology");
+		
+		 session.setAttribute("menuTitle",ecology.getPage_title());
+		
 		request.setAttribute("ecologyinfo",ecology); // send message to JSP    
 		return new Viewable("/ecology", null);
 	}
