@@ -10,9 +10,13 @@ public class Menu
 	 private int menu_level;
 	 private String menu_group;
 	 private int menu_head;
-     
+    private String page_group;
      
 	 
+    
+    
+   
+
 	public Menu()
 	{
 		super();
@@ -22,7 +26,7 @@ public class Menu
 	/*
 	 * Constructor
 	 */
-	public Menu(int menu_id, String menu_name, int page_id, int parent_id, int menu_status, int menu_level,	String menu_group, int menu_head) 
+	public Menu(int menu_id, String menu_name, int page_id, int parent_id, int menu_status, int menu_level,	String menu_group, int menu_head,String page_group) 
 	{
 		super();
 		this.menu_id = menu_id;
@@ -33,11 +37,27 @@ public class Menu
 		this.menu_level = menu_level;
 		this.menu_group = menu_group;
 		this.menu_head = menu_head;
+		this.page_group = page_group;
 	}
 	
 	/*
 	 * Constructor
 	 */
+	public Menu( String menu_name, int page_id, int parent_id, int menu_status, int menu_level,	String menu_group, int menu_head,String page_group)
+	{
+		super();
+		
+		this.menu_name = menu_name;
+		this.page_id = page_id;
+		this.parent_id = parent_id;
+		this.menu_status = menu_status;
+		this.menu_level = menu_level;
+		this.menu_group = menu_group;
+		this.menu_head = menu_head;
+		this.page_group = page_group;
+	}
+
+	
 	public Menu( String menu_name, int page_id, int parent_id, int menu_status, int menu_level,	String menu_group, int menu_head)
 	{
 		super();
@@ -49,8 +69,8 @@ public class Menu
 		this.menu_level = menu_level;
 		this.menu_group = menu_group;
 		this.menu_head = menu_head;
+	
 	}
-
 
 	public int getMenu_id() {
 		return menu_id;
@@ -133,7 +153,16 @@ public class Menu
 	}
 
 
-	
+	 
+		public String getPage_group() {
+			return page_group;
+		}
+
+
+		public void setPage_group(String page_group) {
+			this.page_group = page_group;
+		}
+
 	
 	
 	

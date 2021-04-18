@@ -68,24 +68,18 @@ public class MenuDAO extends AbstractDAO
 	 * This method gets all users from table
 	 * @return
 	 */
-	public List<Menu> getMenuBy() 
+	public List<Menu> getMenuByGroup(String menu_group) 
 	{
 		List<Menu> menus = new ArrayList<Menu>();
 		getConnection();
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM menu ORDER BY menu_id");			
-			ResultSet rs = ps.executeQuery();			
-			/*
-				private int menu_id ;            //1
-	 			private String menu_name;        //2
-	 			private int page_id;             //3 
-	 			private int  parent_id;          //4
-	 			private int menu_status;         //5
-	 			private int menu_level;          //6
-	 			private int menu_group;          //7
-	 			private int menu_head;           //8
-			 */
+			PreparedStatement ps = conn.prepareStatement(" SELECT * FROM menu where menu_group=? ORDER BY menu_id ");			
+			ps.setString(1, menu_group); // parameter before execution
+			
+			ResultSet rs = ps.executeQuery();	
+		
+		
 			
 			while(rs.next()) {
 				Menu row = new Menu();
@@ -111,7 +105,46 @@ public class MenuDAO extends AbstractDAO
 	}
 	
 	
-	
+	public List<Menu> getMenuByGroup1(String menu_group) 
+	{
+		List<Menu> menus = new ArrayList<Menu>();
+		getConnection();
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("SELECT m.`menu_id`, m.`menu_name`,m.`page_id`, p.`page_group` AS page_group FROM menu m "  
++" JOIN pages p  ON m.`page_id` = p.`page_id`  WHERE m.menu_group=? AND m.`menu_status`=1 ORDER BY m.menu_id ");			
+			ps.setString(1, menu_group); // parameter before execution
+			
+			ResultSet rs = ps.executeQuery();	
+		
+		
+			
+			while(rs.next()) {
+				Menu row = new Menu();
+				
+				row.setMenu_id(rs.getInt(1));
+				row.setMenu_name(rs.getString(2));
+				row.setPage_id(rs.getInt(3));
+				row.setPage_group(rs.getString(4));
+				/*
+				row.setParent_id(rs.getInt(4));
+				row.setMenu_status(rs.getInt(5));
+				row.setMenu_level(rs.getInt(6));
+				row.setMenu_group(rs.getString(7));
+				row.setMenu_head(rs.getInt(8));
+				*/
+				
+				
+				menus.add(row);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		return menus;
+	}
 	
 	
 	

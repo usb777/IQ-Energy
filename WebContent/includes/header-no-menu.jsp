@@ -1,9 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
-<%@page import="com.iqenergy.DAO.*"%>
-<%@ page import="com.iqenergy.model.*" %>
-<%@ page import="com.iqenergy.controller.*" %>
-<%@ page import ="com.iqenergy.util.ServerHelper" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

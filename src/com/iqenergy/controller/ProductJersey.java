@@ -52,14 +52,10 @@ public Viewable getProductsPage( @Context HttpServletRequest request,   @Context
 	    @Path("/{productId}")
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
 	    {
-		  request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );
-	           
+		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
+		  
 	      product = pageDAO.getPageById(productId);
-	      request.setAttribute("product",product); // send message to JSP
-	      
-	  
-	      request.setAttribute("productId", productId); // send message to JSP
-	      
+	      request.setAttribute("product",product); // send message to JSP	        
 	      return new Viewable("/products", null);
 	    }
 	 
