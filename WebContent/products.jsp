@@ -6,6 +6,7 @@
 <%@ page import="com.iqenergy.controller.*" %>
 <%@ page import ="com.iqenergy.util.ServerHelper" %>
 
+
   <jsp:include page="includes/header.jsp" />
 
       <!-- main content -->
@@ -13,86 +14,181 @@
 
         <div class="row">
 
-<!-- Left-menu -->
-<jsp:include page="includes/left-menu.jsp" />
-<!-- End Left-menu -->
-          <div class="col-sm-12 col-lg-8 mb-2">
-            <h1>Продукты  Jersey</h1>
+   <% 
+              Page product = new Page();
+              product = (Page)request.getAttribute("product");   
+              
+              
+              //  Not collapsed Mechanizm
+              String icemix_a_class="nav-link collapsed";
+              String icemix_aria_expanded="false";
+              String icemix_div_class = "collapse";
+              
+              if (product.getPage_group().equals("icemix"))  
+              {
+            	   icemix_a_class="nav-link";
+                   icemix_aria_expanded="true";
+                   icemix_div_class = "collapse show";  
+              }
+              
+              
+              
+    %>
 
-            <p class="page_text">
-              <strong>page this is page Page id:  
+<!-- Left-menu -->
+
+
+     <div class="col-sm-6 col-lg-4">
+            <ul class="nav flex-column column_nav">
+              <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения и продукты</a>
+              <div class="collapse show" id="about_company">
+                    <ul class="nav flex-column column_nav_sub">
+                    
+                  <li class="nav-item">
+                  
+                      <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="<%=icemix_aria_expanded %>" aria-controls="nl_icemix">
+                      Противогололёдный реагент «АйсМикс»
+                      </a>  
+                      
+                      <div class="<%=icemix_div_class %>" id="nl_icemix">
+                        <ul class="nav flex-column column_nav_sub_sub">
+                        
+                         <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/30">О продукте</a>
+                          </li>                          
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/19">Назначение и применение</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/20">Действие</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/21">Преимущества</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/22">Сравнительная таблица противогололёдных реагентов</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/23">Экологичность и безопасность</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/24">Показатели активности</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/25">Расход и концентрация реагента</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/26">Опытно-промышленные испытания</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/27">Инструкция и НТД</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/28">Документация</a>
+                          </li>
+                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/29">Линейка реагентов «ICEMIX» (АЙСМИКС)</a>
+                          </li> 
+                          
+                        </ul>
+                      </div>
+                      
+                      
+                   </li>
               
-               <a class="nav-link" href="<%=request.getContextPath()%>/v/en/products/1"> Противогололёдный реагент «АйсМикс»</a> <br>
-               <a class="nav-link" href="<%=request.getContextPath()%>/v/en/products/40"> Противогололёдный реагент «АйсМикс»</a> <br>
-               
+              <% 
+              //  Not collapsed Mechanizm
+              String ecobarrier_a_class="nav-link collapsed";
+              String ecobarrier_aria_expanded="false";
+              String ecobarrier_div_class = "collapse";
               
-              <%=request.getAttribute("productId")%>
+              if (product.getPage_group().equals("ecobarrier"))  
+              {
+            	  ecobarrier_a_class="nav-link";
+            	  ecobarrier_aria_expanded="true";
+            	  ecobarrier_div_class = "collapse show";  
+              }
               
-               <% 
-                     Page product = new Page();
-                     product = (Page)request.getAttribute("product");           
+           
               
               %>
-              <h1> <%=product.getPage_name() %>  </h1>
-              <p><%=product.getPage_info() %> </p>
+                   
+                   
+                  <li class="nav-item">                  
+                      <a class="<%=ecobarrier_a_class %>" data-bs-toggle="collapse" href="#nl_ecobarier" role="button" aria-expanded="<%=ecobarrier_aria_expanded %>" aria-controls="nl_ecobarier">
+                      Пылеподавитель реагент «ЭкоБарьер»
+                      </a>
+                      <div class="<%=ecobarrier_div_class %>" id="nl_ecobarier">
+                        <ul class="nav flex-column column_nav_sub_sub">
+                        
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/31">О продукте</a>
+                          </li>                        
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/32">Назначение и применение</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/33">Использование</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/34">Преимущества</a>
+                          </li>                          
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/35">Промышленные площадки и дороги</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/36">Опытно-промышленные испытания</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/37">Инструкция и НТД</a>
+                          </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/38">Документация</a>
+                          </li>
+                          
+                        </ul>
+                      </div>                     
+                      
+                   </li>
+                   
+                   
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/10">Минеральные удобрения</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/11">Малые Архитектурные Формы (МАФы)</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/12">Герон +</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/13">Водомазутная эмульсия</a>
+                        </li>
+                        
+                    </ul>
+                  </div>   <!-- div collapse show  -->
+              </li>
+
+            </ul>
+   </div>               <!-- div col-sm-6 col-lg-4  -->
+
+
+<!-- End Left-menu -->
+          <div class="col-sm-12 col-lg-8 mb-2">
+          
+           
+           
+           
+            <h1><%=product.getPage_title() %></h1>
+
+            <p class="page_text">
+             <%=product.getPage_info() %>
             </p>
 
-            <!-- 3 section -->
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="card text-center mt-2 mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Товарищество с ограниченной ответственностью "Innovation Qazaqstan Energy"</strong></h5>
-                    <div class="card-text">
-                    <p class="card_text"> <strong>БИН 1805 4000 7119</br>
-                      ИИК (IBAN) № KZ76 9650 3F00 0805 1272</br>
-                      филиал АО "ForteBank" г. Нур-Султан</br>
-                      БИК (SWIFT) IRTY KZKA </br>
-                      РК, 010000, г. Нур-Султан, район Алматы, ул. А. Петрова, д. 18/2, офис 305Б</strong>
-                    </p>
-                    </div>
-                    <div class="card-bot">Телефоны:</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-4">
-                <div class="card text-center mt-2 mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>"Innovation Qazaqstan Energy" Жауапкершілігі шектеулі серіктестік</strong></h5>
-                    <div class="card-text">
-                      <p class="card_text"> <strong>БСН 1805 4000 7119</br>
-                      ЖСК (IBAN) № KZ76 9650 3F00 0805 1272</br>
-                      "ForteBank" АҚ Нұр-Сұлтан қ. филиалы</br>
-                      БСК (SWIFT) IRTY KZKA </br>
-                      ҚР, 010000, Нұр-Сұлтан қаласы, Алматы ауданы, А. Петрова көшесі, 18/2 үй, 305Б кеңсе</strong>
-                    </p>
-                    </div>
-                    <div class="card-bot">Телефоны:</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-4">
-                <div class="card text-center mt-2 mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Limited liability partnership "Innovation Qazaqstan Energy"</strong></h5>
-                    <div class="card-text">
-                        <p class="card_text"> <strong>BIN 1805 4000 7119</br>
-                      IIC (IBAN) № KZ76 9650 3F00 0805 1272</br>
-                      filial АО "ForteBank" Nur-Sultan</br>
-                      BIC (SWIFT) IRTY KZKA </br>
-                      18/2 A. Petrova street, Apt. 305Б, Almaty district, Nur-Sultan city, 010000, Kazakhstan</strong>
-                    </p>
-
-                    </div>
-                    <div class="card-bot">Телефоны:</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /3 section -->
-
+       
           </div>
         </div> <!-- row -->
       </div>  <!-- main content -->

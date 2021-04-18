@@ -20,7 +20,7 @@
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
               <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения и продукты</a>
+          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Экология</a>
                   <div class="collapse show" id="about_company">
                     <ul class="nav flex-column column_nav_sub">
                         

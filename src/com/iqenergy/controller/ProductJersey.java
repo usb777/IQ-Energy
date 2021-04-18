@@ -19,7 +19,7 @@ import com.iqenergy.DAO.PageDAO;
 import com.iqenergy.model.Page;
 import com.sun.jersey.api.view.Viewable;
 
-@Path("/en/products/")
+@Path("/ru/products/")
 public class ProductJersey {
 	
 PageDAO pageDAO = new PageDAO();
@@ -27,7 +27,7 @@ Page product =new Page();
 
 		
 		
-		
+	/*	
 	  @GET
 	    @Produces("text/html")
 	    public Response index() 
@@ -35,34 +35,33 @@ Page product =new Page();
 	        return Response.ok(new Viewable("/index.jsp")).build();
 	    }
 	  
-	  
+	  */
+
+@GET
+public Viewable getProductsPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
+{
+ 
+  
+  product = pageDAO.getPageByName("products");
+  request.setAttribute("product",product); // send message to JSP    
+  return new Viewable("/products", null);
+}
+
 	  
 	 @GET
 	    @Path("/{productId}")
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
 	    {
-		 request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );
-	      String message = "Hello world!";
-	      
+		  request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );
+	           
 	      product = pageDAO.getPageById(productId);
 	      request.setAttribute("product",product); // send message to JSP
 	      
-	      request.setAttribute("message", message); // send message to JSP
+	  
 	      request.setAttribute("productId", productId); // send message to JSP
 	      
 	      return new Viewable("/products", null);
 	    }
 	 
-	 
-	  @GET  
-	    @Path("/feed1/{param}")  
-	    public Viewable paramExploration(@PathParam("param") String productId, @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
-	    {  
-	       
-	        request.setAttribute("productId", productId);
-	       
-	        String output = "Jersey say : " + productId;  
-	        return new Viewable("/param", output);
-	    }  
 
 }
