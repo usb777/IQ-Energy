@@ -23,7 +23,7 @@
 			</span>
 			
 			
-				   <form action="RegisterServlet1" method="post" onsubmit="return validate()">
+				   <form action="RegisterServlet" method="post" onsubmit="return validate()">
 						<div>			
 		<input type="text" name="fullname" id="input-text" value="" placeholder="Full Name" /> <br/><br/>
 		<input type="text" name="email" id="input-text" value="" placeholder="email" /> <br/><br/>

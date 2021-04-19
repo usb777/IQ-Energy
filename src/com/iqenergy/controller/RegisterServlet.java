@@ -22,14 +22,15 @@ import com.iqenergy.util.Bcrypting;
 /**
  * Servlet implementation class RegisterServlet1
  */
-@WebServlet("/RegisterServlet1")
-public class RegisterServlet1 extends HttpServlet {
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterServlet1() 
+    public RegisterServlet() 
     {
         super();       
     }
