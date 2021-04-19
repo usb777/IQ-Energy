@@ -16,7 +16,12 @@
 
    <% 
               Page product = new Page();
-              product = (Page)request.getAttribute("product");   
+              product = (Page)request.getAttribute("product");  
+              
+              
+              List<Page> listIcemixes = (List<Page>)request.getAttribute("menu_icemix");               
+              List<Page> listEcobarriers = (List<Page>)request.getAttribute("menu_ecobarrier"); 
+              
               
               String menuTitle="";
            	 if ( session.getAttribute("menuTitle")!=null )  { menuTitle = (String)session.getAttribute("menuTitle");}
@@ -35,6 +40,25 @@
               }
               
     %>
+    
+          
+              <% 
+              //  Not collapsed Mechanizm    Save in Session Variable
+              String ecobarrier_a_class="nav-link collapsed";
+              String ecobarrier_aria_expanded="false";
+              String ecobarrier_div_class = "collapse";
+              
+              if (product.getPage_group().equals("ecobarrier"))  
+              {
+            	  ecobarrier_a_class="nav-link";
+            	  ecobarrier_aria_expanded="true";
+            	  ecobarrier_div_class = "collapse show";  
+              }
+              
+           
+              
+              %>
+                  
 
 <!-- Left-menu -->
 
@@ -54,67 +78,25 @@
                       <div class="<%=icemix_div_class %>" id="nl_icemix">
                         <ul class="nav flex-column column_nav_sub_sub">
                         
-                         <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/30">О продукте</a>
-                          </li>                          
+                        
+                        
+                               <%                 
+                     for(Page icemixes: listIcemixes)
+                      {                    
+                    %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/19">Назначение и применение</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/20">Действие</a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
                           </li>                          
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/21">Преимущества</a>
-                          </li>                          
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/22">Сравнительная таблица противогололёдных реагентов</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/23">Экологичность и безопасность</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/24">Показатели активности</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/25">Расход и концентрация реагента</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/26">Опытно-промышленные испытания</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/27">Инструкция и НТД</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/28">Документация</a>
-                          </li>
-                          
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/29">Линейка реагентов «ICEMIX» (АЙСМИКС)</a>
-                          </li> 
-                          
+                    <%
+                     }
+                    %>   
+                      
                         </ul>
                       </div>
                       
                       
                    </li>
-              
-              <% 
-              //  Not collapsed Mechanizm
-              String ecobarrier_a_class="nav-link collapsed";
-              String ecobarrier_aria_expanded="false";
-              String ecobarrier_div_class = "collapse";
-              
-              if (product.getPage_group().equals("ecobarrier"))  
-              {
-            	  ecobarrier_a_class="nav-link";
-            	  ecobarrier_aria_expanded="true";
-            	  ecobarrier_div_class = "collapse show";  
-              }
-              
-           
-              
-              %>
-                   
+         
                    
                   <li class="nav-item">                  
                       <a class="<%=ecobarrier_a_class %>" data-bs-toggle="collapse" href="#nl_ecobarier" role="button" aria-expanded="<%=ecobarrier_aria_expanded %>" aria-controls="nl_ecobarier">
@@ -123,30 +105,18 @@
                       <div class="<%=ecobarrier_div_class %>" id="nl_ecobarier">
                         <ul class="nav flex-column column_nav_sub_sub">
                         
+                                    
+                     <%                 
+                   		  for(Page ecobarriers: listEcobarriers )
+                      {                    
+                   	 %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/31">О продукте</a>
-                          </li>                        
-                          <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/32">Назначение и применение</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/33">Использование</a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
                           </li>                          
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/34">Преимущества</a>
-                          </li>                          
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/35">Промышленные площадки и дороги</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/36">Опытно-промышленные испытания</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/37">Инструкция и НТД</a>
-                          </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/38">Документация</a>
-                          </li>
+                    <%
+                     }
+                    %> 			
+                       
                           
                         </ul>
                       </div>                     

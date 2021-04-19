@@ -32,7 +32,7 @@
               String icemix_aria_expanded="false";
               String icemix_div_class = "collapse";
               
-              if (product.getPage_group().equals("nedrousers_neftegaz"))  
+              if (product.getPage_group().equals("icemix"))  
               {
             	   icemix_a_class="nav-link";
                    icemix_aria_expanded="true";
@@ -69,16 +69,26 @@
 					  
 					  
 					                 
-					<!-// Level2 //-->  
+					<!-// Level2 //--> 
+					
+					     <%=icemix_a_class %>
+               
+                   <%=icemix_aria_expanded %>
+                   
+                  <%=icemix_div_class  %>
+     
 					  
                     <li class="nav-item">
-                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_solutions_neftgaz" role="button" aria-expanded="false" aria-controls="nl_solutions_neftgaz">Решения для нефтегазовой сферы </a>
+                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_solutions_neftgaz" role="button" aria-expanded="false" 
+                      aria-controls="nl_solutions_neftgaz">Решения для нефтегазовой сферы </a>
                       <div class="collapse" id="nl_solutions_neftgaz">
                         <ul class="nav flex-column column_nav_sub_sub">
                           <li class="nav-item">
-                            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_reagent" role="button" aria-expanded="false" aria-controls="nl_protivogololednyi_reagent">Противогололёдный реагент «АйсМикс»</a>
-							  
-                            <div class="collapse" id="nl_protivogololednyi_reagent">
+                          
+                       
+                            <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_protivogololednyi_reagent" role="button" aria-expanded="<%=icemix_aria_expanded %>" 
+                            aria-controls="nl_protivogololednyi_reagent">Противогололёдный реагент «АйсМикс»</a>
+						    <div class="<%=icemix_div_class  %>" id="nl_protivogololednyi_reagent">
 								
 								
                     <ul class="nav flex-column column_nav_sub_sub_sub">
@@ -107,8 +117,13 @@
                           
                           
                           <li class="nav-item">
-                              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier" role="button" aria-expanded="false" aria-controls="nl_protivogololednyi_ecobarier">Пылеподавитель реагент «ЭкоБарьер»</a>
-                              <div class="collapse" id="nl_protivogololednyi_ecobarier">
+                          
+            	  
+            	  
+            	  
+            	  
+                              <a class="<%=ecobarrier_a_class %>" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier" role="button" aria-expanded="<%=ecobarrier_aria_expanded %>" aria-controls="nl_protivogololednyi_ecobarier">Пылеподавитель реагент «ЭкоБарьер»</a>
+                              <div class="<%=ecobarrier_div_class  %>" id="nl_protivogololednyi_ecobarier">
                                 <ul class="nav flex-column column_nav_sub_sub_sub">
                                 
                                 
@@ -131,14 +146,20 @@
 					  
 					<!-// Level2 //-->    
 				<li class="nav-item">
-                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_solutions_gorrud" role="button" aria-expanded="false" aria-controls="nl_solutions_gorrud">Решения для горно-рудной отрасли </a>
+                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_solutions_gorrud" role="button" aria-expanded="false"
+                       aria-controls="nl_solutions_gorrud">Решения для горно-рудной отрасли </a>
                       <div class="collapse" id="nl_solutions_gorrud">
                         <ul class="nav flex-column column_nav_sub_sub">
                           <li class="nav-item">
-                            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_reagent1" role="button" aria-expanded="false" 
-                            aria-controls="nl_protivogololednyi_reagent1">Противогололёдный реагент «АйсМикс»</a>
-							  
-                            <div class="collapse" id="nl_protivogololednyi_reagent1">
+                          
+                          
+               
+                   
+                   
+                   
+                            <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_protivogololednyi_reagent1" role="button" aria-expanded="<%=icemix_aria_expanded %>" 
+                            aria-controls="nl_protivogololednyi_reagent1">Противогололёдный реагент «АйсМикс»</a>							  
+                            <div class="<%=icemix_div_class  %>" id="nl_protivogololednyi_reagent1">
 								
 								
                     <ul class="nav flex-column column_nav_sub_sub_sub">
@@ -162,9 +183,15 @@
 							  
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier2" role="button" 
-                              aria-expanded="false" aria-controls="nl_protivogololednyi_ecobarier2">Пылеподавитель реагент «ЭкоБарьер»</a>
-                              <div class="collapse" id="nl_protivogololednyi_ecobarier2">
+                          
+            	  
+            	 
+            	  
+            	   
+                          
+                 <a class="<%=ecobarrier_a_class %>" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier2" role="button"   aria-expanded=" <%=ecobarrier_aria_expanded %>"
+                  aria-controls="nl_protivogololednyi_ecobarier2">Пылеподавитель реагент «ЭкоБарьер»</a>
+                              <div class="<%=ecobarrier_div_class  %>" id="nl_protivogololednyi_ecobarier2">
                                 <ul class="nav flex-column column_nav_sub_sub_sub">
 									
 				   <%                 

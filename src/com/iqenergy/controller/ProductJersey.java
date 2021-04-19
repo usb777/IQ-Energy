@@ -47,6 +47,11 @@ public Viewable getProductsPage( @Context HttpServletRequest request,   @Context
 	
   product = pageDAO.getPageByName("products");
   
+  //TODO in future Remove this Costyl
+  request.setAttribute("menu_icemix", pageDAO.getAllIcemixPages() );           //TODO in future Remove this Costyl
+  request.setAttribute("menu_ecobarrier", pageDAO.getAllEcobarrierPages() );  //TODO in future Remove this Costyl
+  
+  
   session.setAttribute("menuTitle",product.getPage_title());
   
   
@@ -60,7 +65,10 @@ public Viewable getProductsPage( @Context HttpServletRequest request,   @Context
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
 	    {
 		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
-		  
+		 //TODO in future Remove this Costyl
+		    request.setAttribute("menu_icemix", pageDAO.getAllIcemixPages() );           //TODO in future Remove this Costyl
+		    request.setAttribute("menu_ecobarrier", pageDAO.getAllEcobarrierPages() );  //TODO in future Remove this Costyl
+		    
 	      product = pageDAO.getPageById(productId);
 	      request.setAttribute("product",product); // send message to JSP	        
 	      return new Viewable("/products", null);

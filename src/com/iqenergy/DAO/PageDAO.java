@@ -176,7 +176,7 @@ public class PageDAO extends AbstractDAO
 		
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM pages p WHERE p.`page_name` LIKE 'icemix_%' AND page_group='products' ORDER BY p.`page_order`");
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM pages p WHERE p.`page_name` LIKE 'icemix_%' AND page_group='icemix' ORDER BY p.`page_order`");
 			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
@@ -213,7 +213,7 @@ public class PageDAO extends AbstractDAO
 		
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM pages p WHERE p.`page_name` LIKE 'ecobarrier_%' AND page_group='products' ORDER BY p.`page_order`");
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM pages p WHERE p.`page_name` LIKE 'ecobarrier_%' AND page_group='ecobarrier' ORDER BY p.`page_order`");
 			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {

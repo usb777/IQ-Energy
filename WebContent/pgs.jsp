@@ -32,7 +32,7 @@
               String icemix_aria_expanded="false";
               String icemix_div_class = "collapse";
               
-              if (product.getPage_group().equals("nedrousers_neftegaz"))  
+              if (product.getPage_group().equals("icemix"))  
               {
             	   icemix_a_class="nav-link";
                    icemix_aria_expanded="true";
@@ -65,17 +65,11 @@
                 <div class="collapse show" id="nl_pgs">
 					
                   <ul class="nav flex-column column_nav_sub">
-                      <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/56">Малые Архитектурные Формы (МАФы)</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/57">Стекломагниевые листы (СМЛ)</a>
-                      </li>   
-					  
-					  
+                   
+                
 				<li class="nav-item">
-                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="false" aria-controls="nl_icemix">Противогололёдный реагент «АйсМикс»</a>
-                      <div class="collapse" id="nl_icemix">
+                      <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="<%=icemix_aria_expanded %>" aria-controls="nl_icemix">Противогололёдный реагент «АйсМикс»</a>
+                      <div class="<%=icemix_div_class  %>" id="nl_icemix">
                         <ul class="nav flex-column column_nav_sub_sub">
                         
                         <%                 
@@ -93,11 +87,12 @@
                       </div>
                 </li>
 					  
-					  
+				
+          
 						  
 				<li class="nav-item">
-                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_ecobarrier" role="button" aria-expanded="false" aria-controls="nl_ecobarrier">Пылеподавитель реагент «ЭкоБарьер»</a>
-                      <div class="collapse" id="nl_ecobarrier">
+                      <a class="<%=ecobarrier_a_class %>" data-bs-toggle="collapse" href="#nl_ecobarrier" role="button" aria-expanded="<%=ecobarrier_aria_expanded %>" aria-controls="nl_ecobarrier">Пылеподавитель реагент «ЭкоБарьер»</a>
+                      <div class="<%=ecobarrier_div_class  %>" id="nl_ecobarrier">
                         <ul class="nav flex-column column_nav_sub_sub">
                         
                         
@@ -116,7 +111,15 @@
                           
                         </ul>
                       </div>
-                </li>	  
+                </li>
+                
+                       <li class="nav-item">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/56">Малые Архитектурные Формы (МАФы)</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/57">Стекломагниевые листы (СМЛ)</a>
+                      </li>   
+					  	  
 					  
 					  
 					  
