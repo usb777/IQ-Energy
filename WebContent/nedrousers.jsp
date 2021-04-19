@@ -71,11 +71,6 @@
 					                 
 					<!-// Level2 //--> 
 					
-					     <%=icemix_a_class %>
-               
-                   <%=icemix_aria_expanded %>
-                   
-                  <%=icemix_div_class  %>
      
 					  
                     <li class="nav-item">
