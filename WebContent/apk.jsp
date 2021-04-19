@@ -13,34 +13,76 @@
       <div class="main_content">
 
         <div class="row">
- <% 
+
+   <% 
               Page product = new Page();
-              product = (Page)request.getAttribute("apkinfo");   //SuperImportant to change it From Service         
+              product = (Page)request.getAttribute("apkinfo");   
+              
+          //   List<Page> listIcemixes = (List<Page>)request.getAttribute("menu_icemix");
+          //    List<Page> listEcobarriers = (List<Page>)request.getAttribute("menu_ecobarrier"); 
+              
+              String menuTitle="";
+            	 if ( session.getAttribute("menuTitle")!=null )  { menuTitle = (String)session.getAttribute("menuTitle");}
+            	 
+            	 
+            	 
+              //  Not collapsed Mechanizm
+              String icemix_a_class="nav-link collapsed";
+              String icemix_aria_expanded="false";
+              String icemix_div_class = "collapse";
+              
+              if (product.getPage_group().equals("nedrousers_neftegaz"))  
+              {
+            	   icemix_a_class="nav-link";
+                   icemix_aria_expanded="true";
+                   icemix_div_class = "collapse show";  
+              }
+              
+              
+              String ecobarrier_a_class="nav-link collapsed";
+              String ecobarrier_aria_expanded="false";
+              String ecobarrier_div_class = "collapse";
+              
+              if (product.getPage_group().equals("ecobarrier"))  
+              {
+            	  ecobarrier_a_class="nav-link";
+            	  ecobarrier_aria_expanded="true";
+            	  ecobarrier_div_class = "collapse show";  
+              }
+              
+              
               
     %>
 
 <!-- Left-menu -->
 
-
-     <div class="col-sm-6 col-lg-4">
+  <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
               <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения для AПК</a>
-              <div class="collapse show" id="about_company">
-                    <ul class="nav flex-column column_nav_sub">
-                   
-                        <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/apk-grmineraly"> Гранулированные минеральные удобрения</a>
-                        </li>
-                      
-                     
-                        
-                    </ul>
-                  </div>   <!-- div collapse show  -->
+                <a class="nav-link" data-bs-toggle="collapse" href="#nl_apk" role="button" aria-expanded="true" aria-controls="collapseExample">
+					<%=menuTitle%></a>
+                <div class="collapse show" id="nl_apk">
+					
+                  <ul class="nav flex-column column_nav_sub">
+                      <li class="nav-item">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/apk/52">Гранулированные минеральные удобрения</a>
+                      </li>
+              
+					  
+					  
+					  
+					  
+                  </ul>
+                </div>
               </li>
+           
+
+              
 
             </ul>
-   </div>               <!-- div col-sm-6 col-lg-4  -->
+          </div>
+
+                      <!-- div col-sm-6 col-lg-4  -->
 
 
 <!-- End Left-menu -->

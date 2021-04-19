@@ -32,7 +32,7 @@
               String icemix_aria_expanded="false";
               String icemix_div_class = "collapse";
               
-              if (product.getPage_group().equals("nedrousers_neftegaz"))  
+              if (product.getPage_group().equals("gkh_neftegaz"))  
               {
             	   icemix_a_class="nav-link";
                    icemix_aria_expanded="true";
@@ -65,12 +65,7 @@
                 <div class="collapse show" id="nl_gkh">
 					
                   <ul class="nav flex-column column_nav_sub">
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Реквизиты компании</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Дилеры и субдилеры</a>
-                      </li>   
+                   
 					  
 					  
 				<li class="nav-item">
@@ -83,7 +78,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/gkh/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -107,7 +102,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/gkh/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
                           </li>                          
                     <%
                      }
