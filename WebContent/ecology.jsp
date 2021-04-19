@@ -18,7 +18,8 @@
             	MenuDAO  menuDao = new MenuDAO();
    				List<Menu> rightMenus = menuDao.getMenuByGroup1("rm_ecology") ;
            
-            
+                         int counter = menuDao.getCounterOfMenuGroup("rm_ecology")  ;
+                     //    out.println("Kol-vo ecologist:"+counter);
              	Page ecology = new Page();
               	ecology = (Page)request.getAttribute("ecologyinfo");   
               	
@@ -26,12 +27,10 @@
               	 if ( session.getAttribute("menuTitle")!=null )  { menuTitle = (String)session.getAttribute("menuTitle");}
              
              %>
-      
-
-        <div class="row">
+  <div class="row">
 
 <!-- Left-menu -->
-
+<!-- Form Menu by    menuid and parent-id dependency   also check menu_group   -->
 <!--  return all rightmenu_ecology -->
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
@@ -39,8 +38,10 @@
             int k=0;
             for (Menu rmenus: rightMenus )
             {
-            	if (rmenus.getMenu_head()==1 ) 
+            	if (rmenus.getMenu_head()==1 ) // active Collapse Menu head==1
             	{  String colapser = rmenus.getMenu_group()+""+rmenus.getMenu_id();
+            	   // at this point make counter  = count (menu_group) and parent_id ==menu_id   - 1
+            	  k =0;
             		%>
             	<li class="nav-item">
             		<a class="nav-link" data-bs-toggle="collapse" href="#<%=colapser %>" role="button" aria-expanded="true" aria-controls="collapseExample" href="#"><%=menuTitle %></a>
@@ -53,7 +54,7 @@
             	{
             		%>
             		 <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/ru/ecology/<%=rmenus.getPage_id()%>"> <%=rmenus.getMenu_name() %> </a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/<%=rmenus.getPage_id()%>"> <%=rmenus.getMenu_name() %> </a>
                       </li>
             		<%
             	} //else

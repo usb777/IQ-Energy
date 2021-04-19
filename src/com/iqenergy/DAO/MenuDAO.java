@@ -150,6 +150,39 @@ public class MenuDAO extends AbstractDAO
 	
 	
 	
+	
+	
+	
+	public int getCounterOfMenuGroup(String menu_group) 
+	{
+		int counter = 0;
+		getConnection();
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement("SELECT  count(m.`menu_group`) as COUNTER FROM menu m  WHERE m.menu_group=? AND m.`menu_status`=1 ORDER BY m.menu_id ");			
+			ps.setString(1, menu_group); // parameter before execution
+			
+			ResultSet rs = ps.executeQuery();	
+		
+		
+			
+			while(rs.next()) {
+				counter = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		return counter;
+	}
+	
+	
+	
+	
+	
 
 	
 	

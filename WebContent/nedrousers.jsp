@@ -18,7 +18,12 @@
               Page product = new Page();
               product = (Page)request.getAttribute("nedrouserinfo");   
               
+             List<Page> listIcemixes = (List<Page>)request.getAttribute("menu_icemix"); 
+            
+              List<Page> listEcobarriers = (List<Page>)request.getAttribute("menu_ecobarrier"); 
               
+          //    out.println(listIcemixes);
+           //   out.println(listEcobarriers);
               //  Not collapsed Mechanizm
               String icemix_a_class="nav-link collapsed";
               String icemix_aria_expanded="false";
@@ -32,103 +37,167 @@
               }
               
               
+              String ecobarrier_a_class="nav-link collapsed";
+              String ecobarrier_aria_expanded="false";
+              String ecobarrier_div_class = "collapse";
+              
+              if (product.getPage_group().equals("ecobarrier"))  
+              {
+            	  ecobarrier_a_class="nav-link";
+            	  ecobarrier_aria_expanded="true";
+            	  ecobarrier_div_class = "collapse show";  
+              }
+              
+              
               
     %>
 
 <!-- Left-menu -->
 
 
-     <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
+				
+
               <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#nedro_users" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения для недропользователей</a>
-              <div class="collapse show" id="nedro_users">
-                    <ul class="nav flex-column column_nav_sub">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#nl_solutions_products" role="button" aria-expanded="true" aria-controls="nl_solutions_products"> Решения для недропользователей  </a>
+                  <div class="collapse show" id="nl_solutions_products">
+                  <ul class="nav flex-column column_nav_sub">
+					  
+					  
+					                 
+					<!-// Level2 //-->  
+					  
+                    <li class="nav-item">
+                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_solutions_neftgaz" role="button" aria-expanded="false" aria-controls="nl_solutions_neftgaz">Решения для нефтегазовой сферы </a>
+                      <div class="collapse" id="nl_solutions_neftgaz">
+                        <ul class="nav flex-column column_nav_sub_sub">
+                          <li class="nav-item">
+                            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_reagent" role="button" aria-expanded="false" aria-controls="nl_protivogololednyi_reagent">Противогололёдный реагент «АйсМикс»</a>
+							  
+                            <div class="collapse" id="nl_protivogololednyi_reagent">
+								
+								
+                    <ul class="nav flex-column column_nav_sub_sub_sub">
                     
-                  <li class="nav-item">                  
-              <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="<%=icemix_aria_expanded %>" aria-controls="nl_icemix">
-                       Решения для нефтегазовой сферы
-               </a>                       
-                      <div class="<%=icemix_div_class %>" id="nl_icemix">
-                        <ul class="nav flex-column column_nav_sub_sub">
-                        
-                         <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers-ng_icemix">Противогололёдный реагент «АйсМикс»</a>
-                          </li>   
-                                                 
+                    <%                 
+                     for(Page icemixes: listIcemixes)
+                      {                    
+                    %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers-ng_ecobarrier">Пылеподавитель реагент «ЭкоБарьер»</a>
-                          </li>
-                       
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                          </li>                          
+                    <%
+                     }
+                    %>   
+                    
+                    
                           
-                        </ul>
-                      </div>                     
-                      
-                   </li> <!-- nav-item -->
-                               
-                   
-                    <!-- ============================ -->
-                          <% 
-              //  Not collapsed Mechanizm
-              String gorruda_a_class="nav-link collapsed";
-              String gorruda_aria_expanded="false";
-              String gorruda_div_class = "collapse";
-              
-              if (product.getPage_group().equals("nedrousers_gorrud"))  
-              {
-            	  gorruda_a_class="nav-link";
-            	  gorruda_aria_expanded="true";
-            	  gorruda_div_class = "collapse show";  
-              }
-              
-           
-              
-              %>
-                   
-                   
-          <li class="nav-item">                  
-          <a class="<%=gorruda_a_class %>" data-bs-toggle="collapse" href="#nl_ecobarier" role="button" aria-expanded="<%=gorruda_aria_expanded %>" aria-controls="nl_ecobarier">
-                      Решения для горно-рудной отрасли
-                      </a>
-                      <div class="<%=gorruda_div_class %>" id="nl_ecobarier">
-                        <ul class="nav flex-column column_nav_sub_sub">
-                        
-                         <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers-gr_icemix">Противогололёдный реагент «АйсМикс»</a>
-                          </li>   
-                                                 
+                          
+						
+                       </ul>
+								
+                            </div>
+							  
+							  
+                          </li>
+                          
+                          
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers-gr_ecobarrier">Пылеподавитель реагент «ЭкоБарьер»</a>
+                              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier" role="button" aria-expanded="false" aria-controls="nl_protivogololednyi_ecobarier">Пылеподавитель реагент «ЭкоБарьер»</a>
+                              <div class="collapse" id="nl_protivogololednyi_ecobarier">
+                                <ul class="nav flex-column column_nav_sub_sub_sub">
+                                
+                                
+                                  <%                 
+                     for(Page ecobarriers: listEcobarriers )
+                      {                    
+                    %>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                          </li>                          
+                    <%
+                     }
+                    %> 			
+                                </ul>
+                              </div>
                           </li>
-                       
-                          
                         </ul>
-                      </div>                     
-                      
-                   </li>
-                  
-                  
-                  
-                                          
-                    </ul>
-                  </div>   <!-- div collapse show  -->
+                      </div>
+                    </li>
+					  
+					<!-// Level2 //-->    
+				<li class="nav-item">
+                      <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_solutions_gorrud" role="button" aria-expanded="false" aria-controls="nl_solutions_gorrud">Решения для горно-рудной отрасли </a>
+                      <div class="collapse" id="nl_solutions_gorrud">
+                        <ul class="nav flex-column column_nav_sub_sub">
+                          <li class="nav-item">
+                            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_reagent1" role="button" aria-expanded="false" 
+                            aria-controls="nl_protivogololednyi_reagent1">Противогололёдный реагент «АйсМикс»</a>
+							  
+                            <div class="collapse" id="nl_protivogololednyi_reagent1">
+								
+								
+                    <ul class="nav flex-column column_nav_sub_sub_sub">
+                                   
+                              
+                    <%                 
+                     for(Page icemixes: listIcemixes)
+                      {                    
+                    %>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                          </li>                          
+                    <%
+                     }
+                    %>             
+                            
+                       </ul>
+								
+                            </div>
+							  
+							  
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier2" role="button" aria-expanded="false" aria-controls="nl_protivogololednyi_ecobarier2">Пылеподавитель реагент «ЭкоБарьер»</a>
+                              <div class="collapse" id="nl_protivogololednyi_ecobarier2">
+                                <ul class="nav flex-column column_nav_sub_sub_sub">
+									
+				   <%                 
+                     for(Page ecobarriers: listEcobarriers )
+                      {                    
+                    %>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                          </li>                          
+                    <%
+                       }
+                    %> 		
+						
+									
+                                </ul>
+                              </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+					  
+					    
+					  
+					  
+					  
+
+
+					  
+					  
+                  </ul>
+                </div>
               </li>
-              
-              
-              
-            
-              
-              
-              
-              
-              
-              
-              
-              
-              
 
             </ul>
-   </div>               <!-- div col-sm-6 col-lg-4  -->
+          </div>
+
+                      <!-- div col-sm-6 col-lg-4  -->
 
 
 <!-- End Left-menu -->

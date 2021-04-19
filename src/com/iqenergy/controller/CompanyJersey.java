@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -34,13 +35,26 @@ Page company =new Page();
 	   {
 	        return Response.ok(new Viewable("/index.jsp")).build();
 	    }
-	  
-	  */
+	
+	 */
 
+   /**
+    * Going from Top Menu
+    * @param request
+    * @param response
+    * @return
+    * @throws Exception
+    */
 	@GET
 	public Viewable getProductsPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
 	{
+		HttpSession session = null;
+	    session = request.getSession(true);    
+		
 		company = pageDAO.getPageByName("company");
+		
+		 session.setAttribute("menuTitle", company.getPage_title());
+		
 		request.setAttribute("companyinfo",company); // send message to JSP    
 		return new Viewable("/company", null);
 	}
@@ -53,7 +67,7 @@ Page company =new Page();
 		  //request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );
 	           
 	      company = pageDAO.getPageById(companyId);
-	      request.setAttribute("product",company); // send message to JSP	      
+	      request.setAttribute("companyinfo",company); // send message to JSP	      
 	  
 	    //  request.setAttribute("companyId", companyId); // send message to JSP
 	      

@@ -39,49 +39,37 @@
 
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
-        
-        
-            <%
-            int k=0;
-            for (Menu rmenus: rightMenus )
-            {
-            	if (rmenus.getMenu_head()==1 ) // active Collapse Menu head==1
-            	{  String colapser = rmenus.getMenu_group()+""+rmenus.getMenu_id();  //always opened colapser
-            	   // at this point make counter  = count (menu_group) and parent_id ==menu_id   - 1
-            	  k =0;
-            		%>
-            	<li class="nav-item">
-            		<a class="nav-link" data-bs-toggle="collapse" href="#<%=colapser %>" role="button" aria-expanded="true" aria-controls="collapseExample" href="#"><%=menuTitle %></a>
-                  <div class="collapse show" id="<%=colapser %>">
-                   <ul class="nav flex-column column_nav_sub">
-            		<%
-            	}
-            	
-            	else  // head!=1
-            	{
-            		%>
-            		 <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/company/<%=rmenus.getPage_id()%>"> <%=rmenus.getMenu_name() %> </a>
-                      </li>
-            		<%
-            	} //else
-            k++;  
-            	if (k==rightMenus.size())  
-            	{
-            	%>
-            		 </ul>
-                  </div> <!--// ecology div //-->
-              </li>  <!--//top nav-item  //-->
-            		<%
-            		break;
-            	}
-            } //for
-            %>
-             
-              
-             <!--  --> 
+              <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">О компании</a>
+                  <div class="collapse show" id="about_company">
+                    <ul class="nav flex-column column_nav_sub">
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/company-dillers">Дилеры и субдилеры</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/company-partners">Партнеры</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/company-news">Новости</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="<%=request.getContextPath()%>/company-vacancy">Вакансии</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%=request.getContextPath()%>/company-rekvizit">Реквизиты компании</a>
+                        </li>
+                        
+                    </ul>
+                  </div>
+              </li>
               
               
+              
+              
+              
+
             </ul>
           </div>
 

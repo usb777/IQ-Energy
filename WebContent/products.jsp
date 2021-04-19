@@ -18,7 +18,10 @@
               Page product = new Page();
               product = (Page)request.getAttribute("product");   
               
-              
+              String menuTitle="";
+           	 if ( session.getAttribute("menuTitle")!=null )  { menuTitle = (String)session.getAttribute("menuTitle");}
+           	 
+           	 
               //  Not collapsed Mechanizm
               String icemix_a_class="nav-link collapsed";
               String icemix_aria_expanded="false";
@@ -31,8 +34,6 @@
                    icemix_div_class = "collapse show";  
               }
               
-              
-              
     %>
 
 <!-- Left-menu -->
@@ -41,12 +42,11 @@
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
               <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#">Решения и продукты</a>
+          <a class="nav-link" data-bs-toggle="collapse" href="#about_company" role="button" aria-expanded="true" aria-controls="collapseExample" href="#"><%=menuTitle %></a>
               <div class="collapse show" id="about_company">
                     <ul class="nav flex-column column_nav_sub">
                     
-                  <li class="nav-item">
-                  
+                  <li class="nav-item">                  
                       <a class="<%=icemix_a_class %>" data-bs-toggle="collapse" href="#nl_icemix" role="button" aria-expanded="<%=icemix_aria_expanded %>" aria-controls="nl_icemix">
                       Противогололёдный реагент «АйсМикс»
                       </a>  

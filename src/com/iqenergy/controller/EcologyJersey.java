@@ -31,23 +31,13 @@ Page ecology =new Page();
  FROM menu m  JOIN pages p  ON m.`page_id` = p.`page_id`  WHERE m.menu_group="rm_ecology" AND m.`menu_status`=1 ORDER BY m.menu_id		
  */
 		
-	/*	
-	  @GET
-	    @Produces("text/html")
-	    public Response index() 
-	   {
-	        return Response.ok(new Viewable("/index.jsp")).build();
-	    }
-	  
-	  */
 
 	@GET
 	public Viewable getEcologyPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
-	{   HttpSession session = null;
-	    session = request.getSession(true);
-	 
-	 
-	     
+	{   
+		
+		HttpSession session = null;
+	    session = request.getSession(true);    
 	 
 		ecology = pageDAO.getPageByName("ecology");
 		

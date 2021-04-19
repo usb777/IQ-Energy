@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -40,9 +41,15 @@ Page product =new Page();
 @GET
 public Viewable getProductsPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
 {
- 
-  
+	HttpSession session = null;
+    session = request.getSession(true);    
+    
+	
   product = pageDAO.getPageByName("products");
+  
+  session.setAttribute("menuTitle",product.getPage_title());
+  
+  
   request.setAttribute("product",product); // send message to JSP    
   return new Viewable("/products", null);
 }

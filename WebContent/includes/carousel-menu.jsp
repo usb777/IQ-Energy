@@ -36,19 +36,19 @@
                 <div class="d-none d-sm-block position-absolute top-0 end-0">
                   <ul class="nav justify-content-end m-3">
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/nedrousers">Недропользователи</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/">Недропользователи</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/gkh">ЖКХ</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/gkh">ЖКХ</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/tek">ТЭК</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/tek">ТЭК</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/apk">АПК</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/apk">АПК</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/pgs">ПГС</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs">ПГС</a>
                       </li>
                   </ul>
                 </div>

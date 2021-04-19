@@ -13,7 +13,7 @@
       <div class="main_content">
 
         <div class="row">
- <% 
+    <% 
               Page product = new Page();
               product = (Page)request.getAttribute("gkhinfo");           
               

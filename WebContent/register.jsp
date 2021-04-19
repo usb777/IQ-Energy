@@ -15,7 +15,26 @@
             <p class="page_text">
               <strong>page this is page Page id:  
               
-            
+            	<span style="color:red">
+			<%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%>
+			</span>
+			<span style="color:green">
+			<%=(request.getAttribute("registerOk") == null) ? "": request.getAttribute("registerOk")%>
+			</span>
+			
+			
+				   <form action="RegisterServlet1" method="post" onsubmit="return validate()">
+						<div>			
+		<input type="text" name="fullname" id="input-text" value="" placeholder="Full Name" /> <br/><br/>
+		<input type="text" name="email" id="input-text" value="" placeholder="email" /> <br/><br/>
+		<input type="text" name="login" id="input-text" value="" placeholder="login" /> <br/><br/>
+		<input type="password" name="password" id="input-text" value="" placeholder="password" /> <br/><br/>
+		<input type="password" name="password1" id="input-text" value="" placeholder="password again" />  <br/><br/>
+		<input type="submit" id="login-submit" value="Submit" />	
+										
+<button class="button register_button" id="">Register</button>
+                       </div>
+				</form>
               
             </p>
 
