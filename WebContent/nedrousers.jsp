@@ -22,6 +22,9 @@
             
               List<Page> listEcobarriers = (List<Page>)request.getAttribute("menu_ecobarrier"); 
               
+              String menuTitle="";
+           	 if ( session.getAttribute("menuTitle")!=null )  { menuTitle = (String)session.getAttribute("menuTitle");}
+           	 
           //    out.println(listIcemixes);
            //   out.println(listEcobarriers);
               //  Not collapsed Mechanizm
@@ -159,7 +162,8 @@
 							  
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier2" role="button" aria-expanded="false" aria-controls="nl_protivogololednyi_ecobarier2">Пылеподавитель реагент «ЭкоБарьер»</a>
+                              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#nl_protivogololednyi_ecobarier2" role="button" 
+                              aria-expanded="false" aria-controls="nl_protivogololednyi_ecobarier2">Пылеподавитель реагент «ЭкоБарьер»</a>
                               <div class="collapse" id="nl_protivogololednyi_ecobarier2">
                                 <ul class="nav flex-column column_nav_sub_sub_sub">
 									
