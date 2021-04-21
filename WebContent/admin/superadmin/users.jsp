@@ -41,7 +41,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
           
           
 <%
-/*
+
 String user_id="";
 String username="";
         		  
@@ -52,7 +52,7 @@ String username="";
   { username = session.getAttribute("username").toString();    
      user_id = session.getAttribute("user_id").toString();    
   }
-  */
+  
 	 %>
          
           

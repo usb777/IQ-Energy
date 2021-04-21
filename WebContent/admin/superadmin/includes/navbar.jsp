@@ -96,7 +96,13 @@
                 <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
                 <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                
+               <li class="nav-item">
+         			 <a class="nav-link" data-toggle="modal" data-target="#logoutModal">
+           			 <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+       		   </li>
+                
+                
               </ul>
             </li>
           </ul>

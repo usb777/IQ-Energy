@@ -13,20 +13,19 @@
             <h1>О компании</h1>
 
             <p class="page_text">
-            
-   <form class="modal-content animate" action="UsersServlet" method="post" onSubmit="return validate()">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('idLoginForm').style.display='none'" class="closeModalBtn" title="Close Modal">&times;</span>      
-    </div>
-
+        	<span style="color:red"><%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%></span>    
+   <form  action="LoginServlet" method="post" onSubmit="return validate()">
+   
     <div class="containerModal">
       <label for="uname"><b>Username</b></label><br>
       <input class="inputText" type="text" placeholder="Enter Username" name="login"  id="login-text" required><br>
 
       <label for="psw"><b>Password</b></label><br>
       <input  class="inputText" type="password" placeholder="Enter Password" name="password" id="password-text" required>
-        <br>
-      <button type="submit" class="button login_button">Login</button>
+        <br><br>
+      <button type="submit" class="button login_button">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" onclick="document.getElementById('idLoginForm').style.display='none'" class="cancelbtn">Cancel</button>
+      
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -34,7 +33,7 @@
     </div>
 
     <div class="containerModal" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('idLoginForm').style.display='none'" class="cancelbtn">Cancel</button>
+      
       <span class="psw">Forgot <a href="#" class="forgot">password?</a></span>
     </div>
   </form>   

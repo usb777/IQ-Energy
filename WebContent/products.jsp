@@ -85,7 +85,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/<%=icemixes.getPage_id() %>#begin"><%=icemixes.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -152,7 +152,7 @@
            
            
            
-            <h1><%=product.getPage_title() %></h1>
+            <h1 id="begin"><%=product.getPage_title() %></h1>
 
             <p class="page_text">
              <%=product.getPage_info() %>

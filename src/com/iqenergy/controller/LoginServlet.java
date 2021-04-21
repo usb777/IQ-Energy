@@ -112,7 +112,7 @@ public class LoginServlet extends HttpServlet {
     		 {
     			 System.out.println("Password doesn't match");
     			 request.setAttribute("errMessage", "Wrong password"); 
-    			 request.getRequestDispatcher("/index.jsp").forward(request, response);//forwarding the request
+    			 request.getRequestDispatcher("/login.jsp").forward(request, response);//forwarding the request
     		 }
     		 
     	 }
@@ -121,14 +121,14 @@ public class LoginServlet extends HttpServlet {
     	 {
     		 System.out.println("Login doesn't match");
     		 request.setAttribute("errMessage", "login doesn't exist"); 
-    		request.getRequestDispatcher("/index.jsp").forward(request, response);//forwarding the request
+    		request.getRequestDispatcher("/login.jsp").forward(request, response);//forwarding the request
     	 }
     	}// try 
     	catch (NullPointerException npe)
     	{
     		System.out.println("Object user is NULL");
     		request.setAttribute("errMessage", "login doesn't exist"); 
-    		request.getRequestDispatcher("/index.jsp").forward(request, response);//forwarding the request
+    		request.getRequestDispatcher("/login.jsp").forward(request, response);//forwarding the request
     	}
 		 
 	}
