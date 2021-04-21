@@ -27,7 +27,7 @@
   <script src="<%=request.getContextPath()%>/js/jquery-3.6.0.min.js"></script>
   <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
   <script src="<%=request.getContextPath()%>/js/script.js"></script>
-  
+  <script src="<%=request.getContextPath()%>/js/loginForm.js"></script>
 
 </body>
 </html>
