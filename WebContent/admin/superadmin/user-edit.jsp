@@ -12,6 +12,10 @@
                   String path =      request.getContextPath();
                   String path1 = '"'+request.getContextPath()+'"'; // for good javacript function parameter
    %>
+<%     
+ServerHelper serverHelper = new ServerHelper();
+String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
+ %>
 
 
       <div id="page-wrapper">
@@ -28,7 +32,7 @@
                                
           
 <%
-/*
+
 String user_id="";
 String username="";
         		  
@@ -45,7 +49,7 @@ String username="";
 	  
   }
   
-  */
+ 
 	 %>
           
           

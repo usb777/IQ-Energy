@@ -12,6 +12,25 @@
                   String path =      request.getContextPath();
                   String path1 = '"'+request.getContextPath()+'"'; // for good javacript function parameter
    %>
+<%     
+ServerHelper serverHelper = new ServerHelper();
+String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
+ %>
+ 
+ <%
+
+String user_id="";
+String username="";
+        		  
+  if (session.getAttribute("username")==null) 
+  {	  response.sendRedirect(REAL_SERVER_HOST+"/index.jsp");  
+  }
+  else 
+  { username = session.getAttribute("username").toString();    
+     user_id = session.getAttribute("user_id").toString();    
+  }
+  
+	 %>
 
 
       <div id="page-wrapper">
