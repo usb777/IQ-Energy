@@ -65,7 +65,7 @@
 					
                   <ul class="nav flex-column column_nav_sub">
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/apk/52">Гранулированные минеральные удобрения</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/apk/52#begin">Гранулированные минеральные удобрения</a>
                       </li>
               
 					  

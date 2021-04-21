@@ -48,10 +48,10 @@
                         <ul class="nav flex-column column_nav_sub_sub">
                     
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/59">Экологический Кодекс РК</a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/59#begin">Экологический Кодекс РК</a>
                           </li>                          
                          <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/60">Нормативно-правовые акты</a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/60#begin">Нормативно-правовые акты</a>
                           </li>    
                           
                         </ul>
@@ -61,12 +61,12 @@
                       
                       
             		 <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/16">СМИ об экологии </a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/16#begin">СМИ об экологии </a>
                       </li>
                       
                       
             		 <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/17"> Уполномоченный орган РК 	 </a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/ecology/17#begin"> Уполномоченный орган РК 	 </a>
                       </li>
             
             		 </ul>

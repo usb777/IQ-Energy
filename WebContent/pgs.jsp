@@ -77,7 +77,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/<%=icemixes.getPage_id() %>#begin"><%=icemixes.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -102,7 +102,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/<%=ecobarriers.getPage_id() %>#begin"><%=ecobarriers.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -114,10 +114,10 @@
                 </li>
                 
                        <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/56">Малые Архитектурные Формы (МАФы)</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/56#begin">Малые Архитектурные Формы (МАФы)</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/57">Стекломагниевые листы (СМЛ)</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs/57#begin">Стекломагниевые листы (СМЛ)</a>
                       </li>   
 					  	  
 					  

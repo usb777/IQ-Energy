@@ -93,7 +93,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>#begin"><%=icemixes.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -127,7 +127,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>#begin"><%=ecobarriers.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -165,7 +165,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>"><%=icemixes.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=icemixes.getPage_id() %>#begin"><%=icemixes.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -194,7 +194,7 @@
                       {                    
                     %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/<%=ecobarriers.getPage_id() %>#begin"><%=ecobarriers.getPage_title() %></a>
                           </li>                          
                     <%
                        }

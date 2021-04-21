@@ -111,7 +111,7 @@
                       {                    
                    	 %>
                           <li class="nav-item">
-                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/<%=ecobarriers.getPage_id() %>"><%=ecobarriers.getPage_title() %></a>
+                              <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/<%=ecobarriers.getPage_id() %>#begin"><%=ecobarriers.getPage_title() %></a>
                           </li>                          
                     <%
                      }
@@ -125,17 +125,17 @@
                    
                    
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/10">Минеральные удобрения</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/10#begin">Минеральные удобрения</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/11">Малые Архитектурные Формы (МАФы)</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/11#begin">Малые Архитектурные Формы (МАФы)</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/12">Герон +</a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/12#begin">Герон +</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/13">Водомазутная эмульсия</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/13#begin">Водомазутная эмульсия</a>
                         </li>
                         
                     </ul>

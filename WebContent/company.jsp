@@ -61,7 +61,7 @@
             	{
             		%>
             		 <li class="nav-item">
-                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/company/<%=rmenus.getPage_id()%>"> <%=rmenus.getMenu_name() %> </a>
+                          <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/company/<%=rmenus.getPage_id()%>#begin"> <%=rmenus.getMenu_name() %> </a>
                       </li>
             		<%
             	} //else
