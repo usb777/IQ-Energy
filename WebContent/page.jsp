@@ -10,7 +10,7 @@
 <jsp:include page="includes/left-menu.jsp" />
 <!-- End Left-menu -->
           <div class="col-sm-12 col-lg-8 mb-2">
-            <h1>О компании</h1>
+            <h1 id="begin" >О компании</h1>
 
             <p class="page_text">
               <strong>page this is page Page id:  

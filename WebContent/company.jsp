@@ -93,7 +93,7 @@
            
            
            
-            <h1><%=company.getPage_title() %></h1>
+            <h1 id="begin"><%=company.getPage_title() %></h1>
 
             <p class="page_text">
              <%=company.getPage_info() %>

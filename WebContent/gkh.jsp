@@ -136,7 +136,7 @@
            
            
            
-            <h1><%=product.getPage_title() %></h1>
+            <h1 id="begin"><%=product.getPage_title() %></h1>
 
             <p class="page_text">
              <%=product.getPage_info() %>

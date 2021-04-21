@@ -88,7 +88,7 @@
            
            
            
-            <h1><%=ecology.getPage_title() %></h1>
+            <h1 id="begin"><%=ecology.getPage_title() %></h1>
 
             <p class="page_text">
              <%=ecology.getPage_info() %>
