@@ -1,23 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+  <jsp:include page="includes/header.jsp" />
 
+      <!-- main content -->
+      <div class="main_content">
 
-	<div id="content">
-				
-				
-					
-					<div class="post">
-			
-							
-      
-JVM Version: <%=System.getProperty("java.vm.version") %>  <br>
+        <div class="row">
+
+<!-- Left-menu -->
+<jsp:include page="includes/left-menu.jsp" />
+<!-- End Left-menu -->
+          <div class="col-sm-12 col-lg-8 mb-2">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          JVM Version: <%=System.getProperty("java.vm.version") %>  <br>
 Java Version: <%=System.getProperty("java.version") %>  <br>
 Server Version: <%= application.getServerInfo() %><br>
 Servlet Version: <%= application.getMajorVersion() %>.<%= application.getMinorVersion() %> <br>
@@ -50,22 +52,28 @@ JSP Version: <%= JspFactory.getDefaultFactory().getEngineInfo().getSpecification
                      </div>
                      
 					</div> <!-- Row  -->
-			
-			
-			
-			
-					</div>   <!-- div post -->
-					
-				
-					
-				
-				</div>   <!-- div #content -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+         
+             
 
+          </div>   <!-- class="col-sm-12 col-lg-8 mb-2   -->
+        </div> <!-- row -->
+      </div>  <!-- main content -->
 
-
-
-
-
-
-</body>
-</html>
+      <!-- Footer -->
+         <jsp:include page="includes/footer.jsp" />
+    
