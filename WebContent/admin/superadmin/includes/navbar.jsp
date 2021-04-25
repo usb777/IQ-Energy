@@ -21,6 +21,9 @@
             <li><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li><a href="<%=request.getContextPath()%>/admin/superadmin/menu-left"><i class="fa fa-bar-chart-o"></i> left menu</a></li>
             <li><a href="<%=request.getContextPath()%>/admin/superadmin/users"><i class="fa fa-fw fa-user"></i> users</a></li>
+            <li><a href="<%=request.getContextPath()%>/en/admin/pages"><i class="fa fa-fw fa-user"></i> all pages</a></li>
+            
+            
             <li><a href="tables.html">
             <i class="fa fa-table"></i> Tables</a>
             </li>
