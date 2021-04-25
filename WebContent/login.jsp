@@ -13,32 +13,51 @@
             <h1>О компании</h1>
 
             <p class="page_text">
-        	<span style="color:red"><%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%></span>    
-   <form  action="LoginServlet" method="post" onSubmit="return validate()">
-   
-    <div class="containerModal">
-    <!-- will rebase it -->
-      <label for="uname"><b>Username</b></label><br>
-      <input class="inputText" type="text" placeholder="Enter Username" name="login"  id="login-text" required><br>
-
-      <label for="psw"><b>Password</b></label><br>
-      <input  class="inputText" type="password" placeholder="Enter Password" name="password" id="password-text" required>
-        <br><br>
-      <button type="submit" class="button login_button">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="button" onclick="document.getElementById('idLoginForm').style.display='none'" class="cancelbtn">Cancel</button>
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-       <label>Don't have an account yet? <a href="register.jsp">Sign Up</a> </label>
-    </div>
-
-    <div class="containerModal" style="background-color:#f1f1f1">
-      
-      <span class="psw">Forgot <a href="#" class="forgot">password?</a></span>
-    </div>
-  </form>   
+            
      
+    
+      <div class="container">
+ 
+
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  <div class="row">
+    <span style="color:red"><%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%></span>    
+   <form  action="LoginServlet" method="post" onSubmit="return validate()">
+    <div class="col-7 col-md-5">
+           <label for="psw"><b>Login</b></label><br>
+ 			<input type="text" class="form-control" id="login-text" name="login"  placeholder="login">
+ 		  <br>
+ 		<label for="psw"><b>Password</b></label><br>
+ 			<input type="password" class="form-control" name="password" id="password-text" required >
+ 			<br>  
+ 	  <label>
+           <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="psw"><a href="#" class="forgot">Forgot  password?</a></span>
+ 			 <br> <br>
+ 			  <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </div>
+            
+ 			
+       <label>Don't have an account yet? <a href="register.jsp">Sign Up</a> </label>
+  
+ 			</div>  <!-- col-7 col-md-5  -->
+   
+   </form>  
+   
+  </div> <!--  row -->
+
+
+</div>
+
+
+<!--LAST  -->
+
+
+
+  
               
             </p>
 
