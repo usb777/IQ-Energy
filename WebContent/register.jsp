@@ -12,31 +12,46 @@
           <div class="col-sm-12 col-lg-8 mb-2">
             <h1>О компании</h1>
 
-            <p class="page_text">
-              <strong>page this is page Page id:  
-              
-            	<span style="color:red">
+     <p class="page_text">
+    			
+				
+	<div class="row">
+     <span style="color:red">
 			<%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%>
-			</span>
-			<span style="color:green">
+	 </span>
+		<span style="color:green">
 			<%=(request.getAttribute("registerOk") == null) ? "": request.getAttribute("registerOk")%>
-			</span>
+		</span>
 			
 			
-				   <form action="RegisterServlet" method="post" onsubmit="return validate()">
-						<div>			
-		<input type="text" name="fullname" id="input-text" value="" placeholder="Full Name" /> <br/><br/>
-		<input type="text" name="email" id="input-text" value="" placeholder="email" /> <br/><br/>
-		<input type="text" name="login" id="input-text" value="" placeholder="login" /> <br/><br/>
-		<input type="password" name="password" id="input-text" value="" placeholder="password" /> <br/><br/>
-		<input type="password" name="password1" id="input-text" value="" placeholder="password again" />  <br/><br/>
-		<input type="submit" id="login-submit" value="Submit" />	
-										
-<button class="button register_button" id="">Register</button>
-                       </div>
-				</form>
+	 <form action="RegisterServlet" method="post" onsubmit="return validate()">
+
+    <div class="col-7 col-md-5">
+           <label for="login-text"><b>Full Name</b></label><br>
+            <input type="text" class="form-control" name="fullname" id="login-text" value="" placeholder="Full Name" />  			
+ 		  <br>
+ 		<label for="input-email"><b>Email</b></label><br> 		    		    
+ 			<input type="text" class="form-control" name="email" id="input-email"  placeholder="email" required >		<br>  
+ 	          
+          <label for="input-login"><b>Login</b></label><br> 		    		    
+ 			<input type="text" class="form-control" name="login" id="input-login"  placeholder="login" required >		<br>
+ 			
+ 			<label for="input-password"><b>Password</b></label><br> 		    		    
+ 			<input type="password" class="form-control" name="password" id="input-password"  placeholder="password" required >		<br>
+ 			<label for="input-password1"><b>Repeat password</b></label><br> 		    		    
+ 			<input type="password" class="form-control" name="password1" id="input-password1"  placeholder="password again" required >		<br>
+           <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </div>
+  	</div>  <!-- col-7 col-md-5  -->
+   
+   </form>  
+   
+  </div> <!--  row -->
+				
+			
               
-            </p>
+       </p>
 
             <!-- 3 section -->
             <div class="row">

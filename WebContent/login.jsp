@@ -40,10 +40,8 @@
                 <button type="submit" class="btn btn-primary mb-3">Submit</button>
             </div>
             
- 			
-       <label>Don't have an account yet? <a href="register.jsp">Sign Up</a> </label>
-  
- 			</div>  <!-- col-7 col-md-5  -->
+          <label>Don't have an account yet? <a href="register.jsp">Sign Up</a> </label>
+  			</div>  <!-- col-7 col-md-5  -->
    
    </form>  
    
