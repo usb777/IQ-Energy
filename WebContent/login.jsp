@@ -17,6 +17,7 @@
    <form  action="LoginServlet" method="post" onSubmit="return validate()">
    
     <div class="containerModal">
+    <!-- will rebase it -->
       <label for="uname"><b>Username</b></label><br>
       <input class="inputText" type="text" placeholder="Enter Username" name="login"  id="login-text" required><br>
 
