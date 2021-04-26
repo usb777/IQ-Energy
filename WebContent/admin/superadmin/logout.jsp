@@ -11,6 +11,6 @@ System.out.println("<h3>You're session has been terminated.</h3><p>  Make sure t
 System.out.println("Session Destroy!");
 
 //redirect to main page on front-end
-response.sendRedirect(REAL_SERVER_HOST+"/index.jsp");
+response.sendRedirect(REAL_SERVER_HOST+"/login.jsp");
 
 %>

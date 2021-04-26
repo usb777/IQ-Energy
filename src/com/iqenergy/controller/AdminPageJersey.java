@@ -2,6 +2,7 @@ package com.iqenergy.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -17,60 +20,204 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 import com.iqenergy.DAO.PageDAO;
+import com.iqenergy.model.LeftMenu;
 import com.iqenergy.model.Page;
+import com.iqenergy.model.Users;
 import com.sun.jersey.api.view.Viewable;
 
-@Path("/en/admin/pages/")
+@Path("/en/admin/")
 public class AdminPageJersey {
 	
 PageDAO pageDAO = new PageDAO();
-Page product =new Page();
+Page page =new Page();
 
 		
 		
-	/*	
-	  @GET
-	    @Produces("text/html")
-	    public Response index() 
-	   {
-	        return Response.ok(new Viewable("/index.jsp")).build();
-	    }
-	  
-	  */
-
-@GET
-public Viewable getProductsPage( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
-{
-	HttpSession session = null;
-    session = request.getSession(true);    
-    
 	
-  product = pageDAO.getPageByName("products");
-  
-  //TODO in future Remove this Costyl
-  request.setAttribute("menu_icemix", pageDAO.getAllIcemixPages() );           //TODO in future Remove this Costyl
-  request.setAttribute("menu_ecobarrier", pageDAO.getAllEcobarrierPages() );  //TODO in future Remove this Costyl
-  
-  
-  session.setAttribute("menuTitle",product.getPage_title());
-  
-  
-  request.setAttribute("product",product); // send message to JSP    
-  return new Viewable("/products", null);
-}
-
 	  
 	 @GET
 	    @Path("/pages")
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
 	    {
 		 
-		  request.setAttribute("pages", pageDAO.getAllIcemixPages() );     
+		  request.setAttribute("pages", pageDAO.getAllPages());     
 		    
 	    //  product = pageDAO.getPageById(productId);
 	    //  request.setAttribute("product",product); // send message to JSP	        
 	      return new Viewable("/admin/superadmin/pages", null);
 	    }
+	 
+	 
+	 
+	 @GET
+	    @Path("/page-edit/{pageId}")
+	    public Viewable getPageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("pageId") int pageId) throws Exception
+	    {
+		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
+		 //TODO in future Remove this Costyl
+				    
+	      page = pageDAO.getPageById(pageId);
+	      request.setAttribute("page", page); // send message to JSP	        
+	      return new Viewable("/admin/superadmin/page-edit", null);
+	      
+	    }
+	 
+	 
+	 /**
+	  * Action Update page
+	  * @param page_id
+	  * @param page_name
+	  * @param page_title
+	  * @param page_info
+	  * @param page_order
+	  * @param page_group
+	  * @param template
+	  * @return
+	  */
+	 
+	 @POST
+	 @Path("/page-edit/update")
+	 public Viewable  updatePageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
+			 @FormParam("page_id") int page_id,   
+			 @FormParam("page_name") String page_name,			 
+			 @FormParam("page_title") String page_title,
+			 @FormParam("page_info") String page_info,
+			 @FormParam("page_order") int page_order,
+			 @FormParam("page_group") String page_group,
+			 @FormParam("template") String template			 
+			 )  throws Exception 
+	 {	 
+		//String output = "Student Name: " + name + 			", Roll No.: " + rollNo; 
+		
+		
+			
+			Page updatePage = new Page();
+			
+			updatePage.setPage_id( page_id );
+			updatePage.setPage_name(page_name);
+			updatePage.setPage_title(page_title);
+			updatePage.setPage_info(page_info);
+			updatePage.setPage_order(page_order);
+			updatePage.setPage_group(page_group);
+			updatePage.setTemplate(template);
+			
+				try{	 
+					pageDAO.updatePage(updatePage);
+						
+	                }  //try Before insert to Database
+		           catch (Exception e)
+		           { 
+		    	     System.out.println("Error is - "+e);
+		    	     e.printStackTrace();
+		    	   }
+				
+				
+				
+			
+		 System.out.println("HEllo");
+		  request.setAttribute("pages", pageDAO.getAllPages());     
+		 return new Viewable("/admin/superadmin/pages", null);
+	 }
+	 
+	 
+	 
+	 
+	 @GET
+	    @Path("/page-add")
+	    public Viewable getPageADD( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
+	    {
+		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
+		 //TODO in future Remove this Costyl
+				    
+	            
+	      return new Viewable("/admin/superadmin/page-add", null);
+	      
+	    }
+	 
+	 
+	 
+	 
+	 
+	 @POST
+	 @Path("/page-add/insert")
+	 public Viewable  insertPageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
+			  
+			 @FormParam("page_name") String page_name,			 
+			 @FormParam("page_title") String page_title,
+			 @FormParam("page_info") String page_info,
+			 @FormParam("page_order") int page_order,
+			 @FormParam("page_group") String page_group,
+			 @FormParam("template") String template			 
+			 )  throws Exception 
+	 {	 
+		//String output = "Student Name: " + name + 			", Roll No.: " + rollNo; 
+		
+		
+			
+			Page insertPage = new Page();
+			
+			insertPage.setPage_name(page_name);
+			insertPage.setPage_title(page_title);
+			insertPage.setPage_info(page_info);
+			insertPage.setPage_order(page_order);
+			insertPage.setPage_group(page_group);
+			insertPage.setTemplate(template);
+			
+			
+			
+			
+		
+				try{	
+					pageDAO.insertPageByAdmin(insertPage);
+				
+					// request.getRequestDispatcher("/admin/superadmin/menu-left").forward(request, response);
+					}  //try Before insert to Database
+		           catch (Exception e)
+		           { 
+		    	     System.out.println("Error is - "+e);
+		    	     e.printStackTrace();
+		    	   }
+				
+				
+		    request.setAttribute("pages", pageDAO.getAllPages());     
+			
+			 return new Viewable("/admin/superadmin/pages", null);
+			
+	 }		
+	 
+	 
+	 @GET
+	    @Path("/page-delete/{pageId}")
+	    public Viewable deletePageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("pageId") int pageId) throws Exception
+	    {
+		    	
+		 
+			try {	
+				pageDAO.deletePageById(pageId);
+				
+			//	 request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
+				}  //try Before insert to Database
+				catch (Exception e)
+		     	{ 
+					System.out.println("Error is - "+e);
+					e.printStackTrace();
+		     	} //catch
+		 
+		 
+		 
+				    
+	    
+			 request.setAttribute("pages", pageDAO.getAllPages());   
+	           
+	      return new Viewable("/admin/superadmin/pages", null);
+	      
+	      
+	    }
+	 
+	 
+	 
+	 
+	 
 	 
 
 }
