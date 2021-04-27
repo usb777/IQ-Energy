@@ -15,4 +15,6 @@
     <!-- Add custom CSS here -->
     <link  href="<%=request.getContextPath()%>/admin/superadmin/css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet"  href="<%=request.getContextPath()%>/admin/superadmin/font-awesome/css/font-awesome.min.css">
+    
+    <script src="https://cdn.tiny.cloud/1/epldjxj1h4wfvqozdf6bo18umiw4tc4os15u6bbo5jyub3u2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   </head>

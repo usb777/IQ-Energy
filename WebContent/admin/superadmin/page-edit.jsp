@@ -72,11 +72,18 @@ String username="";
                                             <label>Title</label><br/>
                                             <input class="form-control" type="text" name="page_title" value = "<%=currentPage.getPage_title() %>">                                          
                                         </div>
-                                             
+                                          
+                                          
+                                      <!--        
                                          <div class="form-group">
                                             <label>Description</label>
                                            <textarea class="form-control" rows="15" name="page_info"><%=currentPage.getPage_info() %></textarea>
                                         </div>
+                                         -->
+                                          <textarea name="page_info">
+   <%=currentPage.getPage_info() %>
+  </textarea>
+                                        
                                         
                                        <div class="form-group">
                                             <label>Page Order</label>
