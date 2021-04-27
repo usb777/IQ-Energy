@@ -80,7 +80,7 @@ String username="";
                                            <textarea class="form-control" rows="15" name="page_info"><%=currentPage.getPage_info() %></textarea>
                                         </div>
                                          -->
-                                          <textarea name="page_info">
+                                          <textarea name="page_info" rows="35">
    <%=currentPage.getPage_info() %>
   </textarea>
                                         

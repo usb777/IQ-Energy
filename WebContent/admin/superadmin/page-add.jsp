@@ -70,7 +70,8 @@ String username="";
                                              
                                          <div class="form-group">
                                             <label>Description</label>
-                                           <textarea class="form-control" rows="15" name="page_info"></textarea>
+                                              
+                                           <textarea class="form-control" rows="35" name="page_info"></textarea>
                                         </div>
                                         
                                        <div class="form-group">
