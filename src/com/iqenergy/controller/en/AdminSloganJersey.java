@@ -43,58 +43,48 @@ Slogan slogan =new Slogan();
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
 	    {
 		 
-		  request.setAttribute("slogans", sloganDAO.getAllSlogans());     
-		    
-	     
+		  request.setAttribute("slogans", sloganDAO.getAllSlogans()); 
 	      return new Viewable("/admin/superadmin/slogans", null);
 	    }
 	 
-/*	 
+ 
 	 
 	 @GET
-	    @Path("/page-edit/{pageId}")
-	    public Viewable getPageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("pageId") int pageId) throws Exception
+	    @Path("/slogan-edit/{sloganId}")
+	    public Viewable getPageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("sloganId") int sloganId) throws Exception
 	    {
 		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
 		 //TODO in future Remove this Costyl
 				    
-	      page = pageDAO.getPageById(pageId);
-	      request.setAttribute("page", page); // send message to JSP	        
-	      return new Viewable("/admin/superadmin/page-edit", null);
+		 slogan = sloganDAO.getSloganById(sloganId);
+	      request.setAttribute("slogan", slogan); // send message to JSP	        
+	      return new Viewable("/admin/superadmin/slogan-edit", null);
 	      
 	    }
 	 
 	 
 
-	 
+			 
 	 @POST
-	 @Path("/page-edit/update")
-	 public Viewable  updatePageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
-			 @FormParam("page_id") int page_id,   
-			 @FormParam("page_name") String page_name,			 
-			 @FormParam("page_title") String page_title,
-			 @FormParam("page_info") String page_info,
-			 @FormParam("page_order") int page_order,
-			 @FormParam("page_group") String page_group,
-			 @FormParam("template") String template			 
+	 @Path("/slogan-edit/update")
+	 public Viewable  updateSloganAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
+			 @FormParam("id") int id,   
+			 @FormParam("slogan") String slogan			 
+			
 			 )  throws Exception 
 	 {	 
 		//String output = "Student Name: " + name + 			", Roll No.: " + rollNo; 
 		
 		
 			
-			Page updatePage = new Page();
+			Slogan updateSlogan = new Slogan();
 			
-			updatePage.setPage_id( page_id );
-			updatePage.setPage_name(page_name);
-			updatePage.setPage_title(page_title);
-			updatePage.setPage_info(page_info);
-			updatePage.setPage_order(page_order);
-			updatePage.setPage_group(page_group);
-			updatePage.setTemplate(template);
+			updateSlogan.setId( id );
+			updateSlogan.setSlogan(slogan);
+			
 			
 				try{	 
-					pageDAO.updatePage(updatePage);
+					sloganDAO.updateSlogan(updateSlogan);
 						
 	                }  //try Before insert to Database
 		           catch (Exception e)
@@ -106,13 +96,12 @@ Slogan slogan =new Slogan();
 				
 				
 			
-		 System.out.println("HEllo");
-		  request.setAttribute("pages", pageDAO.getAllPages());     
-		 return new Viewable("/admin/superadmin/pages", null);
+				 request.setAttribute("slogans", sloganDAO.getAllSlogans()); 
+			      return new Viewable("/admin/superadmin/slogans", null);
 	 }
 	 
 	 
-	 
+	 /* 
 	 
 	 @GET
 	    @Path("/page-add")

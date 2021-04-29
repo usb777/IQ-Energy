@@ -33,7 +33,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
         <div class="card-header">
           
         <!-- <button type="button" class="btn btn-success"  onclick='insertCategoryPage(<%=path1 %>) ; ' >Add New Category</button>   -->
-          <a href ="<%=request.getContextPath()%>/v/en/admin/page-add" class="btn btn-success" >Add New Slogan </a> <br>
+          <a href ="<%=request.getContextPath()%>/v/en/admin/slogans/page-add" class="btn btn-success" >Add New Slogan </a> <br>
            </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -95,7 +95,7 @@ String username="";
                                    
                                       
                    <td>
-               <a href = "<%=request.getContextPath()%>/v/en/admin/slogan-edit/<%=slogans.getId() %>" class="btn btn-primary"> Edit</a> 
+               <a href = "<%=request.getContextPath()%>/v/en/admin/slogans/slogan-edit/<%=slogans.getId() %>" class="btn btn-primary"> Edit</a> 
                     </td>                  
                   
                    <td>
