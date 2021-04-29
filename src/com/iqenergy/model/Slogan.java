@@ -6,6 +6,24 @@ public class Slogan
 	private int id;	
 	private String slogan;
 	
+	
+	public Slogan()
+	{
+		super();
+	}
+	
+	public Slogan(String slogan) 
+	{
+		super();
+	this.slogan = slogan;
+	}
+	
+	public Slogan(int id, String slogan) 
+	{
+		super();
+		this.id = id;
+		this.slogan = slogan;
+	}
 	public int getId() 
 	{
 		return id;
