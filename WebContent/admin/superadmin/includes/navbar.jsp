@@ -22,7 +22,7 @@
             <li><a href="<%=request.getContextPath()%>/admin/superadmin/menu-left"><i class="fa fa-bar-chart-o"></i> left menu</a></li>
             <li><a href="<%=request.getContextPath()%>/admin/superadmin/users"><i class="fa fa-fw fa-user"></i> users</a></li>
             <li><a href="<%=request.getContextPath()%>/v/en/admin/pages"><i class="fa fa-bar-chart-o"></i> all pages</a></li>
-    
+            <li><a href="<%=request.getContextPath()%>/v/en/admin/slogans"><i class="fa fa-bar-chart-o"></i> slogans</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">

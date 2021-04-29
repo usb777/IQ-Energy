@@ -29,10 +29,10 @@ public class SloganDAO extends AbstractDAO
 			ResultSet rs = ps.executeQuery();			
 			
 			
-				Slogan row = new Slogan();
+				
 			 
 			while(rs.next()) {
-			
+				Slogan row = new Slogan();
 				row.setId(rs.getInt(1));
 				row.setSlogan(rs.getString(2));
 				
