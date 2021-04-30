@@ -101,17 +101,17 @@ Slogan slogan =new Slogan();
 	 }
 	 
 	 
-	 /* 
+	  
 	 
 	 @GET
-	    @Path("/page-add")
-	    public Viewable getPageADD( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
+	    @Path("/slogan-add")
+	    public Viewable getSloganAdd( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
 	    {
 		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
 		 //TODO in future Remove this Costyl
 				    
 	            
-	      return new Viewable("/admin/superadmin/page-add", null);
+	      return new Viewable("/admin/superadmin/slogan-add", null);
 	      
 	    }
 	 
@@ -120,36 +120,23 @@ Slogan slogan =new Slogan();
 	 
 	 
 	 @POST
-	 @Path("/page-add/insert")
-	 public Viewable  insertPageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
+	 @Path("/slogan-add/insert")
+	 public Viewable  insertSloganAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
 			  
-			 @FormParam("page_name") String page_name,			 
-			 @FormParam("page_title") String page_title,
-			 @FormParam("page_info") String page_info,
-			 @FormParam("page_order") int page_order,
-			 @FormParam("page_group") String page_group,
-			 @FormParam("template") String template			 
+			 @FormParam("slogan") String slogan			 
+			
 			 )  throws Exception 
 	 {	 
 		//String output = "Student Name: " + name + 			", Roll No.: " + rollNo; 
 		
 		
 			
-			Page insertPage = new Page();
+			Slogan insertSlogan = new Slogan();
 			
-			insertPage.setPage_name(page_name);
-			insertPage.setPage_title(page_title);
-			insertPage.setPage_info(page_info);
-			insertPage.setPage_order(page_order);
-			insertPage.setPage_group(page_group);
-			insertPage.setTemplate(template);
-			
-			
-			
-			
+			insertSlogan.setSlogan(slogan);	
 		
 				try{	
-					pageDAO.insertPageByAdmin(insertPage);
+					sloganDAO.insertSlogan(insertSlogan);
 				
 					// request.getRequestDispatcher("/admin/superadmin/menu-left").forward(request, response);
 					}  //try Before insert to Database
@@ -160,21 +147,20 @@ Slogan slogan =new Slogan();
 		    	   }
 				
 				
-		    request.setAttribute("pages", pageDAO.getAllPages());     
-			
-			 return new Viewable("/admin/superadmin/pages", null);
+				 request.setAttribute("slogans", sloganDAO.getAllSlogans()); 
+			      return new Viewable("/admin/superadmin/slogans", null);
 			
 	 }		
 	 
 	 
 	 @GET
-	    @Path("/page-delete/{pageId}")
-	    public Viewable deletePageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("pageId") int pageId) throws Exception
+	    @Path("/slogan-delete/{sloganId}")
+	    public Viewable deleteSloganByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("sloganId") int sloganId) throws Exception
 	    {
 		    	
 		 
 			try {	
-				pageDAO.deletePageById(pageId);
+				sloganDAO.deleteSloganById(sloganId);
 				
 			//	 request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
 				}  //try Before insert to Database
@@ -188,17 +174,15 @@ Slogan slogan =new Slogan();
 		 
 				    
 	    
-			 request.setAttribute("pages", pageDAO.getAllPages());   
-	           
-	      return new Viewable("/admin/superadmin/pages", null);
-	      
+			 request.setAttribute("slogans", sloganDAO.getAllSlogans()); 
+		      return new Viewable("/admin/superadmin/slogans", null);
 	      
 	    }
 	 
 	 
 	 
 	 
-	 */
+	 
 	 
 
 }

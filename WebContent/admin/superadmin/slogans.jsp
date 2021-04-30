@@ -33,7 +33,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
         <div class="card-header">
           
         <!-- <button type="button" class="btn btn-success"  onclick='insertCategoryPage(<%=path1 %>) ; ' >Add New Category</button>   -->
-          <a href ="<%=request.getContextPath()%>/v/en/admin/slogans/page-add" class="btn btn-success" >Add New Slogan </a> <br>
+          <a href ="<%=request.getContextPath()%>/v/en/admin/slogans/slogan-add" class="btn btn-success" >Add New Slogan </a> <br>
            </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -100,18 +100,18 @@ String username="";
                   
                    <td>
              
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteLeftMenuModal<%=slogans.getId() %>">
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSloganModal<%=slogans.getId() %>">
   Delete
 </button>
 
  
             
 <!-- Modal -->
-<div class="modal fade" id="deleteLeftMenuModal<%=slogans.getId() %>" tabindex="-1" role="dialog" aria-labelledby="deleteLeftMenuModalTitle" aria-hidden="true">
+<div class="modal fade" id="deleteSloganModal<%=slogans.getId() %>" tabindex="-1" role="dialog" aria-labelledby="deleteSloganModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteLeftMenuModalTitle">Delete Menu</h5>
+        <h5 class="modal-title" id="deleteSloganModalTitle">Delete Menu</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -122,7 +122,7 @@ String username="";
       <div class="modal-footer">
        <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
         <a href="#"  class="btn btn-secondary" data-dismiss="modal" >Cancel </a>
-        <a href = "<%=request.getContextPath()%>/v/en/admin/page-delete/<%=slogans.getId() %>" class="btn btn-primary"> Confirm</a>  
+        <a href = "<%=request.getContextPath()%>/v/en/admin/slogans/slogan-delete/<%=slogans.getId() %>" class="btn btn-primary"> Confirm</a>  
       </div>
     </div>
   </div>
