@@ -41,9 +41,6 @@ Page page =new Page();
 	    {
 		 
 		  request.setAttribute("pages", pageDAO.getAllPages());     
-		    
-	    //  product = pageDAO.getPageById(productId);
-	    //  request.setAttribute("product",product); // send message to JSP	        
 	      return new Viewable("/admin/superadmin/pages", null);
 	    }
 	 
@@ -62,18 +59,7 @@ Page page =new Page();
 	      
 	    }
 	 
-	 
-	 /**
-	  * Action Update page
-	  * @param page_id
-	  * @param page_name
-	  * @param page_title
-	  * @param page_info
-	  * @param page_order
-	  * @param page_group
-	  * @param template
-	  * @return
-	  */
+
 	 
 	 @POST
 	 @Path("/page-edit/update")
