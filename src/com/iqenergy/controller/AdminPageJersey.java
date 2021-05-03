@@ -73,8 +73,7 @@ Page page =new Page();
 			 @FormParam("template") String template			 
 			 )  throws Exception 
 	 {	 
-		//String output = "Student Name: " + name + 			", Roll No.: " + rollNo; 
-		
+				
 		
 			
 			Page updatePage = new Page();
