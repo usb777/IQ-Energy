@@ -193,7 +193,17 @@ public class SloganDAO extends AbstractDAO
 		
 		return isMenuDeleted;
 		
-	}	
+	}
+	
+	/**
+	 * this method return random slogan from DB
+	 * @return
+	 */
+	public static String getRandomSlogan()
+	{	
+		return "";
+	}
+	
 	
 	
 	
