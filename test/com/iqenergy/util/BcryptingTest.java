@@ -29,9 +29,7 @@ public class BcryptingTest {
 	public void setUp() throws Exception {
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
+
 
 	@Test
 	public void testBcrypting() {
@@ -56,5 +54,14 @@ public class BcryptingTest {
 		
 		
 	}
+	
+	
+	@After
+	public void tearDown() throws Exception {
+	}
+	
+	
+	
+	
 
 }
