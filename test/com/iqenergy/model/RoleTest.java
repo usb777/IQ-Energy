@@ -9,22 +9,24 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class RoleTest {
+	
+	static Role role;
+	
+	private int id = 1;
+	private String name="user";
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		role = new Role();
 	}
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	
 
 	@Before
 	public void setUp() throws Exception {
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
+	
 
 	@Test
 	public void testGetId() {
@@ -36,19 +38,17 @@ public class RoleTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testGetName() {
-		fail("Not yet implemented");
+	
+	
+	
+	@After
+	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testSetName() {
-		fail("Not yet implemented");
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		role = null;
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
+	
 
 }
