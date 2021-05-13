@@ -26,20 +26,17 @@ public class RoleTest {
 	public void setUp() throws Exception {
 	}
 
-	
-
 	@Test
-	public void testGetId() {
-		fail("Not yet implemented");
+	public void testId() {
+		role.setId(id);
+		assertEquals(role.getId(), id);		
 	}
-
+	
 	@Test
-	public void testSetId() {
-		fail("Not yet implemented");
+	public void testNameRole() {
+		role.setName(name);
+		assertEquals(role.getName(), name);	
 	}
-
-	
-	
 	
 	@After
 	public void tearDown() throws Exception {
