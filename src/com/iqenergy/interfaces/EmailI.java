@@ -1,5 +1,6 @@
 package com.iqenergy.interfaces;
 
+import java.util.List;
 import java.util.Properties;
 
 public interface EmailI 
@@ -13,7 +14,7 @@ public interface EmailI
 	public static final String MAIL_SMTP_AUTH = "true";
 	public static final String MAIL_SMTP_STARTTLS_ENABLE = "true";
    
-    
+    public static final String recepients ="dzsamoila@gmail.com, admin@advicenyc.com";
    
 
 }
