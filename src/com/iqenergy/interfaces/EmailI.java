@@ -14,7 +14,7 @@ public interface EmailI
 	public static final String MAIL_SMTP_AUTH = "true";
 	public static final String MAIL_SMTP_STARTTLS_ENABLE = "true";
    
-    public static final String recepients ="dzsamoila@gmail.com, admin@advicenyc.com";
+    public static final String RECEPIENTS ="dzsamoila@gmail.com, admin@advicenyc.com";
    
 
 }
