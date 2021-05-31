@@ -6,8 +6,8 @@ import java.util.Properties;
 public interface EmailI 
 {
 	
-	public static final String USERNAME = "dzendzmitry@gmail.com";
-	public static final String PASSWORD = "zpxsuvgccahddiwc";
+	public static final String USERNAME = "iqekzinfo@gmail.com";
+	public static final String PASSWORD = "kzlprfxumgggbaaj";
 	
 	public static final String SMTP_GMAIL_COM = "smtp.gmail.com";
 	public static final String MAIL_SMTP_PORT = "587";
