@@ -35,18 +35,20 @@
 						
 						  <form action="ContactServlet" method="post" onsubmit="return validate()">
 						  
-						<div>			
-		<input type="text" name="subject" id="input-text" value="" placeholder="subject" /> <br/><br/>
-		<input type="text" name="email" id="input-text" value="" placeholder="email" /> <br/><br/>
+						<div class="col-6 col-md-6">		
+		<label for="subject"><b>subject</b></label>				
+		<input type="text" class="form-control" name="subject" id="input-text" value="" placeholder="subject" />
+		<label for="email"><b>email</b></label><br>	
+		<input type="text" class="form-control" name="email" id="email" value="" placeholder="email" />
 		
 		<div  class="comment">
-		<textarea name="message" id="textarea" class="contactTextArea" placeholder="enter your message..."></textarea>
+		<label for="message"><b>message</b></label><br>	
+		<textarea class="form-control" name="message" id="textarea" rows="10" class="contactTextArea" placeholder="enter your message..."></textarea>
 		</div>
 		<br/>
-		<input type="submit" id="login-submit" value="Submit" />	<br/>
-										
-<button class="button register_button" id="">Submit</button>
-                       </div>
+		
+		<button type="submit" class="btn btn-primary mb-3">Отправить</button>	
+                       </div>  <!-- <div class="col-7 col-md-5">	 -->
                        
 								</form>
 						
