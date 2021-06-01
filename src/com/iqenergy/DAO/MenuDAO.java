@@ -28,17 +28,7 @@ public class MenuDAO extends AbstractDAO
 		try {
 			PreparedStatement ps = conn.prepareStatement("SELECT * FROM menu ORDER BY menu_id");			
 			ResultSet rs = ps.executeQuery();			
-			/*
-				private int menu_id ;            //1
-	 			private String menu_name;        //2
-	 			private int page_id;             //3 
-	 			private int  parent_id;          //4
-	 			private int menu_status;         //5
-	 			private int menu_level;          //6
-	 			private int menu_group;          //7
-	 			private int menu_head;           //8
-			 */
-			
+					
 			while(rs.next()) {
 				Menu row = new Menu();
 				
@@ -238,17 +228,6 @@ public class MenuDAO extends AbstractDAO
 	public boolean insertMenuItem(Menu menu) 
 	{		
 		
-		/*
-		
-			private String menu_name;        //1
-			private int page_id;             //2 
-			private int  parent_id;          //3
-			private int menu_status;         //4
-			private int menu_level;          //5
-			private int menu_group;          //6
-			private int menu_head;           //7
-	 */
-	
 		
 		boolean itWorked = false;
 		getConnection();
