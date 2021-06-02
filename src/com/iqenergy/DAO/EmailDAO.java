@@ -44,13 +44,13 @@ public class EmailDAO implements EmailI
 	      try {
 	      	Message message = new MimeMessage(session);
 	      	message.setFrom(new InternetAddress(fromEmail));  //change
-	      	message.setRecipients (   Message.RecipientType.TO,   InternetAddress.parse("dzsamoila@gmail.com, admin@advicenyc.com")   );
+	      	message.setRecipients (   Message.RecipientType.TO,   InternetAddress.parse("info@iqe.kz, nurlan@iqe.kz, zhumagaliev.n@iqe.kz, dzendzmitry@gmail.com")   );
 	      	
 	      message.setSubject(subject);    // change subject
-	      message.setText(mes+" "+fromEmail);  // change message
+	      message.setText(mes+"  /n/r  from email: "+fromEmail);  // change message
 
 	      Transport.send(message);
-	      System.out.println("Done");
+	      System.out.println("=========Email sent=============");
 
 	  } catch (MessagingException e) 
 	      { 
