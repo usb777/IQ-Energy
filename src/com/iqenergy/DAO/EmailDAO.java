@@ -44,7 +44,7 @@ public class EmailDAO implements EmailI
 	      try {
 	      	Message message = new MimeMessage(session);
 	      	message.setFrom(new InternetAddress(fromEmail));  //change
-	      	message.setRecipients (   Message.RecipientType.TO,   InternetAddress.parse("info@iqe.kz, nurlan@iqe.kz, zhumagaliev.n@iqe.kz, dzendzmitry@gmail.com")   );
+	      	message.setRecipients (   Message.RecipientType.TO,   InternetAddress.parse(RECEPIENTS)   );
 	      	
 	      message.setSubject(subject);    // change subject
 	      message.setText(mes+"  /n/r  from email: "+fromEmail);  // change message
