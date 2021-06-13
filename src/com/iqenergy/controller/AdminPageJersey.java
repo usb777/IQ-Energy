@@ -31,10 +31,6 @@ public class AdminPageJersey {
 PageDAO pageDAO = new PageDAO();
 Page page =new Page();
 
-		
-		
-	
-	  
 	 @GET
 	    @Path("/pages")
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
@@ -43,8 +39,6 @@ Page page =new Page();
 		  request.setAttribute("pages", pageDAO.getAllPages());     
 	      return new Viewable("/admin/superadmin/pages", null);
 	    }
-	 
-	 
 	 
 	 @GET
 	    @Path("/page-edit/{pageId}")
@@ -56,10 +50,7 @@ Page page =new Page();
 	      page = pageDAO.getPageById(pageId);
 	      request.setAttribute("page", page); // send message to JSP	        
 	      return new Viewable("/admin/superadmin/page-edit", null);
-	      
 	    }
-	 
-
 	 
 	 @POST
 	 @Path("/page-edit/update")
@@ -120,9 +111,6 @@ Page page =new Page();
 	    }
 	 
 	 
-	 
-	 
-	 
 	 @POST
 	 @Path("/page-add/insert")
 	 public Viewable  insertPageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
@@ -135,9 +123,6 @@ Page page =new Page();
 			 @FormParam("template") String template			 
 			 )  throws Exception 
 	 {	 
-		//String output = "Student Name: " + name + 			", Roll No.: " + rollNo; 
-		
-		
 			
 			Page insertPage = new Page();
 			
@@ -147,10 +132,6 @@ Page page =new Page();
 			insertPage.setPage_order(page_order);
 			insertPage.setPage_group(page_group);
 			insertPage.setTemplate(template);
-			
-			
-			
-			
 		
 				try{	
 					pageDAO.insertPageByAdmin(insertPage);
@@ -187,9 +168,6 @@ Page page =new Page();
 					System.out.println("Error is - "+e);
 					e.printStackTrace();
 		     	} //catch
-		 
-		 
-		 
 				    
 	    
 			 request.setAttribute("pages", pageDAO.getAllPages());   
@@ -198,9 +176,6 @@ Page page =new Page();
 	      
 	      
 	    }
-	 
-	 
-	 
 	 
 	 
 	 
