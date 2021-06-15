@@ -241,6 +241,45 @@ public class PageDAO extends AbstractDAO
 	
 	
 	
+	/**
+	 * return all mxt description
+	 * @return
+	 */
+		public ArrayList<Page> getAllMxtPages() 
+		{
+			ArrayList<Page> pages = new ArrayList<Page>();
+			getConnection();
+			
+			
+			try {
+				PreparedStatement ps = conn.prepareStatement("SELECT * FROM pages p WHERE p.`page_name` LIKE 'mxt_%' AND page_group='mxt' ORDER BY p.`page_order`");
+				
+				ResultSet rs = ps.executeQuery();
+				while(rs.next()) {
+					Page row = new Page();
+					
+					
+					row.setPage_id (rs.getInt(1));
+					row.setPage_name (rs.getString(2));
+					row.setPage_title(rs.getString(3));
+					row.setPage_info(rs.getString(4));
+					row.setPage_order(rs.getInt(5));
+					row.setPage_group(rs.getString(6));
+					row.setTemplate(rs.getString(7));
+					
+					pages.add(row);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				closeConnection();
+			}		
+			return pages;		
+		}
+	
+	
+	
 	
 	/**
 	 * This method gets  users from table by id

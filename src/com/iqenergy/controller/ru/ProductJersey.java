@@ -1,4 +1,4 @@
-package com.iqenergy.controller;
+package com.iqenergy.controller.ru;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -50,7 +50,7 @@ public Viewable getProductsPage( @Context HttpServletRequest request,   @Context
   //TODO in future Remove this Costyl
   request.setAttribute("menu_icemix", pageDAO.getAllIcemixPages() );           //TODO in future Remove this Costyl
   request.setAttribute("menu_ecobarrier", pageDAO.getAllEcobarrierPages() );  //TODO in future Remove this Costyl
-  
+  request.setAttribute("menu_mxt", pageDAO.getAllMxtPages() );  //TODO in future Remove this Costyl
   
   session.setAttribute("menuTitle",product.getPage_title());
   
@@ -68,6 +68,7 @@ public Viewable getProductsPage( @Context HttpServletRequest request,   @Context
 		 //TODO in future Remove this Costyl
 		    request.setAttribute("menu_icemix", pageDAO.getAllIcemixPages() );           //TODO in future Remove this Costyl
 		    request.setAttribute("menu_ecobarrier", pageDAO.getAllEcobarrierPages() );  //TODO in future Remove this Costyl
+		    request.setAttribute("menu_mxt", pageDAO.getAllMxtPages() );
 		    
 	      product = pageDAO.getPageById(productId);
 	      request.setAttribute("product",product); // send message to JSP	        

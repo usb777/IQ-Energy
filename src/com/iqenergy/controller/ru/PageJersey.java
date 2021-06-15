@@ -1,4 +1,4 @@
-package com.iqenergy.controller;
+package com.iqenergy.controller.ru;
 
 import java.util.HashMap;
 import java.util.Map;
