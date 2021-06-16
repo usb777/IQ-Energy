@@ -60,7 +60,7 @@
               %>
               
               
-                    <% 
+            <% 
               //  Not collapsed Mechanizm    Save in Session Variable
               String mxt_a_class="nav-link collapsed";
               String mxt_aria_expanded="false";
@@ -98,7 +98,7 @@
                         
                         
                         
-                               <%                 
+                   <%                 
                      for(Page icemixes: listIcemixes)
                       {                    
                     %>
