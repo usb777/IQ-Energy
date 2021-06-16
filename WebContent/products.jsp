@@ -53,9 +53,7 @@
             	  ecobarrier_a_class="nav-link";
             	  ecobarrier_aria_expanded="true";
             	  ecobarrier_div_class = "collapse show";  
-              }
-              
-           
+              } 
               
               %>
               
@@ -72,14 +70,11 @@
             	  mxt_aria_expanded="true";
             	  mxt_div_class = "collapse show";  
               }
-              
-           
-              
-              %>
+                 
+             %>
                   
 
 <!-- Left-menu -->
-
 
      <div class="col-sm-6 col-lg-4">
             <ul class="nav flex-column column_nav">
@@ -94,8 +89,7 @@
                       </a>  
                       
                       <div class="<%=icemix_div_class %>" id="nl_icemix">
-                        <ul class="nav flex-column column_nav_sub_sub">
-                        
+                        <ul class="nav flex-column column_nav_sub_sub">                        
                         
                         
                    <%                 
