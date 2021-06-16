@@ -1,4 +1,4 @@
-package com.iqenergy.controller;
+package com.iqenergy.controller.ru;
 
 import java.io.IOException;
 import java.sql.SQLException;
