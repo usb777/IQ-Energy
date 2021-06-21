@@ -1,4 +1,4 @@
-package com.iqenergy.controller.en;
+package com.iqenergy.controller;
 
 import java.io.IOException;
 

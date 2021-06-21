@@ -33,7 +33,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
         <div class="card-header">
           
         <!-- <button type="button" class="btn btn-success"  onclick='insertCategoryPage(<%=path1 %>) ; ' >Add New Category</button>   -->
-          <a href ="<%=request.getContextPath()%>/v/en/admin/page-add" class="btn btn-success" >Add New Page </a> <br>
+          <a href ="<%=request.getContextPath()%>/v/en/admin/pages/page-add" class="btn btn-success" >Add New Page </a> <br>
            </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -148,7 +148,7 @@ String username="";
                    
                                       
                    <td>
-               <a href = "<%=request.getContextPath()%>/v/en/admin/page-edit/<%=pages.getPage_id() %>" class="btn btn-primary"> Edit</a> 
+               <a href = "<%=request.getContextPath()%>/v/en/admin/pages/page-edit/<%=pages.getPage_id() %>" class="btn btn-primary"> Edit</a> 
                     </td>
                   
                   
@@ -176,7 +176,7 @@ String username="";
       <div class="modal-footer">
        <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
         <a href="#"  class="btn btn-secondary" data-dismiss="modal" >Cancel </a>
-        <a href = "<%=request.getContextPath()%>/v/en/admin/page-delete/<%=pages.getPage_id() %>" class="btn btn-primary"> Confirm</a>  
+        <a href = "<%=request.getContextPath()%>/v/en/admin/pages/page-delete/<%=pages.getPage_id() %>" class="btn btn-primary"> Confirm</a>  
       </div>
     </div>
   </div>

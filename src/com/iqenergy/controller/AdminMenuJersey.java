@@ -19,30 +19,32 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
+import com.iqenergy.DAO.MenuDAO;
 import com.iqenergy.DAO.PageDAO;
 import com.iqenergy.model.LeftMenu;
+import com.iqenergy.model.Menu;
 import com.iqenergy.model.Page;
 import com.iqenergy.model.Users;
 import com.sun.jersey.api.view.Viewable;
 
-@Path("/en/admin/")
+@Path("/en/admin/menus")
 public class AdminMenuJersey {
 	
-PageDAO pageDAO = new PageDAO();
-Page page =new Page();
+MenuDAO menuDAO = new MenuDAO();
+Menu menu = new Menu();
 
-	 @GET
-	    @Path("/menus")
-	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
+	 @GET	  
+	    public Viewable getAllMenus( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
 	    {
 		 
-		  request.setAttribute("pages", pageDAO.getAllPages());     
+		  request.setAttribute("menus", menuDAO.getAllMenus());     
 	      return new Viewable("/admin/superadmin/menus", null);
 	    }
 	 
+/*	 
 	 @GET
-	    @Path("/menu-edit/{pageId}")
-	    public Viewable getPageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("pageId") int pageId) throws Exception
+	    @Path("/menu-edit/{menuId}")
+	    public Viewable getPageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("menuId") int menuId) throws Exception
 	    {
 		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
 		 //TODO in future Remove this Costyl
@@ -178,6 +180,6 @@ Page page =new Page();
 	    }
 	 
 	 
-	 
+	 */
 
 }

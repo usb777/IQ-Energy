@@ -25,14 +25,13 @@ import com.iqenergy.model.Page;
 import com.iqenergy.model.Users;
 import com.sun.jersey.api.view.Viewable;
 
-@Path("/en/admin/")
+@Path("/en/admin/pages")
 public class AdminPageJersey {
 	
 PageDAO pageDAO = new PageDAO();
 Page page =new Page();
 
-	 @GET
-	    @Path("/pages")
+	 @GET	  
 	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
 	    {
 		 

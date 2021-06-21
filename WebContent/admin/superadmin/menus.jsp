@@ -33,7 +33,7 @@ String REAL_SERVER_HOST = serverHelper.getRealServerPath(request);
         <div class="card-header">
           
         <!-- <button type="button" class="btn btn-success"  onclick='insertCategoryPage(<%=path1 %>) ; ' >Add New Category</button>   -->
-          <a href ="<%=request.getContextPath()%>/v/en/admin/page-add" class="btn btn-success" >Add New Page </a> <br>
+          <a href ="<%=request.getContextPath()%>/v/en/admin/menus/menu-add" class="btn btn-success" >Add New Menu </a> <br>
            </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -59,15 +59,18 @@ String username="";
             <table class="table table-bordered table-hover table-striped tablesorter" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                    <th width="5%">ID</th>
-                  <th  width="5%">Name</th>
-                   <th  width="5%">Title</th>
-                    <th  width="60%">Info</th>
-                    <th  width="5%" >order</th>                   
-                  <th width="5%" >group </th>
-                  <th width="5%" >template </th>
+                  <td width="5%">ID</td>
+                  <td  width="15%">Name</td>
+                   <td  width="5%">page_id</td>
+                    <td  width="5%">parent_id</td>
+                    <td  width="5%" >menu_status</td>                   
+                  <td width="5%" >menu_level </td>
+                  <td width="5%" >menu_group </td>
+                   <td width="5%" >menu_head </td>
+                  
                   <th width="5%">Action </th>
                   <th width="5%">Action </th>
+                  
                 </tr>
               </thead>
     <!--           
@@ -86,97 +89,69 @@ String username="";
               <tfoot>
                <tr>
                  <td width="5%">ID</td>
-                  <td  width="5%">Name</td>
-                   <td  width="5%">Title</td>
-                    <td  width="60%">Info</td>
-                    <td  width="5%" >order</td>                   
-                  <td width="5%" >group </td>
-                  <td width="5%" >template </td>
+                  <td  width="15%">Name</td>
+                   <td  width="5%">page_id</td>
+                    <td  width="5%">parent_id</td>
+                    <td  width="5%" >menu_status</td>                   
+                  <td width="5%" >menu_level </td>
+                  <td width="5%" >menu_group </td>
+                   <td width="5%" >menu_head </td>
+                  
                   <td width="5%">Action </td>
                      <td width="5%">Action </td>
                 </tr>
               </tfoot>
               <tbody>
-              		<%	
-								  
-              		 List<Page> listPages = (List<Page>)request.getAttribute("pages"); 
+              		<%									  
+              		 List<Menu> listMenus = (List<Menu>)request.getAttribute("menus"); 
 					
-              		for(Page pages : listPages)
-					{
-						
+              		for(Menu menus : listMenus)
+					{						
 					 %>
              
                 <tr>
-               	   <td><%=pages.getPage_id() %> </td>
-                   <td><%=pages.getPage_name() %>  </td>
-                   <td><%=pages.getPage_title()   %> </td>
-                   <td>
-                
+                                  
+                   <td><%=menus.getMenu_id() %></td>
+                   <td><%=menus.getMenu_name() %></td>
+                   <td><%=menus.getPage_id() %></td>
+                   <td><%=menus.getParent_id() %></td>
+                   <td><%=menus.getMenu_status() %></td>                   
+                   <td><%=menus.getMenu_level() %></td>
+                   <td><%=menus.getMenu_group() %></td>
+                   <td><%=menus.getMenu_head() %></td>
                    
-                   
-                   
-                     <div id="accordion">
-                       <div class="card">
-                         <div class="card-header" id="heading<%=pages.getPage_id() %>">
-                        <h5 class="mb-0">
-              <button class="btn btn-link " data-toggle="collapse" data-target="#collapse<%=pages.getPage_id() %>" aria-expanded="true" aria-controls="collapse<%=pages.getPage_id() %>">
-                Description #<%=pages.getPage_id() %>
-             </button>
-                       </h5>
-                        </div>
-
-                 <div id="collapse<%=pages.getPage_id() %>" class="collapse" aria-labelledby="heading<%=pages.getPage_id() %>" data-parent="#accordion">
-                   <div class="card-body">
-                  
-   <%=pages.getPage_info()   %>
-
-                   </div>
-                 </div>
-              </div>
-                 </div> 
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                    </td>  
-                   <td><%=pages.getPage_order()  %> </td>
-                   <td><%=pages.getPage_group()  %> </td>
-                  <td><%=pages.getTemplate()  %> </td>
-                   
+                                    
                                       
                    <td>
-               <a href = "<%=request.getContextPath()%>/v/en/admin/page-edit/<%=pages.getPage_id() %>" class="btn btn-primary"> Edit</a> 
+               <a href = "<%=request.getContextPath()%>/v/en/admin/menus/menu-edit/<%=menus.getMenu_id() %>" class="btn btn-primary"> Edit</a> 
                     </td>
                   
                   
                    <td>
              
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteLeftMenuModal<%=pages.getPage_id() %>">
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteLeftMenuModal<%=menus.getMenu_id() %>">
   Delete
 </button>
 
  
             
 <!-- Modal -->
-<div class="modal fade" id="deleteLeftMenuModal<%=pages.getPage_id() %>" tabindex="-1" role="dialog" aria-labelledby="deleteLeftMenuModalTitle" aria-hidden="true">
+<div class="modal fade" id="deleteMenuModal<%=menus.getMenu_id() %>" tabindex="-1" role="dialog" aria-labelledby="deleteMenuModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteLeftMenuModalTitle">Delete Menu</h5>
+        <h5 class="modal-title" id="deleteMenuModalTitle">Delete Menu</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       Do you want to delete this menu item ? id=<%=pages.getPage_id() %>
+       Do you want to delete this menu item ? id=<%=menus.getMenu_id() %>
       </div>
       <div class="modal-footer">
        <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
         <a href="#"  class="btn btn-secondary" data-dismiss="modal" >Cancel </a>
-        <a href = "<%=request.getContextPath()%>/v/en/admin/page-delete/<%=pages.getPage_id() %>" class="btn btn-primary"> Confirm</a>  
+        <a href = "<%=request.getContextPath()%>/v/en/admin/menus/menu-delete/<%=menus.getMenu_id() %>" class="btn btn-primary"> Confirm</a>  
       </div>
     </div>
   </div>
