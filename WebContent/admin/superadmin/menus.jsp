@@ -129,7 +129,7 @@ String username="";
                   
                    <td>
              
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteLeftMenuModal<%=menus.getMenu_id() %>">
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteMenuModal<%=menus.getMenu_id() %>">
   Delete
 </button>
 

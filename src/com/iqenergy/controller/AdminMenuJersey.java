@@ -41,7 +41,7 @@ Menu menu = new Menu();
 	      return new Viewable("/admin/superadmin/menus", null);
 	    }
 	 
-/*	 
+	 
 	 @GET
 	    @Path("/menu-edit/{menuId}")
 	    public Viewable getPageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("menuId") int menuId) throws Exception
@@ -49,10 +49,12 @@ Menu menu = new Menu();
 		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
 		 //TODO in future Remove this Costyl
 				    
-	      page = pageDAO.getPageById(pageId);
-	      request.setAttribute("page", page); // send message to JSP	        
-	      return new Viewable("/admin/superadmin/page-edit", null);
+	      menu = menuDAO.getMenuById(menuId);
+	      request.setAttribute("menu", menu); // send message to JSP	        
+	      return new Viewable("/admin/superadmin/menu-edit", null);
 	    }
+
+	 /* 
 	 
 	 @POST
 	 @Path("/page-edit/update")
