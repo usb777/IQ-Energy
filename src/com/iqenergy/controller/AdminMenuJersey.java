@@ -54,52 +54,48 @@ Menu menu = new Menu();
 	      return new Viewable("/admin/superadmin/menu-edit", null);
 	    }
 
-	 /* 
+	
 	 
 	 @POST
-	 @Path("/page-edit/update")
+	 @Path("/menu-edit/update")
 	 public Viewable  updatePageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
-			 @FormParam("page_id") int page_id,   
-			 @FormParam("page_name") String page_name,			 
-			 @FormParam("page_title") String page_title,
-			 @FormParam("page_info") String page_info,
-			 @FormParam("page_order") int page_order,
-			 @FormParam("page_group") String page_group,
-			 @FormParam("template") String template			 
+			 @FormParam("id") int menu_id,
+			 @FormParam("menu_name") String menu_name,
+			 @FormParam("page_id") int page_id,
+			 @FormParam("parent_id") int  parent_id,
+			 @FormParam("menu_status") int menu_status,
+			 @FormParam("menu_level") int menu_level,
+			 @FormParam("menu_group") String menu_group,
+	 		 @FormParam("menu_head") int menu_head,
+	 		 @FormParam("page_group") String page_group		 
+			 
 			 )  throws Exception 
-	 {	 
-				
-		
+	 {	 	
+			Menu updateMenu = new Menu();
 			
-			Page updatePage = new Page();
+			updateMenu.setMenu_id(menu_id);
+			updateMenu.setMenu_name(menu_name);
+			updateMenu.setPage_id(page_id);
+			updateMenu.setParent_id(parent_id);
+			updateMenu.setMenu_status(menu_status);
+			updateMenu.setMenu_level(menu_level);
+			updateMenu.setMenu_group(menu_group);
+			updateMenu.setMenu_head(menu_head);
+			updateMenu.setPage_group(page_group);
+			System.out.println("=========page_group============"+page_group);
 			
-			updatePage.setPage_id( page_id );
-			updatePage.setPage_name(page_name);
-			updatePage.setPage_title(page_title);
-			updatePage.setPage_info(page_info);
-			updatePage.setPage_order(page_order);
-			updatePage.setPage_group(page_group);
-			updatePage.setTemplate(template);
-			
-				try{	 
-					pageDAO.updatePage(updatePage);
-						
-	                }  //try Before insert to Database
+			try{ menuDAO.updateMenu(updateMenu);  	   }  //try Before insert to Database
 		           catch (Exception e)
 		           { 
 		    	     System.out.println("Error is - "+e);
 		    	     e.printStackTrace();
-		    	   }
-				
-				
-				
-			
-		 System.out.println("HEllo");
-		  request.setAttribute("pages", pageDAO.getAllPages());     
-		 return new Viewable("/admin/superadmin/pages", null);
+		    	   }	
+		
+		  request.setAttribute("menus", menuDAO.getAllMenus()  );     
+		 return new Viewable("/admin/superadmin/menus", null);
 	 }
 	 
-	 
+	 /* 
 	 
 	 
 	 @GET

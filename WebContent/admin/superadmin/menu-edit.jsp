@@ -80,13 +80,13 @@ String username="";
            
    
     
-         <form role="form" action="menu-update" method="POST"   accept-charset="utf-8"  >  
+         <form role="form" action="update" method="POST"   accept-charset="utf-8"  >  
                                    
                                    <input type="hidden" id="id" name="id" value="<%=menu.getMenu_id() %>">  
                                     <!-- private String name;            //2   -->
                                         <div class="form-group">
                                             <label>Menu name</label><br/>
-                                            <input class="form-control" type="text" name="name" value = "<%=menu.getMenu_name() %>">                                          
+                                            <input class="form-control" type="text" name="menu_name" value = "<%=menu.getMenu_name() %>">                                          
                                         </div>                                        
                                         <div class="form-group">
                                             <label>Page id</label><br/>

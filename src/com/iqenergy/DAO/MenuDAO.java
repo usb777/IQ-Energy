@@ -232,8 +232,8 @@ public class MenuDAO extends AbstractDAO
 		boolean itWorked = false;
 		getConnection();
 		try {  //row.setDate_reg(rs.getDate(7));
-			PreparedStatement ps = conn.prepareStatement("insert into menu_left (menu_name, page_id, parent_id, menu_status,  menu_level, menu_group, menu_head ) "
-					+ " values (?,?,?,?,?,?,?) ");
+			PreparedStatement ps = conn.prepareStatement("insert into menu (menu_name, page_id, parent_id, menu_status,  menu_level, menu_group, menu_head, page_group ) "
+					+ " values (?,?,?,?,?,?,?,?) ");
 			
 						
 	  	 ps.setString(1, menu.getMenu_name());	
@@ -242,9 +242,8 @@ public class MenuDAO extends AbstractDAO
 			ps.setInt(4, menu.getMenu_status() );
 		 	ps.setInt (5, menu.getMenu_level() );
 		 	ps.setString(6,menu.getMenu_group() );
-		 	ps.setInt(7, menu.getMenu_head() );
-		 	 
-		 	
+		 	ps.setInt(7, menu.getMenu_head() );		 	 
+		 	ps.setString(8, menu.getPage_group() );
 		    
 			itWorked = ps.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
@@ -284,15 +283,16 @@ public class MenuDAO extends AbstractDAO
 		boolean isMenuUpdate = false;
 		getConnection();
 		try {
-			String SQL_UPDATE = " UPDATE  menu_left SET "
+			String SQL_UPDATE = " UPDATE menu SET "
 					+ " menu_name = ?, "         //1
 					+ " page_id = ?, "           //2
 					+ " parent_id = ?,"          //3
 					+ " menu_status = ?, "       //4
 					+ " menu_level = ?, "        //5	
 					+ " menu_group = ?, "        //6	
-					+ " menu_head = ? "          //7	
-					+ " WHERE menu_id =? ";      //8
+					+ " menu_head = ?, "         //7	
+					+ " page_group = ? "         //8	
+					+ " WHERE menu_id =? ";      //9
 			
 			PreparedStatement ps = conn.prepareStatement(SQL_UPDATE);
 			
@@ -303,7 +303,8 @@ public class MenuDAO extends AbstractDAO
 			ps.setInt(5, menu.getMenu_level() );      //5
 			ps.setString(6, menu.getMenu_group() );      //6
 			ps.setInt(7, menu.getMenu_head() );       //7
-			ps.setInt(8, menu.getMenu_id());          //8
+			ps.setString(8, menu.getPage_group() );      //6
+			ps.setInt(9, menu.getMenu_id());          //9
 			
 		//	ps.executeQuery("SET NAMES 'UTF8'");
 		 //   ps.executeQuery("SET CHARACTER SET 'UTF8'");

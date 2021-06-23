@@ -2,15 +2,15 @@ package com.iqenergy.model;
 
 public class Menu
 {
-	 private int menu_id ;
-	 private String menu_name;
-	 private int page_id;
-	 private int  parent_id;
-	 private int menu_status;
-	 private int menu_level;
-	 private String menu_group;
-	 private int menu_head;
-    private String page_group;
+	 private int menu_id ;   //1
+	 private String menu_name; //2
+	 private int page_id;  //3
+	 private int  parent_id; //4
+	 private int menu_status;  //5
+	 private int menu_level;  //6
+	 private String menu_group;  //7
+	 private int menu_head;  //8
+    private String page_group;  //9
      
 	 
     
