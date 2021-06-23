@@ -69,16 +69,7 @@ String username="";
                   <th >Action </th>
                 </tr>
               </thead>
-    <!--           
-       <thead class="thead-grey">
-            <tr>
-            <th rowspan="8"> 
-            <button type="button" class="btn btn-success">Add New Place</button></th>
-           
-           </tr>
-    </thead>
      
-        -->      
               <tfoot>
                    <th>ID</th>
                    <th>Full Name</th>

@@ -37,20 +37,7 @@
                         }
                           %>
                           
-                        
-                        <!-- 
-                          <li class="nav-item">
-                            <a class="nav-link active" href="<%=request.getContextPath()%>/v/ru/products/">о компании</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/products/38">решения и продукты</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="<%=request.getContextPath()%>/ecology">Экология</a>
-                          </li>
-                           -->
-                          
-                          
+                                               
 
                           <!-- right nav for show on mobile -->
                           <li class="nav-item d-block d-sm-none">
