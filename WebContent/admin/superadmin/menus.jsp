@@ -67,7 +67,7 @@ String username="";
                   <td width="5%" >menu_level </td>
                   <td width="5%" >menu_group </td>
                    <td width="5%" >menu_head </td>
-                  
+                    <td width="5%" >page_group </td>
                   <th width="5%">Action </th>
                   <th width="5%">Action </th>
                   
@@ -96,6 +96,7 @@ String username="";
                   <td width="5%" >menu_level </td>
                   <td width="5%" >menu_group </td>
                    <td width="5%" >menu_head </td>
+                   <td width="5%" >page_group </td>
                   
                   <td width="5%">Action </td>
                      <td width="5%">Action </td>
@@ -119,10 +120,9 @@ String username="";
                    <td><%=menus.getMenu_level() %></td>
                    <td><%=menus.getMenu_group() %></td>
                    <td><%=menus.getMenu_head() %></td>
-                   
-                                    
+                    <td><%=menus.getPage_group() %></td>                                    
                                       
-                   <td>
+                  <td>
                <a href = "<%=request.getContextPath()%>/v/en/admin/menus/menu-edit/<%=menus.getMenu_id() %>" class="btn btn-primary"> Edit</a> 
                     </td>
                   

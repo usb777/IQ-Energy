@@ -40,7 +40,7 @@ public class MenuDAO extends AbstractDAO
 				row.setMenu_level(rs.getInt(6));
 				row.setMenu_group(rs.getString(7));
 				row.setMenu_head(rs.getInt(8));
-				
+				row.setPage_group(rs.getString(9));
 				menus.add(row);
 			}
 		} catch (SQLException e) {
@@ -203,7 +203,7 @@ public class MenuDAO extends AbstractDAO
 				row.setMenu_level(rs.getInt(6));
 				row.setMenu_group(rs.getString(7));
 				row.setMenu_head(rs.getInt(8));
-				
+				row.setPage_group(rs.getString(9));
 				menu= row;
 				
 			}
