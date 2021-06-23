@@ -32,7 +32,7 @@ PageDAO pageDAO = new PageDAO();
 Page page =new Page();
 
 	 @GET	  
-	    public Viewable feed_page( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
+	    public Viewable feedPage( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("productId") int productId) throws Exception
 	    {
 		 
 		  request.setAttribute("pages", pageDAO.getAllPages());     
@@ -54,12 +54,12 @@ Page page =new Page();
 	 @POST
 	 @Path("/page-edit/update")
 	 public Viewable  updatePageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
-			 @FormParam("page_id") int page_id,   
-			 @FormParam("page_name") String page_name,			 
-			 @FormParam("page_title") String page_title,
-			 @FormParam("page_info") String page_info,
-			 @FormParam("page_order") int page_order,
-			 @FormParam("page_group") String page_group,
+			 @FormParam("page_id") int pageId,   
+			 @FormParam("page_name") String pageName,			 
+			 @FormParam("page_title") String pageTitle,
+			 @FormParam("page_info") String pageInfo,
+			 @FormParam("page_order") int pageOrder,
+			 @FormParam("page_group") String pageGroup,
 			 @FormParam("template") String template			 
 			 )  throws Exception 
 	 {	 
@@ -68,12 +68,12 @@ Page page =new Page();
 			
 			Page updatePage = new Page();
 			
-			updatePage.setPage_id( page_id );
-			updatePage.setPage_name(page_name);
-			updatePage.setPage_title(page_title);
-			updatePage.setPage_info(page_info);
-			updatePage.setPage_order(page_order);
-			updatePage.setPage_group(page_group);
+			updatePage.setPage_id( pageId );
+			updatePage.setPage_name(pageName);
+			updatePage.setPage_title(pageTitle);
+			updatePage.setPage_info(pageInfo);
+			updatePage.setPage_order(pageOrder);
+			updatePage.setPage_group(pageGroup);
 			updatePage.setTemplate(template);
 			
 				try{	 
@@ -114,22 +114,22 @@ Page page =new Page();
 	 @Path("/page-add/insert")
 	 public Viewable  insertPageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
 			  
-			 @FormParam("page_name") String page_name,			 
-			 @FormParam("page_title") String page_title,
-			 @FormParam("page_info") String page_info,
-			 @FormParam("page_order") int page_order,
-			 @FormParam("page_group") String page_group,
+			 @FormParam("page_name") String pageName,			 
+			 @FormParam("page_title") String pageTitle,
+			 @FormParam("page_info") String pageInfo,
+			 @FormParam("page_order") int pageOrder,
+			 @FormParam("page_group") String pageGroup,
 			 @FormParam("template") String template			 
 			 )  throws Exception 
 	 {	 
 			
 			Page insertPage = new Page();
 			
-			insertPage.setPage_name(page_name);
-			insertPage.setPage_title(page_title);
-			insertPage.setPage_info(page_info);
-			insertPage.setPage_order(page_order);
-			insertPage.setPage_group(page_group);
+			insertPage.setPage_name(pageName);
+			insertPage.setPage_title(pageTitle);
+			insertPage.setPage_info(pageInfo);
+			insertPage.setPage_order(pageOrder);
+			insertPage.setPage_group(pageGroup);
 			insertPage.setTemplate(template);
 		
 				try{	
