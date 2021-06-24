@@ -16,8 +16,7 @@ abstract class AbstractDAO implements DAOConnectI
 		Logger logger = Logger.getLogger(this.getClass().getName());
 		
 		try 
-		{
-			//Class.forName("com.mysql.cj.jdbc.Driver");
+		{			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, USER, PASSWORD);  // value come from DAO interfaces
 			
@@ -36,7 +35,10 @@ abstract class AbstractDAO implements DAOConnectI
 		try
 		{
 			conn.close();
-		} catch(Exception e) {}
+		} catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 }

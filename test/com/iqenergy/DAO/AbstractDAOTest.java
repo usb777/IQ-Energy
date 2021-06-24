@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class AbstractDAOTest {
 	
-public static 	 AbstractDAO abstractDao;
+public static 	 AbstractDAO abstractDao = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +20,7 @@ public static 	 AbstractDAO abstractDao;
 
 	@Before
 	public void setUp() throws Exception {
+		
 	}
 
 	
@@ -32,10 +33,8 @@ public static 	 AbstractDAO abstractDao;
 	
 	@After
 	public void tearDown() throws Exception {
+		abstractDao = null;
 	}
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-	
+
 }
