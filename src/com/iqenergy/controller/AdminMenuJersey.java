@@ -104,58 +104,55 @@ Menu menu = new Menu();
 		  return new Viewable("/admin/superadmin/menu-add", null);
 	    }
 	 
-	 /*
+	 
 	 @POST
-	 @Path("/menu-add/insert")
-	 public Viewable  insertPageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
-			  
-			 @FormParam("page_name") String page_name,			 
-			 @FormParam("page_title") String page_title,
-			 @FormParam("page_info") String page_info,
-			 @FormParam("page_order") int page_order,
-			 @FormParam("page_group") String page_group,
-			 @FormParam("template") String template			 
+	 @Path("/insert")
+	 public Viewable  insertPageAction
+	 ( @Context HttpServletRequest request,   @Context HttpServletResponse response,			  
+			 @FormParam("id") int menu_id,
+			 @FormParam("menu_name") String menu_name,
+			 @FormParam("page_id") int page_id,
+			 @FormParam("parent_id") int  parent_id,
+			 @FormParam("menu_status") int menu_status,
+			 @FormParam("menu_level") int menu_level,
+			 @FormParam("menu_group") String menu_group,
+	 		 @FormParam("menu_head") int menu_head,
+	 		 @FormParam("page_group") String page_group		 
 			 )  throws Exception 
-	 {	 
+	 {	
+			Menu insertMenu = new Menu();			
 			
-			Page insertPage = new Page();
+			insertMenu.setMenu_name(menu_name);
+			insertMenu.setPage_id(page_id);
+			insertMenu.setParent_id(parent_id);
+			insertMenu.setMenu_status(menu_status);
+			insertMenu.setMenu_level(menu_level);
+			insertMenu.setMenu_group(menu_group);
+			insertMenu.setMenu_head(menu_head);
+			insertMenu.setPage_group(page_group);
+			System.out.println("=========page_group============"+page_group);
 			
-			insertPage.setPage_name(page_name);
-			insertPage.setPage_title(page_title);
-			insertPage.setPage_info(page_info);
-			insertPage.setPage_order(page_order);
-			insertPage.setPage_group(page_group);
-			insertPage.setTemplate(template);
-		
-				try{	
-					pageDAO.insertPageByAdmin(insertPage);
-				
-					// request.getRequestDispatcher("/admin/superadmin/menu-left").forward(request, response);
-					}  //try Before insert to Database
+			try{ menuDAO.insertMenuItem(insertMenu);  	   }  //try Before insert to Database
 		           catch (Exception e)
 		           { 
 		    	     System.out.println("Error is - "+e);
 		    	     e.printStackTrace();
-		    	   }
-				
-				
-		    request.setAttribute("pages", pageDAO.getAllPages());     
-			
-			 return new Viewable("/admin/superadmin/pages", null);
+		    	   }	
+		
+		  request.setAttribute("menus", menuDAO.getAllMenus()  );     
+		 return new Viewable("/admin/superadmin/menus", null);
 			
 	 }		
 	 
 	 
 	 @GET
-	    @Path("/menu-delete/{pageId}")
-	    public Viewable deletePageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("pageId") int pageId) throws Exception
+	    @Path("/menu-delete/{menuId}")
+	    public Viewable deletePageByID( @Context HttpServletRequest request,   @Context HttpServletResponse response, @PathParam("menuId") int menuId) throws Exception
 	    {
 		    	
 		 
 			try {	
-				pageDAO.deletePageById(pageId);
-				
-			//	 request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
+				menuDAO.deleteMenuItemById(menuId);						
 				}  //try Before insert to Database
 				catch (Exception e)
 		     	{ 
@@ -164,14 +161,13 @@ Menu menu = new Menu();
 		     	} //catch
 				    
 	    
-			 request.setAttribute("pages", pageDAO.getAllPages());   
-	           
-	      return new Viewable("/admin/superadmin/pages", null);
+			  request.setAttribute("menus", menuDAO.getAllMenus()  );     
+			 return new Viewable("/admin/superadmin/menus", null);
 	      
 	      
 	    }
 	 
 	 
-	 */
+	 
 
 }

@@ -80,7 +80,7 @@ String username="";
            
    
     
-         <form role="form" action="update" method="POST"   accept-charset="utf-8"  >  
+         <form role="form" action="insert" method="POST"   accept-charset="utf-8"  >  
                                    
                                   
                                     <!-- private String name;            //2   -->
