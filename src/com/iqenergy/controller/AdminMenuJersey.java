@@ -95,22 +95,16 @@ Menu menu = new Menu();
 		 return new Viewable("/admin/superadmin/menus", null);
 	 }
 	 
-	 /* 
 	 
-	 
+	 	 
 	 @GET
 	    @Path("/menu-add")
 	    public Viewable getPageADD( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
-	    {
-		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
-		 //TODO in future Remove this Costyl
-				    
-	            
-	      return new Viewable("/admin/superadmin/page-add", null);
-	      
+	    {	 
+		  return new Viewable("/admin/superadmin/menu-add", null);
 	    }
 	 
-	 
+	 /*
 	 @POST
 	 @Path("/menu-add/insert")
 	 public Viewable  insertPageAction( @Context HttpServletRequest request,   @Context HttpServletResponse response,
