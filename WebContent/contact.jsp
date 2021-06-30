@@ -37,18 +37,18 @@
 			<span style="color:green">
 			<%=(request.getAttribute("contactOk") == null) ? "": request.getAttribute("contactOk")%>
 			</span>
-						<p>  email: <a href="mailto:support@advicenyc.com">support@advicenyc.com</a> </p>
+						<p>  e-mail: <a href="mailto:support@advicenyc.com">support@advicenyc.com</a> </p>
 						
 						  <form action="ContactServlet" method="post" onsubmit="return validate()">
 						  
 						<div class="col-6 col-md-6">		
-		<label for="subject"><b>subject</b></label>				
+		<label for="subject"><b>Тема сообщения</b></label>				
 		<input type="text" class="form-control" name="subject" id="input-text" value="" placeholder="subject" />
-		<label for="email"><b>email</b></label><br>	
+		<label for="email"><b>e-mail:</b></label><br>	
 		<input type="text" class="form-control" name="email" id="email" value="" placeholder="email" />
 		
 		<div  class="comment">
-		<label for="message"><b>message</b></label><br>	
+		<label for="message"><b>Сообщение</b></label><br>	
 		<textarea class="form-control" name="message" id="textarea" rows="10" class="contactTextArea" placeholder="enter your message..."></textarea>
 		</div>
 		<br/>
