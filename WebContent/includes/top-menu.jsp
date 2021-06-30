@@ -41,19 +41,19 @@
 
                           <!-- right nav for show on mobile -->
                           <li class="nav-item d-block d-sm-none">
-                            <a class="nav-link" href="#">Hедропользователи</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/nedrousers/">Hедропользователи</a>
                           </li>
                           <li class="nav-item d-block d-sm-none">
-                            <a class="nav-link" href="#">ЖКХ</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/gkh">ЖКХ</a>
                           </li>
                           <li class="nav-item d-block d-sm-none">
-                            <a class="nav-link" href="#">ТЭК</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/tek">ТЭК</a>
                           </li>
                           <li class="nav-item d-block d-sm-none">
-                            <a class="nav-link" href="#">АПК</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/apk">АПК</a>
                           </li>
                           <li class="nav-item d-block d-sm-none">
-                            <a class="nav-link" href="#">ГПС</a>
+                            <a class="nav-link" href="<%=request.getContextPath()%>/v/ru/pgs">ГПС</a>
                           </li>
                           <!-- /right nav for show on mobile -->
 
