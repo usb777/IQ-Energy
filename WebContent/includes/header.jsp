@@ -60,7 +60,7 @@
                           <a href="#null"><img src="<%=request.getContextPath()%>/images/flag_ru.png" height="24" alt=""></a>
                         </li>
                         <li class="list-group-item align-self-center d-none d-md-block">
-                          <a href="#null"><img src="<%=request.getContextPath()%>/images/flag_gb.png" height="24" alt=""></a>
+                          <a href="<%=request.getContextPath()%>"><img src="<%=request.getContextPath()%>/images/flag_gb.png" height="24" alt=""></a>
                         </li>
 
                         <!-- social icons -->
