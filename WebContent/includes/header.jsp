@@ -62,7 +62,6 @@
                         <li class="list-group-item align-self-center d-none d-md-block">
                           <a href="<%=request.getContextPath()%>"><img src="<%=request.getContextPath()%>/images/flag_gb.png" height="24" alt=""></a>
                         </li>
-
                         <!-- social icons -->
                         <li class="list-group-item icon">
                             <a href="#null"><img src="<%=request.getContextPath()%>/images/icon_facebook.png" alt=""></a>
@@ -74,7 +73,6 @@
                             <a href="#null"><img src="<%=request.getContextPath()%>/images/icon_youtube.png" alt=""></a>
                         </li>
                       </ul>
-
                     </div>
 
           <!--//col-lg-12  top-menu  //-->
