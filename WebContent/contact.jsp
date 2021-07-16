@@ -10,9 +10,7 @@
 <jsp:include page="includes/left-menu.jsp" />
 <!-- End Left-menu -->
           <div class="col-sm-12 col-lg-8 mb-2">
-            <h1>О компании</h1>
-
-          
+            <h1>О компании</h1>       
             
      
     
@@ -28,8 +26,7 @@
 						
 						<p>тел:<b> +77777812999</b> </p>
 						<p>тел:<b> +77758220058</b> </p>
-						<p>тел:<b> +77715571515</b> </p>
-						
+						<p>тел:<b> +77715571515</b> </p>						
 						
 						<span style="color:red">
 			<%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%>
