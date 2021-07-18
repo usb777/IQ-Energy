@@ -23,9 +23,9 @@
 					<div class="post">
 						<h2 class="title-post">Наши контакты </h2>
 						
-						<p>тел:<b> +77777812999</b> </p>
-						<p>тел:<b> +77758220058</b> </p>
-						<p>тел:<b> +77715571515</b> </p>						
+						<p>тел:<b> +7-777-781-2999</b> </p>
+						<p>тел:<b> +7-775-822-0058</b> </p>
+						<p>тел:<b> +7-771-557-1515</b> </p>						
 						
 						<span style="color:red">
 			<%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%>
