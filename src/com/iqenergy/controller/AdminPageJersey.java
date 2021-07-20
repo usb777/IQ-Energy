@@ -101,10 +101,7 @@ Page page =new Page();
 	    @Path("/page-add")
 	    public Viewable getPageADD( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
 	    {
-		 // request.setAttribute("menu_companies", pageDAO.getAllCompaniesPages() );	  
-		 //TODO in future Remove this Costyl
-				    
-	            
+			            
 	      return new Viewable("/admin/superadmin/page-add", null);
 	      
 	    }
@@ -135,8 +132,7 @@ Page page =new Page();
 				try{	
 					pageDAO.insertPageByAdmin(insertPage);
 				
-					// request.getRequestDispatcher("/admin/superadmin/menu-left").forward(request, response);
-					}  //try Before insert to Database
+										}  //try Before insert to Database
 		           catch (Exception e)
 		           { 
 		    	     System.out.println("Error is - "+e);
@@ -158,9 +154,8 @@ Page page =new Page();
 		    	
 		 
 			try {	
-				pageDAO.deletePageById(pageId);
-				
-			//	 request.getRequestDispatcher("/admin/superadmin/pages").forward(request, response);
+				pageDAO.deletePageById(pageId);				
+			
 				}  //try Before insert to Database
 				catch (Exception e)
 		     	{ 
