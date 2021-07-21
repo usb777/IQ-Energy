@@ -85,12 +85,8 @@ Page page =new Page();
 		    	     System.out.println("Error is - "+e);
 		    	     e.printStackTrace();
 		    	   }
-				
-				
-				
 			
-		 System.out.println("HEllo");
-		  request.setAttribute("pages", pageDAO.getAllPages());     
+	  request.setAttribute("pages", pageDAO.getAllPages());     
 		 return new Viewable("/admin/superadmin/pages", null);
 	 }
 	 
@@ -100,10 +96,8 @@ Page page =new Page();
 	 @GET
 	    @Path("/page-add")
 	    public Viewable getPageADD( @Context HttpServletRequest request,   @Context HttpServletResponse response) throws Exception
-	    {
-			            
-	      return new Viewable("/admin/superadmin/page-add", null);
-	      
+	    {			            
+	      return new Viewable("/admin/superadmin/page-add", null);	      
 	    }
 	 
 	 
@@ -118,8 +112,7 @@ Page page =new Page();
 			 @FormParam("page_group") String pageGroup,
 			 @FormParam("template") String template			 
 			 )  throws Exception 
-	 {	 
-			
+	 {	 			
 			Page insertPage = new Page();
 			
 			insertPage.setPage_name(pageName);
@@ -161,8 +154,7 @@ Page page =new Page();
 		     	{ 
 					System.out.println("Error is - "+e);
 					e.printStackTrace();
-		     	} //catch
-				    
+		     	} //catch				    
 	    
 			 request.setAttribute("pages", pageDAO.getAllPages());   
 	           
