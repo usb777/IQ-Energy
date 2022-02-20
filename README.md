@@ -9,3 +9,4 @@ https://www.w3spoint.com/jax-rs-file-upload
 Junit Testing tools, SonarQube, requests
 
 added Junits
+Intel J Idea Migration
