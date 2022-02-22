@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IQ-Energy:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>IQ-Energy</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="IQ-Energy-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="IQ-Energy:war exploded" />
+    </root>
+  </artifact>
+</component>
