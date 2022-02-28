@@ -29,7 +29,6 @@ public void setM_status(short m_status)
 
 public LeftMenu ()
 { super();
-	
 }
 
 
