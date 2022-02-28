@@ -21,7 +21,6 @@ public short getM_status()
 	return m_status;
 }
 
-
 public void setM_status(short m_status) 
 {
 	this.m_status = m_status;
