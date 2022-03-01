@@ -39,6 +39,24 @@ public class LeftMenuTest {
 
     }
 
+    @Test
+    public void testConstructors()
+    {
+        leftMenu = new   LeftMenu( 5, "menu 5", 5,  "link 5",  m_status);
+
+        assertEquals(5, leftMenu.getMenu_id());
+        assertEquals("menu 5", leftMenu.getMenu_name());
+        assertEquals(5, leftMenu.getParent_id());
+        assertEquals("link 5", leftMenu.getLink());
+        assertEquals(m_status, leftMenu.getM_status());
+
+        leftMenu = new   LeftMenu(  "menu 6", 6,  "link 6",  m_status);
+        assertEquals("menu 6", leftMenu.getMenu_name());
+        assertEquals(6, leftMenu.getParent_id());
+        assertEquals("link 6", leftMenu.getLink());
+        assertEquals(m_status, leftMenu.getM_status());
+    }
+
 
 
 
