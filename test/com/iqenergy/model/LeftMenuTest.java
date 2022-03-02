@@ -57,6 +57,11 @@ public class LeftMenuTest {
         assertEquals(m_status, leftMenu.getM_status());
     }
 
+    @Test
+    public void testToString()
+    {  leftMenu = new   LeftMenu( 5, "menu 5", 5,  "link 5",  m_status);
+        assertEquals("LeftMenu [menu_id=5, menu_name=menu 5, parent_id=5, link=link 5, m_status=0]", leftMenu.toString());
+    }
 
 
 
